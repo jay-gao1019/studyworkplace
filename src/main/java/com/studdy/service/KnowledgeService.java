@@ -37,16 +37,19 @@ public class KnowledgeService {
     private final AttemptRoundRepository attempts;
     private final LedgerService ledger;
     private final SettingsService settings;
+    private final ApprovalService approval;
     private final ObjectMapper mapper = new ObjectMapper();
 
     public KnowledgeService(SeedService seed, TreeNodeRepository nodes, QuizRepository quizzes,
-                            AttemptRoundRepository attempts, LedgerService ledger, SettingsService settings) {
+                            AttemptRoundRepository attempts, LedgerService ledger, SettingsService settings,
+                            ApprovalService approval) {
         this.seed = seed;
         this.nodes = nodes;
         this.quizzes = quizzes;
         this.attempts = attempts;
         this.ledger = ledger;
         this.settings = settings;
+        this.approval = approval;
     }
 
     /** 叶子当前题目集 = builtin（seed JSON）+ custom（quizzes 表 origin=custom）。 */
@@ -256,8 +259,10 @@ public class KnowledgeService {
         boolean everProficient = attempts.findByProfileIdAndLeafIdOrderByFinishedAtDesc(profileId, leafId)
                 .stream().anyMatch(a -> hash.equals(a.getQuizSetHash())
                         && a.getRate().doubleValue() >= 0.9);
+        // v2.3/M5.10：待审的精通奖励同样计入"已发过"，防重复申请
         boolean alreadyRewarded = ledger.txsOf(profileId).stream().anyMatch(t ->
-                t.type() == TxType.TEXTBOOK && leafId.equals(t.srcId()));
+                t.type() == TxType.TEXTBOOK && leafId.equals(t.srcId()))
+                || approval.findPending(profileId, "MASTERY_REWARD", leafId, "ALL").isPresent();
 
         attempts.save(new AttemptRoundEntity(Ids.next("at"), profileId, leafId, hash,
                 detail.toString(), BigDecimal.valueOf(rate).setScale(3, RoundingMode.HALF_UP),
@@ -271,11 +276,19 @@ public class KnowledgeService {
         out.put("masteryLabel", m.label());
         out.put("results", detail);
         if (m == Mastery.PROFICIENT && !everProficient && !alreadyRewarded) {
-            var tx = ledger.appendTx(profileId, TxType.TEXTBOOK, settings.textbookCoinValue(),
-                    leafId, null, "首次精通");
-            out.put("rewarded", settings.textbookCoinValue());
+            int value = settings.textbookCoinValue();
+            out.put("rewarded", value);
             out.put("balance", ledger.balance(profileId));
-            out.put("rewardTxId", tx.id());
+            if (approval.needsApproval("MASTERY_REWARD", value)) {
+                // v2.3/FR-29：首次精通奖励转待审（终身占位 dayKey=ALL），审批通过才落账
+                var pa = approval.submit(profileId, "MASTERY_REWARD", leafId, "ALL", value, "首次精通");
+                out.put("rewardState", "pending");
+                out.put("rewardPendingId", pa.getId());
+            } else {
+                var tx = ledger.appendTx(profileId, TxType.TEXTBOOK, value, leafId, null, "首次精通");
+                out.put("rewardState", "done");
+                out.put("rewardTxId", tx.id());
+            }
         }
         return out;
     }

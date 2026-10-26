@@ -353,7 +353,10 @@ export async function render(main, ctx) {
             : '这次没答对没关系，我们一起看看正确答案！'));
 
     if (r.rewarded) {
-      toast(`首次精通奖励 +${r.rewarded}🪙！`, 'ok');
+      // v2.3/FR-29：审批启用时首次精通奖励转待审，先不喊"到账"
+      toast(r.rewardState === 'pending'
+        ? `首次精通啦！奖励 +${r.rewarded}🪙 ⏳ 待家长确认`
+        : `首次精通奖励 +${r.rewarded}🪙！`, 'ok');
       sprinkle(card);
     }
 

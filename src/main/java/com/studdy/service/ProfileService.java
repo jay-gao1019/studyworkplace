@@ -27,6 +27,8 @@ public class ProfileService {
     private final ScreenBankRepository bankRepo;
     private final HabitLogRepository habitLogRepo;
     private final HabitChainRepository chainRepo;
+    private final PendingActionRepository pendingRepo;
+    private final PhotoService photoService;
     private final SessionService session;
 
     public ProfileService(ProfileRepository repo, CoinTxRepository txRepo, PlanCheckRepository planRepo,
@@ -34,6 +36,7 @@ public class ProfileService {
                           RedemptionRepository redemptionRepo, SleepLogRepository sleepRepo,
                           ScreenSessionRepository screenRepo, ScreenBankRepository bankRepo,
                           HabitLogRepository habitLogRepo, HabitChainRepository chainRepo,
+                          PendingActionRepository pendingRepo, PhotoService photoService,
                           SessionService session) {
         this.repo = repo;
         this.txRepo = txRepo;
@@ -46,6 +49,8 @@ public class ProfileService {
         this.bankRepo = bankRepo;
         this.habitLogRepo = habitLogRepo;
         this.chainRepo = chainRepo;
+        this.pendingRepo = pendingRepo;
+        this.photoService = photoService;
         this.session = session;
     }
 
@@ -119,8 +124,12 @@ public class ProfileService {
         bankRepo.findById(pid).ifPresent(bankRepo::delete);
         habitLogRepo.deleteAll(habitLogRepo.findAll().stream().filter(x -> x.getProfileId().equals(pid)).toList());
         chainRepo.deleteAll(chainRepo.findAll().stream().filter(x -> x.getProfileId().equals(pid)).toList());
+        // v2.3/M11.9：重置/删除档案连带清空其待审队列
+        pendingRepo.deleteAll(pendingRepo.findByProfileIdOrderByCreatedAtDesc(pid));
+        // v2.4/M13.6：连带物理删除佐证照片文件与元数据行
+        int purgedPhotos = photoService.purgeProfile(pid);
         txRepo.deleteAll(txRepo.findByProfileIdOrderByCreatedAtAsc(pid));
-        return Map.of("reset", pid);
+        return Map.of("reset", pid, "purgedPhotos", purgedPhotos);
     }
 
     /** M8.8 删除档案：连带物理删除其分区数据（唯一物理删除场景）。 */

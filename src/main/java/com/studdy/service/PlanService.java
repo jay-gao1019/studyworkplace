@@ -4,6 +4,7 @@ import com.studdy.domain.coin.CoinTx;
 import com.studdy.domain.coin.LedgerRule;
 import com.studdy.domain.coin.TxType;
 import com.studdy.domain.util.DayKey;
+import com.studdy.entity.PendingActionEntity;
 import com.studdy.entity.PlanCheckEntity;
 import com.studdy.entity.ProfileEntity;
 import com.studdy.entity.TaskItemEntity;
@@ -33,14 +34,17 @@ public class PlanService {
     private final ProfileRepository profileRepo;
     private final LedgerService ledger;
     private final SettingsService settings;
+    private final ApprovalService approval;
 
     public PlanService(TaskItemRepository taskRepo, PlanCheckRepository planRepo,
-                       ProfileRepository profileRepo, LedgerService ledger, SettingsService settings) {
+                       ProfileRepository profileRepo, LedgerService ledger, SettingsService settings,
+                       ApprovalService approval) {
         this.taskRepo = taskRepo;
         this.planRepo = planRepo;
         this.profileRepo = profileRepo;
         this.ledger = ledger;
         this.settings = settings;
+        this.approval = approval;
     }
 
     /** M2.1 今日清单 = enabled 且年级/学期命中；附勾选状态与流水。 */
@@ -50,6 +54,10 @@ public class PlanService {
         String dayKey = DayKey.ofToday(LocalDateTime.now(ZoneId.systemDefault()));
         Map<String, PlanCheckEntity> checks = planRepo.findByProfileIdAndDayKey(profileId, dayKey).stream()
                 .collect(Collectors.toMap(PlanCheckEntity::getTaskItemId, Function.identity(), (a, b) -> a));
+        // v2.3/M11.1：待审态由 pending_actions 联查推导，源表不动
+        java.util.Set<String> pendingTaskIds = approval.configEntity().isEnabled()
+                ? new java.util.HashSet<>(approval.pendingRefIds(profileId, "TASK_CHECK", dayKey))
+                : java.util.Set.of();
         List<Map<String, Object>> out = new ArrayList<>();
         for (TaskItemEntity t : taskRepo.findAllByOrderBySortAscIdAsc()) {
             if (!t.isEnabled() || !gradeHit(t, p.getGrade(), p.getTerm())) {
@@ -65,6 +73,7 @@ public class PlanService {
             m.put("category", t.getCategory());
             m.put("done", done);
             m.put("txId", done ? c.getTxId() : null);
+            m.put("pending", pendingTaskIds.contains(t.getId()));
             out.add(m);
         }
         return out;
@@ -87,6 +96,13 @@ public class PlanService {
      */
     @Transactional
     public Map<String, Object> toggleChild(String profileId, String taskItemId) {
+        return toggleChild(profileId, taskItemId, null, null);
+    }
+
+    /** v2.4/M13.5：孩子端勾选可附佐证照片与备注（仅转待审时挂接）。 */
+    @Transactional
+    public Map<String, Object> toggleChild(String profileId, String taskItemId,
+                                           List<String> photoIds, String note) {
         TaskItemEntity t = taskRepo.findById(taskItemId)
                 .orElseThrow(() -> new ApiException(404, "任务项不存在"));
         if (!t.isEnabled()) {
@@ -95,19 +111,32 @@ public class PlanService {
         if (t.getAmount() < 0) {
             throw new ApiException(403, "这项由家长在后台记录哦");
         }
-        return toggle(profileId, t);
+        return toggle(profileId, t, photoIds, note);
     }
 
     /** 家长侧：允许对扣币项发起记录（惩罚），仍遵守每日一次。 */
     @Transactional
     public Map<String, Object> toggleAdmin(String profileId, String taskItemId) {
-        TaskItemEntity t = taskRepo.findById(taskItemId)
-                .orElseThrow(() -> new ApiException(404, "任务项不存在"));
-        return toggle(profileId, t);
+        return toggleAdmin(profileId, taskItemId, null, null);
     }
 
-    private Map<String, Object> toggle(String profileId, TaskItemEntity t) {
+    @Transactional
+    public Map<String, Object> toggleAdmin(String profileId, String taskItemId,
+                                           List<String> photoIds, String note) {
+        TaskItemEntity t = taskRepo.findById(taskItemId)
+                .orElseThrow(() -> new ApiException(404, "任务项不存在"));
+        return toggle(profileId, t, photoIds, note);
+    }
+
+    private Map<String, Object> toggle(String profileId, TaskItemEntity t,
+                                       List<String> photoIds, String note) {
         String dayKey = DayKey.ofToday(LocalDateTime.now(ZoneId.systemDefault()));
+        // v2.3/M11.2：再点待审半透明勾 = 撤回申请
+        var pend = approval.findPending(profileId, "TASK_CHECK", t.getId(), dayKey);
+        if (pend.isPresent()) {
+            approval.withdraw(pend.get().getId(), profileId);
+            return result(false, null, "pending", profileId);
+        }
         PlanCheckEntity c = planRepo.findById(new PlanCheckEntity.Pk(profileId, t.getId(), dayKey)).orElse(null);
         boolean doneNow = c != null && "done".equals(c.getStatus());
         if (doneNow) {
@@ -126,6 +155,12 @@ public class PlanService {
             planRepo.save(c);
             return result(false, rev, profileId);
         }
+        // v2.3/FR-29：需审批的加分项只生成待审申请，不动账本与勾选表
+        if (approval.needsApproval("TASK_CHECK", t.getAmount())) {
+            PendingActionEntity pa = approval.submit(profileId, "TASK_CHECK", t.getId(), dayKey,
+                    t.getAmount(), t.getName(), photoIds, note);
+            return result(true, null, "pending", pa.getId(), profileId);
+        }
         CoinTx tx = ledger.appendTx(profileId, TxType.TASK, t.getAmount(), t.getId(), null, null);
         if (c == null) {
             planRepo.save(new PlanCheckEntity(profileId, t.getId(), dayKey, "done",
@@ -140,23 +175,44 @@ public class PlanService {
         return result(true, tx, profileId);
     }
 
-    /** M2.5 签到（每日一次，服务端去重兜底）。 */
+    /** M2.5 签到（每日一次，服务端去重兜底）；v2.3 需审批时转待审申请。 */
     @Transactional
     public Map<String, Object> checkin(String profileId) {
+        return checkin(profileId, null, null);
+    }
+
+    @Transactional
+    public Map<String, Object> checkin(String profileId, List<String> photoIds, String note) {
         String dayKey = DayKey.ofToday(LocalDateTime.now(ZoneId.systemDefault()));
         boolean already = ledger.txsOf(profileId).stream().anyMatch(t ->
                 t.type() == TxType.DAILY_CHECKIN && t.dayKey().equals(dayKey));
         if (already) {
             throw new ApiException(409, "今天已经签过到啦");
         }
+        int amount = settings.checkinAmount();
+        if (approval.needsApproval("CHECKIN", amount)) {
+            PendingActionEntity pa = approval.submit(profileId, "CHECKIN", "checkin", dayKey,
+                    amount, "每日签到", photoIds, note);
+            return result(true, null, "pending", pa.getId(), profileId);
+        }
         CoinTx tx = ledger.appendTx(profileId, TxType.DAILY_CHECKIN,
-                settings.checkinAmount(), "checkin", null, null);
+                amount, "checkin", null, null);
         return result(true, tx, profileId);
     }
 
     private Map<String, Object> result(boolean done, CoinTx tx, String profileId) {
+        return result(done, tx, done ? "done" : "undone", null, profileId);
+    }
+
+    private Map<String, Object> result(boolean done, CoinTx tx, String state, String profileId) {
+        return result(done, tx, state, null, profileId);
+    }
+
+    private Map<String, Object> result(boolean done, CoinTx tx, String state, String pendingId, String profileId) {
         Map<String, Object> m = new LinkedHashMap<>();
         m.put("done", done);
+        m.put("state", state);
+        m.put("pendingId", pendingId);
         m.put("tx", tx == null ? null : Map.of(
                 "id", tx.id(), "type", tx.type().wire(), "amount", tx.amount(), "dayKey", tx.dayKey()));
         m.put("balance", ledger.balance(profileId));

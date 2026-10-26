@@ -32,6 +32,21 @@ export const api = {
   del: (p) => req('DELETE', p),
   raw: (method, text, p) => req(method, p, text),
 
+  /** v2.4/M13.2：multipart 上传（佐证照片、电子书 PDF）。不手动设 Content-Type，交给浏览器带 boundary。 */
+  async upload(path, formData) {
+    const headers = {};
+    if (adminToken) headers['X-Admin-Token'] = adminToken;
+    const res = await fetch(BASE + path, { method: 'POST', headers, body: formData });
+    const text = await res.text();
+    let data;
+    try { data = text ? JSON.parse(text) : null; } catch { data = text; }
+    if (!res.ok) {
+      const msg = (data && data.message) || `上传失败（${res.status}）`;
+      throw new ApiError(res.status, msg);
+    }
+    return data;
+  },
+
   setAdminToken(t) { adminToken = t; },
   get adminToken() { return adminToken; },
 

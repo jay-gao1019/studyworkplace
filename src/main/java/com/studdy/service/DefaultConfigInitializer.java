@@ -21,18 +21,29 @@ public class DefaultConfigInitializer implements ApplicationRunner {
     private final TaskItemRepository taskRepo;
     private final ShopItemRepository shopRepo;
     private final HabitRepository habitRepo;
+    private final PenaltyPresetRepository presetRepo;
 
     public DefaultConfigInitializer(SettingsRepository settingsRepo, TaskItemRepository taskRepo,
-                                    ShopItemRepository shopRepo, HabitRepository habitRepo) {
+                                    ShopItemRepository shopRepo, HabitRepository habitRepo,
+                                    PenaltyPresetRepository presetRepo) {
         this.settingsRepo = settingsRepo;
         this.taskRepo = taskRepo;
         this.shopRepo = shopRepo;
         this.habitRepo = habitRepo;
+        this.presetRepo = presetRepo;
     }
 
     @Override
     @Transactional
     public void run(ApplicationArguments args) {
+        // v2.3/M12.4：默认扣分预设（表为空时装载；家长清空后不复活）
+        if (presetRepo.count() == 0) {
+            presetRepo.saveAll(List.of(
+                    new PenaltyPresetEntity("pp_homework_slow", "写作业拖拉", "🐌", 3, true, 1),
+                    new PenaltyPresetEntity("pp_temper", "发脾气", "😤", 5, true, 2),
+                    new PenaltyPresetEntity("pp_liar", "说谎", "🎭", 8, true, 3),
+                    new PenaltyPresetEntity("pp_careless", "丢三落四", "🧦", 2, true, 4)));
+        }
         if (settingsRepo.existsById("singleton")) {
             return;
         }

@@ -19,7 +19,7 @@ import java.util.TreeMap;
  */
 public final class BackupFormat {
 
-    public static final String CURRENT_VERSION = "2.0";
+    public static final String CURRENT_VERSION = "3.1";
     private static final List<String> REQUIRED_SECTIONS = List.of(
             "settings", "taskItems", "shopItems", "habits", "profiles",
             "coinTxs", "redemptions", "planChecks", "textbookChecks",
@@ -87,23 +87,22 @@ public final class BackupFormat {
         return v.compareTo(CURRENT_VERSION) > 0;
     }
 
-    /** 迁移链：1.0（docs/05 v1.1 本地导出）→ 2.0。 */
+    /** 迁移链：1.0（docs/05 v1.1 本地导出）→ 2.0；3.0/3.1 新段（待审/预设/审批配置/照片元数据）按可选缺省容忍，不改 payload（保 checksum 对称）。 */
     public static JsonNode migrate(ObjectMapper mapper, String fromVersion, JsonNode payload) {
-        if (!"1.0".equals(fromVersion)) {
-            return payload; // 未知旧版本尽力而为；结构校验兜底
-        }
         ObjectNode p = payload.deepCopy();
-        renameIfPresent(p, "config", "settings");
-        renameIfPresent(p, "txs", "coinTxs");
-        renameIfPresent(p, "redemptions", "redemptions");
-        renameIfPresent(p, "customNodes", "customNodes");
-        renameIfPresent(p, "customQuizzes", "customQuizzes");
-        renameIfPresent(p, "attempts", "attempts");
-        // 1.0 settings 为对象 {pin, levelThresholds,...}：pin → pinHash 置空（导入后强制重设）
-        JsonNode settings = p.get("settings");
-        if (settings != null && settings.isObject() && settings.has("pin") && !settings.has("pinHash")) {
-            ((ObjectNode) settings).remove("pin");
-            ((ObjectNode) settings).putNull("pinHash");
+        if ("1.0".equals(fromVersion)) {
+            renameIfPresent(p, "config", "settings");
+            renameIfPresent(p, "txs", "coinTxs");
+            renameIfPresent(p, "redemptions", "redemptions");
+            renameIfPresent(p, "customNodes", "customNodes");
+            renameIfPresent(p, "customQuizzes", "customQuizzes");
+            renameIfPresent(p, "attempts", "attempts");
+            // 1.0 settings 为对象 {pin, levelThresholds,...}：pin → pinHash 置空（导入后强制重设）
+            JsonNode settings = p.get("settings");
+            if (settings != null && settings.isObject() && settings.has("pin") && !settings.has("pinHash")) {
+                ((ObjectNode) settings).remove("pin");
+                ((ObjectNode) settings).putNull("pinHash");
+            }
         }
         return p;
     }

@@ -20,10 +20,11 @@ public class LearningController {
     private final KnowledgeService knowledge;
     private final LifeService life;
     private final StatsService statsService;
+    private final ApprovalService approval;
 
     public LearningController(SessionService session, ProfileService profiles, PlanService plan,
                               LedgerService ledger, TextbookService textbook, KnowledgeService knowledge,
-                              LifeService life, StatsService statsService) {
+                              LifeService life, StatsService statsService, ApprovalService approval) {
         this.session = session;
         this.profiles = profiles;
         this.plan = plan;
@@ -32,6 +33,7 @@ public class LearningController {
         this.knowledge = knowledge;
         this.life = life;
         this.statsService = statsService;
+        this.approval = approval;
     }
 
     private String pid() {
@@ -52,12 +54,37 @@ public class LearningController {
 
     @PostMapping("/plans/check")
     public Map<String, Object> check(@RequestBody JsonNode body) {
-        return plan.toggleChild(pid(), body.path("taskItemId").asText());
+        return plan.toggleChild(pid(), body.path("taskItemId").asText(), photoIds(body), note(body));
     }
 
     @PostMapping("/checkin")
-    public Map<String, Object> checkin() {
-        return plan.checkin(pid());
+    public Map<String, Object> checkin(@RequestBody(required = false) JsonNode body) {
+        return plan.checkin(pid(), photoIds(body), note(body));
+    }
+
+    /** v2.4/M13.5：动作请求体可选 photoIds[]（≤3 张已上传佐证）。 */
+    static java.util.List<String> photoIds(JsonNode b) {
+        if (b == null || !b.has("photoIds") || !b.get("photoIds").isArray()) {
+            return null;
+        }
+        java.util.List<String> out = new java.util.ArrayList<>();
+        for (JsonNode n : b.get("photoIds")) {
+            if (!n.asText().isBlank()) {
+                out.add(n.asText());
+            }
+        }
+        return out;
+    }
+
+    static String note(JsonNode b) {
+        String n = b == null ? null : b.path("note").asText(null);
+        return n == null || n.isBlank() ? null : n.trim();
+    }
+
+    /** 孩子端本人待审申请（v2.3/M11.9：待审勾展示与撤回匹配用）。 */
+    @GetMapping("/pending/mine")
+    public List<Map<String, Object>> pendingMine() {
+        return approval.mine(pid());
     }
 
     /** P1 悬浮卡双线完成率（docs/02 v2.1）。 */
@@ -80,7 +107,7 @@ public class LearningController {
 
     @PostMapping("/textbook/check")
     public Map<String, Object> textbookCheck(@RequestBody JsonNode body) {
-        return textbook.toggle(pid(), body.path("nodeId").asText());
+        return textbook.toggle(pid(), body.path("nodeId").asText(), photoIds(body), note(body));
     }
 
     // ── 知识树与自测 ──

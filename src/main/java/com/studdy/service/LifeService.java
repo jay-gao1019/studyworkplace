@@ -9,6 +9,7 @@ import com.studdy.domain.util.DayKey;
 import com.studdy.entity.HabitChainEntity;
 import com.studdy.entity.HabitEntity;
 import com.studdy.entity.HabitLogEntity;
+import com.studdy.entity.PendingActionEntity;
 import com.studdy.entity.ScreenBankEntity;
 import com.studdy.entity.ScreenSessionEntity;
 import com.studdy.entity.SleepLogEntity;
@@ -47,12 +48,13 @@ public class LifeService {
     private final HabitChainRepository chainRepo;
     private final LedgerService ledger;
     private final SettingsService settings;
+    private final ApprovalService approval;
     private final ObjectMapper mapper = new ObjectMapper();
 
     public LifeService(SleepLogRepository sleepRepo, ScreenSessionRepository screenRepo,
                        ScreenBankRepository bankRepo, HabitRepository habitRepo,
                        HabitLogRepository habitLogRepo, HabitChainRepository chainRepo,
-                       LedgerService ledger, SettingsService settings) {
+                       LedgerService ledger, SettingsService settings, ApprovalService approval) {
         this.sleepRepo = sleepRepo;
         this.screenRepo = screenRepo;
         this.bankRepo = bankRepo;
@@ -61,6 +63,7 @@ public class LifeService {
         this.chainRepo = chainRepo;
         this.ledger = ledger;
         this.settings = settings;
+        this.approval = approval;
     }
 
     // ── M6-A 作息 ────────────────────────────────
@@ -90,7 +93,13 @@ public class LifeService {
         }
         int coin = onTime ? ("sleep".equals(kind) ? ls.sleepCoin() : ls.wakeCoin()) : 0;
         String txId = null;
-        if (coin > 0) {
+        boolean pendingCoin = false;
+        if (coin > 0 && approval.needsApproval("LIFE_CHECK", coin)) {
+            // v2.3/M6.2：作息记录即时保存，金币走待审（LIFE_CHECK，当日占位）
+            approval.submit(profileId, "LIFE_CHECK", kind, dayKey, coin,
+                    ("sleep".equals(kind) ? "早睡" : "早起") + "按时打卡");
+            pendingCoin = true;
+        } else if (coin > 0) {
             CoinTx tx = ledger.appendTx(profileId, TxType.TASK, coin,
                     "life_" + kind + "_" + dayKey, null, null);
             txId = tx.id();
@@ -102,6 +111,7 @@ public class LifeService {
         m.put("kind", kind);
         m.put("onTime", onTime);
         m.put("rewarded", coin);
+        m.put("pending", pendingCoin);
         m.put("balance", ledger.balance(profileId));
         return m;
     }
@@ -109,6 +119,8 @@ public class LifeService {
     /** 今日作息状态（P4 视图需要，docs/04 §2 作息分区）。 */
     public Map<String, Object> sleepToday(String profileId) {
         String dayKey = DayKey.ofToday(LocalDateTime.now(ZoneId.systemDefault()));
+        List<String> pendLife = approval.configEntity().isEnabled()
+                ? approval.pendingRefIds(profileId, "LIFE_CHECK", dayKey) : List.of();
         Map<String, Object> out = new LinkedHashMap<>();
         for (String kind : List.of("sleep", "wake")) {
             SleepLogEntity e = sleepRepo
@@ -116,6 +128,7 @@ public class LifeService {
             Map<String, Object> s = new LinkedHashMap<>();
             s.put("done", e != null);
             s.put("onTime", e != null && e.isOnTime());
+            s.put("pending", pendLife.contains(kind));
             out.put(kind, s);
         }
         out.put("dayKey", dayKey);
@@ -314,8 +327,9 @@ public class LifeService {
         chainRepo.save(chain);
         habitLogRepo.save(new HabitLogEntity(profileId, habitId, today, chainId, true));
 
-        // 里程碑判定（M6.13）
+        // 里程碑判定（M6.13）；v2.3/FR-29：需审批时提交 HABIT_MILESTONE 待审申请，占位记 pendingId
         int rewarded = 0;
+        int pendingCount = 0;
         try {
             JsonNode rewards = mapper.readTree(h.getMilestoneRewards() == null ? "{}" : h.getMilestoneRewards());
             JsonNode awarded = mapper.readTree(chain.getAwardedMilestones() == null ? "{}" : chain.getAwardedMilestones());
@@ -325,14 +339,25 @@ public class LifeService {
                 var f = fields.next();
                 int milestone = Integer.parseInt(f.getKey());
                 if (consecutive >= milestone && !aw.has(f.getKey())) {
-                    CoinTx tx = ledger.appendTx(profileId, TxType.HABIT_MILESTONE, f.getValue().asInt(),
-                            "habit:" + habitId + ":" + milestone + ":" + chainId, null, null);
-                    aw.put(f.getKey(), tx.id());
-                    rewarded += f.getValue().asInt();
+                    int amt = f.getValue().asInt();
+                    if (approval.needsApproval("HABIT_MILESTONE", amt)) {
+                        PendingActionEntity pa = approval.submit(profileId, "HABIT_MILESTONE",
+                                habitId + "#" + chainId + "#" + milestone, "ALL", amt,
+                                h.getName() + " 连续 " + milestone + " 天");
+                        aw.put(f.getKey(), pa.getId());
+                        pendingCount++;
+                    } else {
+                        CoinTx tx = ledger.appendTx(profileId, TxType.HABIT_MILESTONE, amt,
+                                "habit:" + habitId + ":" + milestone + ":" + chainId, null, null);
+                        aw.put(f.getKey(), tx.id());
+                        rewarded += amt;
+                    }
                 }
             }
             chain.setAwardedMilestones(aw.toString());
             chainRepo.save(chain);
+        } catch (ApiException e) {
+            throw e;
         } catch (Exception e) {
             throw new ApiException(500, "里程碑配置解析失败");
         }
@@ -341,6 +366,7 @@ public class LifeService {
         m.put("consecutive", consecutive);
         m.put("chainId", chainId);
         m.put("milestoneRewarded", rewarded);
+        m.put("milestonePending", pendingCount);
         m.put("balance", ledger.balance(profileId));
         return m;
     }

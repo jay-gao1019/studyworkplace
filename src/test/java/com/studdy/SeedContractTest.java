@@ -160,8 +160,13 @@ class SeedContractTest {
                         String leafId = leaf.path("id").asText();
                         id(leafId, KN_LEAF, "知识点叶", tk);
                         JsonNode quizzes = leaf.path("quizzes");
-                        int min = (grade >= 4 && "校内".equals(branch)) ? 3 : 2;
+                        boolean focus = grade >= 4; // v2.3/FR-30：4–6 年级（含奥数）重点学段
+                        int min = focus ? 15 : 2;
                         assertTrue(quizzes.size() >= 2, tk + " 叶题目 <2: " + leafId);
+                        if (focus) {
+                            // docs/10 v1.3：QuizExpander 保证 4–6 年级每叶恰 15 题（一整轮自测）。
+                            assertEquals(15, quizzes.size(), tk + " 4–6 年级叶应恰 15 题: " + leafId);
+                        }
                         int[] cnt = {0, 0};
                         for (JsonNode q : quizzes) checkQuiz(q, leafId, tk, cnt);
                         assertTrue(cnt[0] >= 1 && cnt[1] >= 1, leafId + " 应单选与填空各至少 1");

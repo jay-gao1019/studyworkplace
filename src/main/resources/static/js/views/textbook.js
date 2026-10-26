@@ -1,5 +1,5 @@
-// P2 教材页（#/cn #/math #/en，docs/04 §2 P2）：目录打卡结算 + 进度条 + 条目自测跳转知识树 + 单元电子书（M4.7 v2.2）。
-import { h, toast, floatCoin } from '../ui.js';
+// P2 教材页（#/cn #/math #/en，docs/04 §2 P2）：目录打卡结算 + 进度条 + 条目自测跳转知识树 + 单元电子书（M4.7 v2.2；v2.3 待审勾；v2.4 佐证+阅读引导）。
+import { h, toast, floatCoin, evidenceSheet } from '../ui.js';
 
 const NAMES = { cn: '📖 语文', math: '🧮 数学', en: '🅰️ 英语' };
 
@@ -103,27 +103,33 @@ export async function render(main, ctx, meta) {
   function groupHeader(g) {
     const btn = h('button', {
       class: 'btn ebook-btn',
-      disabled: ebookOk ? null : 'disabled',
       title: ebookOk ? '打开本册人教版电子书（可定位到对应单元起始页）'
-        : `电子书还没就位：请把人教版 PDF 放到 ${ebookDir || 'data/ebooks'} 目录`,
+        : '电子书还没就位：点开看怎么放入书架',
       onclick: () => openReader(g),
     }, '📖 打开电子书');
-    if (!ebookOk) btn.classList.add('grey');
+    if (!ebookOk) btn.classList.add('grey'); // v2.4：灰态但可点——点开是引导页而非 404
     return h('div', { class: 'tb-group-head' }, h('span', { style: 'font-weight:700' }, g.title), btn);
   }
 
-  /** PDF 阅读器弹层：iframe #page 定位到分组的 ebookPage（默认第 1 页）。 */
+  /** PDF 阅读器弹层：iframe #page 定位到分组的 ebookPage（默认第 1 页）；缺文件显示引导态（M14.4）。 */
   function openReader(g) {
-    if (!ebookOk) { toast('这一册的电子书还没放进来哦', ''); return; }
     const page = g.ebookPage || 1;
     const url = `/api/ebook/${subject}/${gradeOf()}/${encodeURIComponent(termOf())}/file#page=${page}`;
+    const body = ebookOk
+      ? h('iframe', { src: url, title: '人教版电子书' })
+      : h('div', { class: 'pdf-guide' }, h('div', {},
+        h('div', { class: 'big' }, '📚'),
+        h('b', {}, '这本书还没有放入书架'),
+        h('p', {}, `请家长在 后台 → 📚 教材资源 上传「${NAMES[subject] || ''} ${gradeOf()}年级${termOf()}册」人教版 PDF。`),
+        h('p', {}, '手机浏览器打开后台也能直接上传；上传后孩子端立即可读。'),
+        h('button', { class: 'btn primary', style: 'margin-top:14px', onclick: () => { close(); ctx.ui.go('admin'); } }, '🔒 去找家长上传')));
     const overlay = h('div', { class: 'pdf-overlay' },
       h('div', { class: 'pdf-box' },
         h('div', { class: 'pdf-bar' },
           h('b', {}, `${NAMES[subject] || '课本'} · ${gradeOf()}年级${termOf()}册`),
-          h('span', { class: 'pdf-page' }, `第 ${page} 页`),
-          h('button', { class: 'btn ghost', onclick: close }, '✕ 关闭')),
-        h('iframe', { src: url, title: '人教版电子书' })));
+          ebookOk ? h('span', { class: 'pdf-page' }, `第 ${page} 页`) : null,
+          h('button', { class: 'btn ghost', style: 'margin-left:auto', onclick: close }, '✕ 关闭')),
+        body));
     function close() {
       overlay.remove();
       document.removeEventListener('keydown', onKey);
@@ -146,26 +152,62 @@ export async function render(main, ctx, meta) {
     const row = h('div', { class: 'tb-leaf' }, tick, name, checkBtn, quizBtn);
 
     const sync = () => {
+      const pend = !!leaf.pending && !leaf.checked;
       row.classList.toggle('checked', !!leaf.checked);
+      row.classList.toggle('pend', pend);
       tick.setAttribute('style', leaf.checked
         ? 'width:22px;height:22px;border-radius:7px;flex:none;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--c-income);border:2px solid var(--c-income)'
-        : 'width:22px;height:22px;border-radius:7px;flex:none;border:2px solid var(--c-line);background:#fff');
-      tick.textContent = leaf.checked ? '✓' : '';
-      checkBtn.className = `btn ${leaf.checked ? 'ghost' : 'primary'}`;
+        : pend
+          ? 'width:22px;height:22px;border-radius:7px;flex:none;display:grid;place-items:center;font-size:13px;border:2px dashed var(--c-primary);background:#fff'
+          : 'width:22px;height:22px;border-radius:7px;flex:none;border:2px solid var(--c-line);background:#fff');
+      tick.textContent = leaf.checked ? '✓' : pend ? '⏳' : '';
+      checkBtn.className = `btn ${leaf.checked || pend ? 'ghost' : 'primary'}`;
       checkBtn.style.cssText = 'padding:5px 12px;font-size:.85rem';
-      checkBtn.textContent = leaf.checked ? '取消打卡' : `知识点 +${coinValue}🪙`;
+      checkBtn.textContent = leaf.checked ? '取消打卡'
+        : pend ? '⏳ 待审核（点击撤回）' : `知识点 +${coinValue}🪙`;
     };
 
     checkBtn.onclick = async () => {
       checkBtn.disabled = true;
       try {
+        // v2.3/M11.3：待审条目再点 = 撤回申请
+        if (leaf.pending && !leaf.checked) {
+          const r = await ctx.api.post('/textbook/check',
+            { profileId: ctx.store.s.currentProfileId, nodeId: leaf.id });
+          if (r.state === 'pending' && !r.checked) {
+            leaf.pending = false;
+            sync();
+            toast(`“${leaf.title}”的申请已撤回`, '');
+            await ctx.store.refreshCoins();
+          }
+          return;
+        }
+        // v2.4/FR-32：审批启用时，打卡先弹 📸 佐证层（照片可选）
+        let extra = {};
+        if (!leaf.checked && ctx.store.s.approvalEnabled) {
+          const ev = await evidenceSheet(ctx.api, {
+            title: `打卡「${leaf.title}」`,
+            subtitle: `知识点 +${coinValue}🪙 · 家长确认后到账`,
+            kind: 'textbook',
+          });
+          if (!ev) return; // 取消
+          extra = { photoIds: ev.photoIds, note: ev.note };
+        }
         const r = await ctx.api.post('/textbook/check',
-          { profileId: ctx.store.s.currentProfileId, nodeId: leaf.id });
-        leaf.checked = !!r.checked;
-        const amount = r.amount ?? coinValue; // 反选时后端不返回 amount，用目录接口的金额
-        sync();
-        floatCoin(row, leaf.checked ? `+${amount}🪙` : `−${amount}🪙`);
-        toast(leaf.checked ? `“${leaf.title}”打卡成功，+${amount}🪙！` : '这次打卡取消啦', leaf.checked ? 'ok' : '');
+          { profileId: ctx.store.s.currentProfileId, nodeId: leaf.id, ...extra });
+        if (r.state === 'pending') {
+          leaf.pending = true;
+          leaf.checked = false;
+          sync();
+          floatCoin(row, '⏳ 已提交');
+          toast('⏳ 已提交，待家长确认', 'ok');
+        } else {
+          leaf.checked = !!r.checked;
+          const amount = r.amount ?? coinValue; // 反选时后端不返回 amount，用目录接口的金额
+          sync();
+          floatCoin(row, leaf.checked ? `+${amount}🪙` : `−${amount}🪙`);
+          toast(leaf.checked ? `“${leaf.title}”打卡成功，+${amount}🪙！` : '这次打卡取消啦', leaf.checked ? 'ok' : '');
+        }
         await ctx.store.refreshCoins();
       } catch (e) {
         toast(e.message, 'err');

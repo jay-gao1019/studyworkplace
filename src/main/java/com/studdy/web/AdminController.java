@@ -28,6 +28,7 @@ public class AdminController {
     private final ShopService shop;
     private final LifeService life;
     private final SettingsService settings;
+    private final ApprovalService approval;
     private final TaskItemRepository taskRepo;
     private final ShopItemRepository shopRepo;
     private final HabitRepository habitRepo;
@@ -37,7 +38,8 @@ public class AdminController {
 
     public AdminController(AdminService admin, SessionService session, ProfileService profiles,
                            PlanService plan, LedgerService ledger, ShopService shop, LifeService life,
-                           SettingsService settings, TaskItemRepository taskRepo, ShopItemRepository shopRepo,
+                           SettingsService settings, ApprovalService approval,
+                           TaskItemRepository taskRepo, ShopItemRepository shopRepo,
                            HabitRepository habitRepo, TreeNodeRepository nodeRepo, QuizRepository quizRepo,
                            SeedService seed) {
         this.admin = admin;
@@ -48,6 +50,7 @@ public class AdminController {
         this.shop = shop;
         this.life = life;
         this.settings = settings;
+        this.approval = approval;
         this.taskRepo = taskRepo;
         this.shopRepo = shopRepo;
         this.habitRepo = habitRepo;
@@ -271,8 +274,98 @@ public class AdminController {
             throw new ApiException(400, "原因至少 2 个字");
         }
         String pid = b.path("profileId").asText(session.currentProfileId());
-        var tx = ledger.appendTx(pid, TxType.MANUAL, b.path("amount").asInt(), null, null, reason);
-        return Map.of("txId", tx.id(), "balance", ledger.balance(pid));
+        int amount = b.path("amount").asInt();
+        // v2.3/FR-29：家长手动奖惩（正负皆可）先入待审队列；关闭审批/免审批时即落
+        if (amount != 0 && approval.needsApproval("MANUAL_TX", Math.abs(amount))) {
+            var pa = approval.submit(pid, "MANUAL_TX", Ids.next("m"), approval.todayKey(), amount,
+                    reason.trim().length() > 120 ? reason.trim().substring(0, 120) : reason.trim(),
+                    LearningController.photoIds(b), LearningController.note(b));
+            return Map.of("pendingId", pa.getId(), "state", "pending", "amount", amount,
+                    "balance", ledger.balance(pid));
+        }
+        var tx = ledger.appendTx(pid, TxType.MANUAL, amount, null, null, reason);
+        return Map.of("txId", tx.id(), "state", "done", "balance", ledger.balance(pid));
+    }
+
+    // ── 审批中心（M11，v2.3/FR-29）──
+
+    @GetMapping("/pending")
+    public List<Map<String, Object>> pendingList(@RequestParam(required = false) String status,
+                                                 @RequestParam(required = false) String profileId,
+                                                 HttpServletRequest req) {
+        gate(req);
+        return approval.listForAdmin(status, profileId);
+    }
+
+    @PostMapping("/pending/{id}/approve")
+    public Map<String, Object> pendingApprove(@PathVariable String id, HttpServletRequest req) {
+        gate(req);
+        return approval.approve(id);
+    }
+
+    @PostMapping("/pending/{id}/reject")
+    public Map<String, Object> pendingReject(@PathVariable String id, @RequestBody(required = false) JsonNode b,
+                                             HttpServletRequest req) {
+        gate(req);
+        return approval.reject(id, b == null ? null : b.path("reason").asText(null));
+    }
+
+    @PostMapping("/pending/approve-all")
+    public Map<String, Object> pendingApproveAll(@RequestBody(required = false) JsonNode b,
+                                                 HttpServletRequest req) {
+        gate(req);
+        return approval.approveAll(b == null ? null : b.path("profileId").asText(null));
+    }
+
+    @GetMapping("/approval-config")
+    public Map<String, Object> approvalConfigGet(HttpServletRequest req) {
+        gate(req);
+        return approval.configView();
+    }
+
+    @PatchMapping("/approval-config")
+    public Map<String, Object> approvalConfigPatch(@RequestBody JsonNode b, HttpServletRequest req) {
+        gate(req);
+        List<String> autoKinds = null;
+        if (b.has("autoKinds") && b.get("autoKinds").isArray()) {
+            autoKinds = new ArrayList<>();
+            for (JsonNode n : b.get("autoKinds")) {
+                autoKinds.add(n.asText());
+            }
+        }
+        return approval.updateConfig(b.hasNonNull("enabled") ? b.get("enabled").asBoolean() : null, autoKinds);
+    }
+
+    // ── 扣分快速面板（M12，v2.3/FR-28）──
+
+    @GetMapping("/penalty-presets")
+    public List<Map<String, Object>> penaltyPresets(HttpServletRequest req) {
+        gate(req);
+        return approval.listPresets();
+    }
+
+    @PostMapping("/penalty-presets")
+    public Map<String, Object> upsertPenaltyPreset(@RequestBody JsonNode b, HttpServletRequest req) {
+        gate(req);
+        return approval.upsertPreset(b.path("id").asText(null), b.path("name").asText(null),
+                b.path("icon").asText(null), b.hasNonNull("amount") ? b.get("amount").asInt() : null,
+                b.hasNonNull("enabled") ? b.get("enabled").asBoolean() : null,
+                b.hasNonNull("sort") ? b.get("sort").asInt() : null);
+    }
+
+    @DeleteMapping("/penalty-presets/{id}")
+    public Map<String, Object> deletePenaltyPreset(@PathVariable String id, HttpServletRequest req) {
+        gate(req);
+        approval.deletePreset(id);
+        return Map.of("deleted", id);
+    }
+
+    @PostMapping("/penalty-apply")
+    public Map<String, Object> penaltyApply(@RequestBody JsonNode b, HttpServletRequest req) {
+        gate(req);
+        String pid = b.path("profileId").asText(session.currentProfileId());
+        return approval.penaltyApply(pid, b.path("presetId").asText(), b.path("reason").asText(null),
+                LearningController.photoIds(b), LearningController.note(b));
     }
 
     // ── 数据修正（M7.6/FR-26，v2.2）──
@@ -294,7 +387,8 @@ public class AdminController {
     public Map<String, Object> adminCheck(@RequestBody JsonNode b, HttpServletRequest req) {
         gate(req);
         String pid = b.path("profileId").asText(session.currentProfileId());
-        return plan.toggleAdmin(pid, b.path("taskItemId").asText());
+        return plan.toggleAdmin(pid, b.path("taskItemId").asText(),
+                LearningController.photoIds(b), LearningController.note(b));
     }
 
     @PostMapping("/redemptions/{id}/confirm")

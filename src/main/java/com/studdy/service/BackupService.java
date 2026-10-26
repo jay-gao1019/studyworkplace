@@ -49,6 +49,10 @@ public class BackupService {
     private final ScreenBankRepository bankRepo;
     private final HabitLogRepository habitLogRepo;
     private final HabitChainRepository chainRepo;
+    private final PendingActionRepository pendingRepo;
+    private final PenaltyPresetRepository presetRepo;
+    private final ApprovalConfigRepository approvalRepo;
+    private final PhotoEvidenceRepository photoRepo;
     private final PreImportSnapshotRepository snapshotRepo;
     private final SessionService session;
 
@@ -60,8 +64,10 @@ public class BackupService {
                          QuizRepository quizRepo, AttemptRoundRepository attemptRepo,
                          SleepLogRepository sleepRepo, ScreenSessionRepository screenRepo,
                          ScreenBankRepository bankRepo, HabitLogRepository habitLogRepo,
-                         HabitChainRepository chainRepo, PreImportSnapshotRepository snapshotRepo,
-                         SessionService session) {
+                         HabitChainRepository chainRepo, PendingActionRepository pendingRepo,
+                         PenaltyPresetRepository presetRepo, ApprovalConfigRepository approvalRepo,
+                         PhotoEvidenceRepository photoRepo,
+                         PreImportSnapshotRepository snapshotRepo, SessionService session) {
         this.settingsRepo = settingsRepo;
         this.taskRepo = taskRepo;
         this.shopRepo = shopRepo;
@@ -79,6 +85,10 @@ public class BackupService {
         this.bankRepo = bankRepo;
         this.habitLogRepo = habitLogRepo;
         this.chainRepo = chainRepo;
+        this.pendingRepo = pendingRepo;
+        this.presetRepo = presetRepo;
+        this.approvalRepo = approvalRepo;
+        this.photoRepo = photoRepo;
         this.snapshotRepo = snapshotRepo;
         this.session = session;
     }
@@ -108,6 +118,16 @@ public class BackupService {
         life.set("screenBanks", arr(bankRepo.findAll(), this::bankMap));
         life.set("habitLogs", arr(habitLogRepo.findAll(), this::habitLogMap));
         life.set("habitChains", arr(chainRepo.findAll(), this::chainMap));
+        // v2.3（docs/05 §10，schemaVersion 3.0）：审批队列 / 扣分预设 / 审批开关
+        payload.set("pendingActions", arr(pendingRepo.findAll(), this::pendingMap));
+        payload.set("penaltyPresets", arr(presetRepo.findAll(), this::presetMap));
+        payload.set("approvalConfig", mapper.valueToTree(
+                approvalRepo.findById("approval")
+                        .map(c -> Map.of("code", "approval", "enabled", c.isEnabled(),
+                                "autoKinds", c.getAutoKinds() == null ? "[]" : c.getAutoKinds()))
+                        .orElse(Map.of("code", "approval", "enabled", true, "autoKinds", "[]"))));
+        // v2.4（docs/05 §11，schemaVersion 3.1）：照片仅元数据行入段，文件本体不进备份（M13.2）
+        payload.set("photoEvidences", arr(photoRepo.findAll(), this::photoMap));
 
         ObjectNode root = mapper.createObjectNode();
         root.put("schemaVersion", BackupFormat.CURRENT_VERSION);
@@ -200,6 +220,18 @@ public class BackupService {
         counts += readList(life.path("screenBanks"), this::writeBank);
         counts += readList(life.path("habitLogs"), this::writeHabitLog);
         counts += readList(life.path("habitChains"), this::writeChain);
+        counts += readList(payload.path("pendingActions"), this::writePending);
+        counts += readList(payload.path("penaltyPresets"), this::writePreset);
+        counts += readList(payload.path("photoEvidences"), this::writePhoto); // 3.0 及以前缺段容忍（M13.2）
+        JsonNode ac = payload.path("approvalConfig");
+        if (ac.isObject()) {
+            approvalRepo.save(new ApprovalConfigEntity("approval",
+                    ac.path("enabled").asBoolean(true),
+                    ac.path("autoKinds").isTextual() ? ac.path("autoKinds").asText()
+                            : (ac.get("autoKinds") != null && ac.get("autoKinds").isArray()
+                            ? ac.get("autoKinds").toString() : "[]")));
+            counts++;
+        }
         return Map.of("imported", true, "rows", counts);
     }
 
@@ -213,6 +245,10 @@ public class BackupService {
     }
 
     private void wipeAll() {
+        photoRepo.deleteAllInBatch();
+        approvalRepo.deleteAllInBatch();
+        presetRepo.deleteAllInBatch();
+        pendingRepo.deleteAllInBatch();
         chainRepo.deleteAllInBatch();
         habitLogRepo.deleteAllInBatch();
         bankRepo.deleteAllInBatch();
@@ -539,5 +575,65 @@ public class BackupService {
     private void writeChain(JsonNode n) {
         chainRepo.save(new HabitChainEntity(s(n, "profileId"), s(n, "habitId"), s(n, "chainId"),
                 i(n, "consecutive"), s(n, "startedAt"), sDefault(n, "awardedMilestones", "{}")));
+    }
+
+    // ── v2.3 新增表（schemaVersion 3.0） ────────────────────────────────
+
+    private Map<String, Object> pendingMap(PendingActionEntity e) {
+        Map<String, Object> m = new LinkedHashMap<>();
+        m.put("id", e.getId()); m.put("profileId", e.getProfileId()); m.put("kind", e.getKind());
+        m.put("refId", e.getRefId()); m.put("amount", e.getAmount()); m.put("reason", e.getReason());
+        m.put("dayKey", e.getDayKey()); m.put("status", e.getStatus());
+        m.put("createdAt", e.getCreatedAt().toString());
+        m.put("decidedAt", e.getDecidedAt() == null ? null : e.getDecidedAt().toString());
+        m.put("txId", e.getTxId());
+        m.put("evidenceIds", e.getEvidenceIds());
+        return m;
+    }
+
+    private void writePending(JsonNode n) {
+        PendingActionEntity e = new PendingActionEntity(s(n, "id"), s(n, "profileId"), s(n, "kind"),
+                s(n, "refId"), i(n, "amount"), s(n, "reason"), s(n, "dayKey"));
+        e.setStatus(sDefault(n, "status", "pending"));
+        e.setDecidedAt(ts(n, "decidedAt"));
+        e.setTxId(s(n, "txId"));
+        e.setEvidenceIds(s(n, "evidenceIds"));
+        if (n.hasNonNull("createdAt")) {
+            e.setCreatedAt(Instant.parse(n.get("createdAt").asText()));
+        }
+        pendingRepo.save(e);
+    }
+
+    /** v2.4：照片元数据段（文件本体在 data/evidence，不入 payload）。 */
+    private Map<String, Object> photoMap(PhotoEvidenceEntity e) {
+        Map<String, Object> m = new LinkedHashMap<>();
+        m.put("id", e.getId()); m.put("profileId", e.getProfileId()); m.put("kind", e.getKind());
+        m.put("filePath", e.getFilePath()); m.put("origName", e.getOrigName());
+        m.put("note", e.getNote());
+        m.put("takenAt", e.getTakenAt().toString());
+        m.put("createdAt", e.getCreatedAt().toString());
+        return m;
+    }
+
+    private void writePhoto(JsonNode n) {
+        PhotoEvidenceEntity e = new PhotoEvidenceEntity(s(n, "id"), s(n, "profileId"),
+                sDefault(n, "kind", "task"), s(n, "filePath"), s(n, "origName"), s(n, "note"),
+                tsReq(n, "takenAt"));
+        if (n.hasNonNull("createdAt")) {
+            e.setCreatedAt(Instant.parse(n.get("createdAt").asText()));
+        }
+        photoRepo.save(e);
+    }
+
+    private Map<String, Object> presetMap(PenaltyPresetEntity e) {
+        Map<String, Object> m = new LinkedHashMap<>();
+        m.put("id", e.getId()); m.put("name", e.getName()); m.put("icon", e.getIcon());
+        m.put("amount", e.getAmount()); m.put("enabled", e.isEnabled()); m.put("sort", e.getSort());
+        return m;
+    }
+
+    private void writePreset(JsonNode n) {
+        presetRepo.save(new PenaltyPresetEntity(s(n, "id"), s(n, "name"), s(n, "icon"),
+                i(n, "amount"), b(n, "enabled", true), iDefault(n, "sort", 0)));
     }
 }

@@ -188,3 +188,47 @@ CREATE TABLE IF NOT EXISTS pre_import_snapshots (
   created_at DATETIME(6) NOT NULL,
   payload LONGTEXT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- v2.3 审批系统（docs/05 §10 / M11）
+CREATE TABLE IF NOT EXISTS pending_actions (
+  id VARCHAR(40) PRIMARY KEY,
+  profile_id VARCHAR(40) NOT NULL,
+  kind VARCHAR(16) NOT NULL,
+  ref_id VARCHAR(64) NOT NULL,
+  amount INT NOT NULL,
+  reason VARCHAR(120),
+  day_key VARCHAR(10) NOT NULL,
+  status VARCHAR(10) NOT NULL,
+  created_at DATETIME(6) NOT NULL,
+  decided_at DATETIME(6),
+  tx_id VARCHAR(40),
+  evidence_ids VARCHAR(200),
+  active_day CHAR(10) AS (IF(status='pending', day_key, NULL)) STORED,
+  UNIQUE KEY uq_pending (profile_id, kind, ref_id, active_day)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS penalty_presets (
+  id VARCHAR(40) PRIMARY KEY,
+  name VARCHAR(24) NOT NULL,
+  icon VARCHAR(24),
+  amount INT NOT NULL,
+  enabled TINYINT(1) DEFAULT 1,
+  sort INT DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS approval_config (
+  code VARCHAR(20) PRIMARY KEY,
+  enabled TINYINT(1) DEFAULT 1,
+  auto_kinds JSON
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS photo_evidences (
+  id VARCHAR(40) PRIMARY KEY,
+  profile_id VARCHAR(40) NOT NULL,
+  kind VARCHAR(24) NOT NULL,
+  file_path VARCHAR(200),
+  orig_name VARCHAR(120),
+  note VARCHAR(120),
+  taken_at DATETIME(6) NOT NULL,
+  created_at DATETIME(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

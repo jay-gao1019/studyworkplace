@@ -1,6 +1,6 @@
-// P6 后台配置（docs/04 §2 P6）：家长 PIN 门 + 五个配置 Tab。
+// P6 后台配置（docs/04 §2 P6）：家长 PIN 门 + 七个配置 Tab（v2.3 审批中心 / v2.4 教材资源）。
 // 原生 ESM，无第三方依赖；DOM 全部走 ui.h()，接口全部走 ctx.api.admin()。
-import { h, toast, modal, confirmModal } from '../ui.js';
+import { h, toast, modal, confirmModal, evidenceSheet, lightbox } from '../ui.js';
 
 const GRADES = [1, 2, 3, 4, 5, 6];
 
@@ -103,11 +103,14 @@ function renderAdmin(main, ctx) {
   const TABS = [
     ['users', '用户管理', renderUsers],
     ['plan', '每日计划', renderPlan],
+    ['approval', '审批中心', renderApproval],
     ['shop', '商店', renderShop],
     ['life', '生活设置', renderLife],
+    ['ebooks', '教材资源', renderEbooks],
     ['data', '数据与题库', renderData],
   ];
   let current = 'users';
+  let pendingCount = 0; // v2.3/FR-29：审批 Tab 红色徽标
 
   main.innerHTML = '';
   const tabBar = h('div', { class: 'admin-tabs' });
@@ -128,11 +131,22 @@ function renderAdmin(main, ctx) {
   function drawTabs() {
     tabBar.innerHTML = '';
     for (const [key, label] of TABS) {
-      tabBar.append(h('button', {
+      const btn = h('button', {
         class: `btn ghost ${key === current ? 'on' : ''}`,
         onclick: () => { current = key; drawTabs(); loadTab(); },
-      }, label));
+      }, label);
+      if (key === 'approval' && pendingCount > 0) btn.append(h('span', { class: 'tab-badge' }, String(pendingCount)));
+      tabBar.append(btn);
     }
+  }
+
+  /** 待办数徽标：审批动作后由各 Tab 调用刷新。 */
+  async function loadPendingCount() {
+    try {
+      const list = await ctx.api.admin('GET', '/pending');
+      pendingCount = Array.isArray(list) ? list.length : 0;
+    } catch { pendingCount = 0; }
+    drawTabs();
   }
 
   async function loadTab() {
@@ -154,7 +168,8 @@ function renderAdmin(main, ctx) {
     }
     const found = TABS.find(([k]) => k === current);
     bodyBox.innerHTML = '';
-    found[2](bodyBox, ctx, config, { main, reload: loadTab });
+    found[2](bodyBox, ctx, config, { main, reload: loadTab, reloadBadge: loadPendingCount });
+    loadPendingCount();
   }
 
   drawTabs();
@@ -167,6 +182,10 @@ function td(content, attrs = {}) {
 }
 
 function table(cols, rows) {
+  // v2.4/§2.5：给每个 td 标 data-col，≤480px 时 CSS 把表格降级为卡片列表
+  for (const tr of rows) {
+    [...tr.children].forEach((cell, i) => cell.setAttribute('data-col', cols[i] || ''));
+  }
   return h('table', { class: 'cfg-table' },
     h('thead', {}, h('tr', {}, ...cols.map((c) => h('th', {}, c)))),
     h('tbody', {}, ...rows));
@@ -373,12 +392,23 @@ function renderPlan(box, ctx, config, svc) {
       ['名称', '图标', '金额', '类别', '年级范围', '学期', '启用', '操作'], rows))
     : h('div', { class: 'card empty' }, '还没有任务，点右上「＋ 添加任务」');
 
-  // 手动奖惩快捷区
+  // 手动奖惩快捷区（v2.4/FR-32：可附照片佐证与备注，走审批）
+  let mEv = null; // {photoIds, note}
+  const mEvLabel = h('span', { style: 'color:var(--c-sub);font-size:.85rem' }, '未附照片');
   const manualNode = h('div', { style: 'display:flex;flex-direction:column;gap:12px;max-width:520px' },
     field('档案', sel('m-profile', (config.profiles || []).map((p) => [p.id, `${p.name}（${p.grade}${p.term}）`]),
       ctx.store.s.currentProfileId)),
     field('金额（正=奖励，负=扣除）', h('input', { class: 'm-amount', type: 'number', value: 5 })),
     field('原因（≥2 字）', h('input', { class: 'm-reason', placeholder: '例如：主动整理书桌' })),
+    h('div', { style: 'display:flex;align-items:center;gap:10px' },
+      h('button', {
+        class: 'btn ghost',
+        onclick: async () => {
+          const pid = manualNode.querySelector('.m-profile').value;
+          const ev = await evidenceSheet(ctx.api, { title: '家长记录 · 佐证照片', subtitle: '照片可选，≤3 张，服务端盖时间水印', kind: 'manual', profileId: pid });
+          if (ev) { mEv = ev; mEvLabel.textContent = `📷 ${ev.photoIds.length} 张${ev.note ? ` · 备注：${ev.note}` : ''}`; }
+        },
+      }, '📷 附佐证'), mEvLabel),
     h('button', { class: 'btn primary', onclick: doManual }, '记录这一笔'));
 
   async function doManual() {
@@ -387,13 +417,92 @@ function renderPlan(box, ctx, config, svc) {
     const reason = manualNode.querySelector('.m-reason').value.trim();
     if (!reason || reason.length < 2) { toast('原因至少 2 个字', 'err'); return; }
     if (amount === 0) { toast('金额不能为 0', 'err'); return; }
-    const r = await runAdmin(ctx, main, () => ctx.api.admin('POST', '/manual-tx', { profileId, amount, reason }));
+    const body = { profileId, amount, reason };
+    if (mEv) { body.photoIds = mEv.photoIds; body.note = mEv.note; }
+    const r = await runAdmin(ctx, main, () => ctx.api.admin('POST', '/manual-tx', body));
     if (r) {
-      toast(`已记录，余额 ${r.balance}🪙`, 'ok');
+      if (r.state === 'pending') toast(`⏳ 已提交审批，通过后落账（当前余额 ${r.balance}🪙）`, 'ok');
+      else toast(`已记录，余额 ${r.balance}🪙`, 'ok');
       manualNode.querySelector('.m-reason').value = '';
+      mEv = null; mEvLabel.textContent = '未附照片';
       if (String(profileId) === String(ctx.store.s.currentProfileId)) ctx.store.refreshCoins().catch(() => {});
     }
   }
+
+  // ── ⚡ 扣分快速面板（M12/v2.3-FR-28 + v2.4 照片佐证）──
+  const penBox = h('div', { class: 'card' }, h('div', { class: 'empty' }, '扣分预设加载中…'));
+
+  async function loadPenalty() {
+    const presets = await runAdmin(ctx, main, () => ctx.api.admin('GET', '/penalty-presets'));
+    if (!presets) return;
+    penBox.innerHTML = '';
+    const grid = h('div', { class: 'pen-grid' });
+    for (const p of presets.filter((x) => x.enabled)) {
+      grid.append(h('span', { class: 'pen-item', style: 'display:inline-flex;gap:4px;align-items:center' },
+        h('button', { class: 'btn pen-btn', onclick: () => applyPenalty(p) }, `${p.icon || '⚠️'} ${p.name} −${p.amount}🪙`),
+        h('button', { class: 'btn ghost', style: 'padding:5px 8px;font-size:.8rem', title: '改名/换图标/改分值/停用', onclick: () => editPreset(p) }, '⚙'),
+        h('button', { class: 'btn ghost', style: 'padding:5px 8px;font-size:.8rem', title: '删除这一预设', onclick: () => delPreset(p) }, '🗑')));
+    }
+    grid.append(h('button', { class: 'btn pen-btn pen-add', onclick: () => editPreset(null) }, '＋ 预设'));
+    penBox.append(
+      field('档案', sel('q-profile', (config.profiles || []).map((x) => [x.id, `${x.name}（${x.grade}${x.term}）`]),
+        ctx.store.s.currentProfileId)),
+      h('p', { style: 'color:var(--c-sub);font-size:.85rem;margin:8px 0' },
+        '点一下＝提交扣分申请（可拍照佐证），在审批中心通过后才会真正扣除；同一件事当天重复点击会被拦下'),
+      grid);
+  }
+
+  async function applyPenalty(p) {
+    const profileId = penBox.querySelector('.q-profile').value;
+    const ev = await evidenceSheet(ctx.api, {
+      title: `扣分「${p.name}」 −${p.amount}🪙`,
+      subtitle: '提交后需在 ✅ 审批中心通过才真正扣除（照片可选）',
+      kind: 'penalty', okText: '提交扣分申请', profileId,
+    });
+    if (!ev) return;
+    const r = await runAdmin(ctx, main, () => ctx.api.admin('POST', '/penalty-apply',
+      { profileId, presetId: p.id, photoIds: ev.photoIds, note: ev.note }));
+    if (r) {
+      toast(`⏳ 已提交扣分申请，去审批中心确认（余额 ${r.balance}🪙）`, 'ok');
+      if (svc.reloadBadge) svc.reloadBadge();
+    }
+  }
+
+  function presetForm(item = {}) {
+    return h('div', { style: 'display:flex;flex-direction:column;gap:12px' },
+      field('行为名称', h('input', { class: 'f-name', value: item.name || '' })),
+      field('图标（emoji）', h('input', { class: 'f-icon', value: item.icon || '⚠️' })),
+      field('扣分分值（正数，如 5 表示 −5🪙）', h('input', { class: 'f-amount', type: 'number', value: item.amount ?? 5 })),
+      field('排序（小在前）', h('input', { class: 'f-sort', type: 'number', value: item.sort ?? 0 })),
+      field('启用', h('input', { class: 'f-enabled', type: 'checkbox', checked: item.enabled !== false ? 'checked' : null })));
+  }
+
+  async function editPreset(p) {
+    const node = await modal({ title: p ? `编辑预设：${p.name}` : '新增扣分预设', body: presetForm(p || {}), okText: '保存' });
+    if (!node) return;
+    const obj = {
+      name: node.querySelector('.f-name').value.trim(),
+      icon: node.querySelector('.f-icon').value.trim(),
+      amount: Number(node.querySelector('.f-amount').value) || 0,
+      sort: Number(node.querySelector('.f-sort').value) || 0,
+      enabled: node.querySelector('.f-enabled').checked,
+    };
+    if (!obj.name) { toast('名称不能为空', 'err'); return; }
+    if (obj.amount <= 0) { toast('扣分分值需为正数', 'err'); return; }
+    if (p) obj.id = p.id;
+    if (await runAdmin(ctx, main, () => ctx.api.admin('POST', '/penalty-presets', obj))) {
+      toast('预设已保存', 'ok');
+      loadPenalty();
+    }
+  }
+
+  async function delPreset(p) {
+    if (!await confirmModal('删除预设', `确认删除扣分预设「${p.name}」？`)) return;
+    if (await runAdmin(ctx, main, () => ctx.api.admin('DELETE', `/penalty-presets/${p.id}`))) {
+      toast('预设已删除', 'ok'); loadPenalty();
+    }
+  }
+  loadPenalty();
 
   // ── 数据修正（M7.6/FR-26）：近 50 条流水，逐条"冲正+补录"改数 ──
   const TYPE_CN = {
@@ -455,12 +564,243 @@ function renderPlan(box, ctx, config, svc) {
     tbl,
     h('div', { class: 'section-title' }, '⚡ 家长代记（手动奖惩）'),
     h('div', { class: 'card' }, manualNode),
+    h('div', { class: 'section-title' }, '💢 扣分快速面板（v2.3：点击＝提交待审批）'),
+    penBox,
     h('div', { class: 'section-title' }, '🧾 数据修正（调整已积分的流水）'),
     txBox);
 }
 
 // ════════════════════════════════════════════════════
-// Tab 3 · 商店（商品 CRUD + 待办兑现）
+// Tab 3 · 审批中心（M11，v2.3/FR-29 + v2.4 佐证核验）
+// ════════════════════════════════════════════════════
+const KIND_CN = {
+  TASK_CHECK: '任务打卡', CHECKIN: '每日签到', TEXTBOOK_CHECK: '教材打卡',
+  LIFE_CHECK: '作息打卡', HABIT_MILESTONE: '习惯里程碑', MASTERY_REWARD: '首次精通',
+  MANUAL_TX: '家长记录', PENALTY: '行为扣分',
+};
+
+// 审批金额展示符号：pending_actions.amount 存绝对值快照（submit 取 abs），
+// PENALTY 落账时取反扣币，故无论存储符号一律按「−」展示（v2.4 修正）。
+function pendingNeg(p) {
+  return p.kind === 'PENALTY' || p.amount < 0;
+}
+
+function renderApproval(box, ctx, config, svc) {
+  const { main } = svc;
+  const listBox = h('div', {});
+  const histBox = h('details', { class: 'card', style: 'margin-top:14px' },
+    h('summary', { style: 'font-weight:700;cursor:pointer' }, '📜 已审历史（近 30 条）'),
+    h('div', { class: 'empty' }, '展开时加载…'));
+
+  // 顶部控制区：总开关 + 免审批项
+  const ctlBox = h('div', { class: 'card', style: 'margin-bottom:14px;display:flex;flex-direction:column;gap:8px' },
+    h('div', { class: 'empty' }, '审批配置加载中…'));
+
+  async function loadCtl() {
+    const cfg = await runAdmin(ctx, main, () => ctx.api.admin('GET', '/approval-config'));
+    if (!cfg) return;
+    ctlBox.innerHTML = '';
+    const sw = h('input', { type: 'checkbox', checked: cfg.enabled ? 'checked' : null });
+    sw.onchange = async () => {
+      const r = await runAdmin(ctx, main, () => ctx.api.admin('PATCH', '/approval-config', { enabled: sw.checked }));
+      if (r) {
+        toast(sw.checked ? '审批已启用：加分/扣分先待审再落账' : '审批已关闭：恢复即时记账', 'ok');
+        try { await ctx.store.refreshCoins(); } catch { /* 忽略 */ }
+      }
+    };
+    const auto = new Set(cfg.autoKinds || []);
+    const kindCbs = (cfg.configurableKinds || []).map((k) => {
+      const cb = h('input', { type: 'checkbox', checked: auto.has(k) ? 'checked' : null, 'data-k': k });
+      cb.onchange = async () => {
+        const next = [...ctlBox.querySelectorAll('.ap-kinds input')]
+          .filter((x) => x.checked).map((x) => x.getAttribute('data-k'));
+        const r = await runAdmin(ctx, main, () => ctx.api.admin('PATCH', '/approval-config', { autoKinds: next }));
+        if (r) toast(`免审批项已更新（${next.length} 类自动通过）`, 'ok');
+      };
+      return h('label', { class: 'g-item' }, cb, KIND_CN[k] || k);
+    });
+    ctlBox.append(
+      h('div', { style: 'display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px' },
+        h('label', { class: 'ap-toggle' }, sw, '启用审批（所有人为加减分先待家长确认才落账）'),
+        h('button', { class: 'btn primary', onclick: approveAll }, '✅ 全部通过')),
+      h('div', { style: 'color:var(--c-sub);font-size:.85rem' }, '免审批项（勾选的类别自动通过，不占队列）'),
+      h('div', { class: 'ap-kinds' }, ...kindCbs));
+  }
+
+  async function approveAll() {
+    if (!await confirmModal('全部通过', '把队列里所有待审申请一次性通过？（重复项会被后端自动跳过）')) return;
+    const r = await runAdmin(ctx, main, () => ctx.api.admin('POST', '/pending/approve-all', {}));
+    if (r) {
+      toast(`通过 ${r.approved} 条${r.autoRejected ? `，自动跳过 ${r.autoRejected} 条` : ''}${r.failed ? `，失败 ${r.failed} 条` : ''}`, r.failed ? '' : 'ok');
+      if (r.errors && r.errors.length) toast(r.errors[0], 'err');
+      await ctx.store.refreshCoins().catch(() => {});
+      loadList();
+      if (svc.reloadBadge) svc.reloadBadge();
+    }
+  }
+
+  async function loadList() {
+    const list = await runAdmin(ctx, main, () => ctx.api.admin('GET', '/pending'));
+    if (!list) return;
+    listBox.innerHTML = '';
+    if (!list.length) {
+      listBox.append(h('div', { class: 'card empty' }, '队列空空的，没有等确认的申请 🎉'));
+      return;
+    }
+    for (const p of list) {
+      const neg = pendingNeg(p);
+      const shots = (p.photos || []).map((ph, i) => h('img', {
+        class: 'ap-shot', src: ph.url, alt: `佐证${i + 1}`,
+        onclick: () => lightbox(p.photos, i),
+      }));
+      const card = h('div', { class: 'ap-card' },
+        h('div', { class: 'ap-main' },
+          h('div', { class: 'ap-label' }, `${p.profileName || '?'} · ${KIND_CN[p.kind] || p.kind}`,
+            p.evidenceCount ? h('span', { class: 'pill', style: 'margin-left:6px' }, `📷${p.evidenceCount}`) : null),
+          h('div', { class: 'ap-meta' }, `${p.label}${p.reason && p.reason !== p.label ? `（${p.reason}）` : ''} · ${p.dayKey} · 申报于 ${String(p.createdAt).replace('T', ' ').slice(0, 16)}`),
+          shots.length ? h('div', { class: 'ap-photos', style: 'margin-top:6px' }, ...shots) : null),
+        h('span', { class: `ap-amount ${neg ? 'neg' : ''}` }, `${neg ? '−' : '+'}${Math.abs(p.amount)}🪙`),
+        h('button', { class: 'btn primary', onclick: () => decide(p, true, card) }, '✅ 通过'),
+        h('button', { class: 'btn danger', onclick: () => decide(p, false, card) }, '❌ 驳回'));
+      listBox.append(card);
+    }
+  }
+
+  async function decide(p, ok, card) {
+    let reason;
+    if (ok) {
+      if (!await confirmModal('通过', `确认通过「${p.profileName || ''} ${p.label}（${pendingNeg(p) ? '−' : '+'}${Math.abs(p.amount)}🪙）」？通过后立即落账。`)) return;
+    } else {
+      const node = h('div', { style: 'display:flex;flex-direction:column;gap:10px' },
+        h('p', { style: 'color:var(--c-sub)' }, `驳回「${p.label}」，可留一句话给孩子：`),
+        h('input', { class: 'r-reason', placeholder: '例如：照片看不清，明天补一张' }));
+      const go = await modal({ title: '❌ 驳回申请', body: node, okText: '驳回', danger: true });
+      if (!go) return;
+      reason = node.querySelector('.r-reason').value.trim() || undefined;
+    }
+    const r = await runAdmin(ctx, main, () => ctx.api.admin('POST',
+      `/pending/${p.id}/${ok ? 'approve' : 'reject'}`, ok ? {} : { reason }));
+    if (r) {
+      toast(ok ? '已通过，金币落账' : '已驳回（不产生流水）', ok ? 'ok' : '');
+      await ctx.store.refreshCoins().catch(() => {});
+      loadList();
+      histBox.dataset.loaded = '';
+      if (svc.reloadBadge) svc.reloadBadge();
+    }
+  }
+
+  // 已审历史（近 30 条，通过+驳回落入折叠区）
+  histBox.querySelector('summary').addEventListener('click', async () => {
+    if (histBox.dataset.loaded) return;
+    histBox.dataset.loaded = '1';
+    const body = histBox.querySelector('.empty');
+    try {
+      const [ap, rj] = await Promise.all([
+        ctx.api.admin('GET', '/pending?status=approved'),
+        ctx.api.admin('GET', '/pending?status=rejected'),
+      ]);
+      const rows = [...(ap || []), ...(rj || [])]
+        .sort((a, b) => String(b.decidedAt || b.createdAt).localeCompare(String(a.decidedAt || a.createdAt)))
+        .slice(0, 30);
+      body.className = '';
+      body.innerHTML = '';
+      if (!rows.length) { body.append(h('div', { style: 'color:var(--c-sub)' }, '还没有已审记录')); return; }
+      for (const p of rows) {
+        body.append(h('div', { class: 'tb-leaf' },
+          h('span', { class: 't' }, `${p.profileName || '?'} · ${p.label}（${pendingNeg(p) ? '−' : '+'}${Math.abs(p.amount)}🪙）`),
+          h('span', { class: 'pill' }, p.status === 'approved' ? '✅ 通过' : '❌ 驳回'),
+          h('span', { style: 'color:var(--c-sub);font-size:.8rem' }, String(p.decidedAt || p.createdAt).replace('T', ' ').slice(0, 16))));
+      }
+    } catch {
+      body.textContent = '历史加载失败';
+    }
+  });
+
+  box.append(
+    subBox('✅ 审批中心（通过后金币才落账）', null),
+    ctlBox, listBox, histBox);
+  loadCtl();
+  loadList();
+}
+
+// ════════════════════════════════════════════════════
+// Tab 6 · 教材资源（M14，v2.4/FR-33：家长上传人教版 PDF）
+// ════════════════════════════════════════════════════
+const EB_SUBJECTS = [['cn', '📖 语文'], ['math', '🧮 数学'], ['en', '🅰️ 英语']];
+
+function renderEbooks(box, ctx, config, svc) {
+  const { main } = svc;
+  const gridBox = h('div', { class: 'eb-grid' });
+
+  async function loadGrid() {
+    gridBox.innerHTML = '';
+    gridBox.append(h('div', { class: 'empty' }, '书架扫描中…'));
+    const data = await runAdmin(ctx, main, () => ctx.api.admin('GET', '/ebook/presets'));
+    if (!data) return;
+    gridBox.innerHTML = '';
+    for (const cell of data.grid || []) {
+      gridBox.append(ebCell(cell));
+    }
+    if (data.dir) {
+      gridBox.append(h('p', { style: 'color:var(--c-sub);font-size:.8rem;grid-column:1/-1' }, `电子书包存放目录：${data.dir}`));
+    }
+  }
+
+  function ebCell(cell) {
+    const [key, label] = EB_SUBJECTS.find(([s]) => s === cell.subject) || [cell.subject, cell.subject];
+    const title = `${label} ${cell.grade}年级${cell.term}册`;
+    const fileIn = h('input', { type: 'file', accept: 'application/pdf', style: 'display:none' });
+    fileIn.onchange = () => doUpload(cell.subject, cell.grade, cell.term, fileIn.files[0]);
+    const upBtn = h('button', { class: `btn ${cell.ready ? 'ghost' : 'primary'}`, onclick: () => fileIn.click() },
+      cell.ready ? '替换' : '⬜ 上传');
+    const acts = h('div', { class: 'eb-acts' }, upBtn, fileIn);
+    if (cell.ready) {
+      acts.append(h('button', { class: 'btn danger', onclick: () => doDelete(cell) }, '删除'));
+    }
+    return h('div', { class: `eb-cell ${cell.ready ? '' : 'off'}` },
+      h('div', { class: 'eb-title' }, cell.ready ? '✅' : '·', title),
+      h('div', { class: 'eb-meta' }, cell.ready
+        ? `${cell.fileName || ''}　${cell.sizeBytes ? `${Math.round(cell.sizeBytes / 1024 / 1024 * 10) / 10}MB` : ''}　${String(cell.updatedAt || '').replace('T', ' ').slice(0, 16)}`
+        : '还没有放入书架'),
+      acts);
+  }
+
+  async function doUpload(subject, grade, term, file) {
+    if (!file) return;
+    if (!/\.pdf$/i.test(file.name)) { toast('只接受 PDF 文件哦', 'err'); return; }
+    toast('上传中…（大文件稍等）');
+    const fd = new FormData();
+    fd.append('subject', subject);
+    fd.append('grade', String(grade));
+    fd.append('term', term);
+    fd.append('file', file);
+    const r = await runAdmin(ctx, main, () => ctx.api.upload('/admin/ebook/upload', fd));
+    if (r) {
+      toast(`已保存：孩子端已可读 🎉（${r.saved && r.saved.fileName ? r.saved.fileName : ''}）`, 'ok');
+      loadGrid();
+    }
+  }
+
+  async function doDelete(cell) {
+    if (!await confirmModal('删除电子书', `确认删除「${cell.subject} ${cell.grade}年级${cell.term}册」的电子书？孩子端按钮会回到灰态。`)) return;
+    const r = await runAdmin(ctx, main, () => ctx.api.admin('DELETE', `/ebook/${cell.subject}/${cell.grade}/${encodeURIComponent(cell.term)}`));
+    if (r) { toast('已删除', 'ok'); loadGrid(); }
+  }
+
+  box.append(
+    subBox('📚 教材资源（人教版电子书上传通道）', null),
+    h('div', { class: 'eb-guide' },
+      h('b', {}, '📥 怎么拿到人教版教材 PDF？'),
+      h('p', {}, '① 手机或电脑浏览器打开「国家中小学智慧教育平台」（basic.smartedu.cn）→ 教材；'),
+      h('p', {}, '② 选学科、年级、版本=人教版，在线翻开电子课本并下载/打印为 PDF；'),
+      h('p', {}, '③ 回到本页点对应格子〔上传〕即可——手机浏览器打开后台也能直接完成，上传后孩子端立即可读。'),
+      h('p', { style: 'color:var(--c-sub);font-size:.82rem' }, '说明：本系统不内置教材正文，PDF 由家长从官方渠道获取后上传；单册 ≤80MB。')),
+    gridBox);
+  loadGrid();
+}
+
+// ════════════════════════════════════════════════════
+// Tab 4 · 商店（商品 CRUD + 待办兑现）
 // ════════════════════════════════════════════════════
 function shopForm(item = {}) {
   return h('div', { style: 'display:flex;flex-direction:column;gap:12px' },
@@ -845,11 +1185,21 @@ function renderData(box, ctx, config, svc) {
     }
   }
 
+  // v2.4/FR-31：局域网访问提示（bootstrap lanHints）
+  const hints = ctx.store.s.lanHints || [];
+  const lanCard = h('div', { class: 'lan-card' },
+    h('b', {}, '📶 手机 / 平板怎么访问？'),
+    h('p', { style: 'margin:6px 0' }, hints.length ? '' : '没发现局域网地址——请确认这台电脑已连上 Wi-Fi 或网线，然后重启应用。'),
+    ...hints.map((hm) => h('code', {}, hm)),
+    h('p', { style: 'color:var(--c-sub);margin-top:6px;font-size:.85rem' },
+      '手机连同一个 Wi-Fi，浏览器打开上面地址即可（无需公网）。后台、佐证拍照、电子书上传都能在手机上完成。'));
+
   box.append(
     h('div', { class: 'section-title' }, '🔑 修改家长 PIN'), h('div', { class: 'card' }, pinNode),
     h('div', { class: 'section-title' }, '🌿 自定义知识点叶'), h('div', { class: 'card' }, leafNode),
     h('div', { class: 'section-title' }, '📚 题库 JSON 导入'),
     h('div', { class: 'card' }, importNode),
+    lanCard,
     h('div', { class: 'section-title' }, '🧨 危险区'),
     h('div', { class: 'card danger-zone' }, dangerNode));
 }

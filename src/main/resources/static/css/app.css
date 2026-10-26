@@ -176,12 +176,9 @@ svg.bars text { font-size: 10px; fill: var(--c-sub); }
 #gate-form button { border-radius: 999px; background: var(--c-primary); color: #fff; padding: 12px; font-weight: 700; }
 .gate-err { color: var(--c-expense); min-height: 1.2em; margin-top: 8px; }
 
-@media (max-width: 1023px) {
-  #navrail { min-width: 64px; }
-  #navrail a span.label { display: none; }
-}
+/* v2.4/FR-31：原 1023px 图标栏规则由文末 §2.5 的 900px 规则取代 */
 @media (max-width: 767px) {
-  body::before { content: "请在电脑或平板上使用本应用哦"; position: fixed; inset: 0; background: var(--c-bg); display: grid; place-items: center; font-size: 1.2rem; z-index: 99; }
+  /* v2.4/FR-31：原"请在电脑或平板上使用"屏蔽层已删除，手机走 §2.5 响应式版式 */
 }
 
 /* ── v2.2 增量（FR-24/25/26/27）────────────────────── */
@@ -229,3 +226,125 @@ svg.bars text { font-size: 10px; fill: var(--c-sub); }
 .icon-pick:hover { border-color: var(--c-primary); background: #fff4e8; }
 .grade-checks { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
 .g-item { display: flex; align-items: center; gap: 5px; font-size: .9rem; cursor: pointer; }
+
+/* ── v2.3/v2.4 增量（FR-28/29/31/32/33）────────────────── */
+
+/* 顶栏待审核角标 + 孩子端只读清单（FR-29） */
+.badge.pend-badge { background: #fff1e0; color: var(--c-primary-dark); font-weight: 700; border: 2px solid #ffd9b3; }
+.mine-row { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--c-line); border-radius: 12px; }
+.mine-label { flex: 1; font-weight: 600; }
+.mine-amount { font-weight: 800; color: var(--c-income); }
+.mine-amount.neg { color: var(--c-expense); }
+
+/* P1 任务卡/教材条目「待审核」半透明勾（虚线框 + 沙漏角标，非绿色） */
+.task-card.pend { opacity: .55; background: #fff8ef; border-color: #ffd9b3; }
+.task-card.pend .tick { border-style: dashed; border-color: var(--c-primary); background: #fff; position: relative; }
+.task-card.pend .tick::after { content: "⏳"; position: absolute; inset: 0; display: grid; place-items: center; font-size: 15px; }
+.tb-leaf.pend { opacity: .55; }
+.tb-leaf.pend .t { color: var(--c-sub); }
+
+/* 📸 佐证半屏弹层（FR-32） */
+.evid-overlay { position: fixed; inset: 0; background: rgba(60, 42, 20, .45); display: flex; align-items: center; justify-content: center; z-index: 65; }
+.evid-card { background: #fff; border-radius: var(--radius); padding: 18px; width: min(94vw, 480px); box-shadow: 0 10px 40px rgba(0,0,0,.25); display: flex; flex-direction: column; gap: 12px; }
+.evid-head { display: flex; align-items: center; justify-content: space-between; font-size: 1.05rem; }
+.evid-sub { color: var(--c-primary-dark); font-weight: 700; margin-top: -6px; }
+.evid-hint { color: var(--c-sub); font-size: .82rem; }
+.evid-thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+.evid-thumb { position: relative; width: 76px; height: 76px; border-radius: 12px; overflow: hidden; border: 2px solid var(--c-line); }
+.evid-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.evid-spin { width: 100%; height: 100%; display: grid; place-items: center; font-size: 1.6rem; background: #f7f2ea; }
+.evid-del { position: absolute; top: 2px; right: 2px; width: 22px; height: 22px; border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: .8rem; line-height: 1; display: grid; place-items: center; }
+.evid-add { width: 76px; height: 76px; border-radius: 12px; border: 2px dashed var(--c-line); background: #fff; color: var(--c-sub); font-size: .82rem; line-height: 1.3; }
+.evid-add:hover { border-color: var(--c-primary); background: #fff4e8; color: var(--c-primary-dark); }
+
+/* 大图轮播灯箱（M11.10） */
+.lb-overlay { position: fixed; inset: 0; background: rgba(20, 14, 6, .78); display: grid; place-items: center; z-index: 80; }
+.lb-box { background: #fff; border-radius: var(--radius); width: min(94vw, 760px); max-height: 92vh; display: flex; flex-direction: column; overflow: hidden; }
+.lb-cap { color: var(--c-sub); font-size: .85rem; margin-left: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb-stage { flex: 1; display: flex; align-items: center; gap: 6px; padding: 8px; min-height: 0; background: #171310; }
+.lb-stage img { flex: 1; max-height: 72vh; max-width: 100%; object-fit: contain; border-radius: 8px; }
+.lb-nav { font-size: 1.6rem; padding: 6px 14px; background: rgba(255,255,255,.12); color: #fff; flex: none; }
+
+/* P6 审批中心 Tab（FR-29） */
+.admin-tabs .btn { position: relative; }
+.tab-badge { position: absolute; top: -6px; right: -4px; min-width: 20px; height: 20px; border-radius: 999px; background: var(--c-expense); color: #fff; font-size: .72rem; font-weight: 800; display: grid; place-items: center; padding: 0 5px; }
+.ap-card { border: 1px solid var(--c-line); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; background: #fff; }
+.ap-card .ap-main { flex: 1; min-width: 200px; }
+.ap-card .ap-label { font-weight: 700; }
+.ap-card .ap-meta { color: var(--c-sub); font-size: .82rem; margin-top: 2px; }
+.ap-amount { font-weight: 800; color: var(--c-income); }
+.ap-amount.neg { color: var(--c-expense); }
+.ap-photos { display: flex; gap: 6px; align-items: center; }
+.ap-shot { width: 44px; height: 44px; object-fit: cover; border-radius: 8px; border: 2px solid var(--c-line); cursor: zoom-in; }
+.ap-toggle { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.ap-toggle input { width: 22px; height: 22px; accent-color: var(--c-primary); }
+.ap-kinds { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 6px 0; font-size: .9rem; }
+
+/* ⚡ 扣分快速面板（FR-28） */
+.pen-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.pen-btn { border-radius: 14px; padding: 10px 14px; min-height: 44px; background: #fff; box-shadow: var(--shadow); border: 2px solid #ffd3cf; font-weight: 700; color: var(--c-expense); }
+.pen-btn:hover { background: #fff5f4; transform: translateY(-1px); }
+.pen-add { border-style: dashed; color: var(--c-sub); border-color: var(--c-line); }
+
+/* 📚 教材资源 Tab（FR-33/M14） */
+.eb-guide { border: 2px dashed #ffd9b3; background: #fff8ef; border-radius: 14px; padding: 12px 14px; font-size: .92rem; line-height: 1.7; margin-bottom: 12px; }
+.eb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.eb-cell { border: 1px solid var(--c-line); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; background: #fff; }
+.eb-cell.off { background: #faf6ef; }
+.eb-cell .eb-title { font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.eb-cell .eb-meta { color: var(--c-sub); font-size: .8rem; word-break: break-all; }
+.eb-cell .eb-acts { display: flex; gap: 6px; flex-wrap: wrap; }
+.lan-card { border: 2px solid var(--c-line); border-radius: 14px; padding: 12px 14px; margin-top: 12px; }
+.lan-card code { display: inline-block; background: #fff4e8; border-radius: 8px; padding: 2px 10px; font-weight: 700; color: var(--c-primary-dark); margin: 3px 6px 3px 0; }
+
+/* 电子书阅读引导态（FR-33/M14.4） */
+.pdf-guide { flex: 1; display: grid; place-items: center; text-align: center; padding: 30px; color: var(--c-sub); line-height: 1.9; }
+.pdf-guide .big { font-size: 3rem; }
+
+/* ── §2.5 移动端 H5 适配（v2.4/FR-31）：≤480 手机 / ≤900 图标栏 ── */
+.drawer-btn { display: none; }
+#navrail a .nav-text { display: inline; }
+@media (max-width: 900px) {
+  #navrail { min-width: 60px; }
+  #navrail a { justify-content: center; padding: 12px 6px; font-size: 1.15rem; }
+  #navrail a .nav-text { display: none; }
+  #layout { gap: 10px; }
+  .kb-layout { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 480px) {
+  #shell { padding: 0 8px 28px; }
+  /* 顶栏折叠：档案头像 + 余额 + 📋角标 + ☰ 抽屉 */
+  #statusbar > select, #statusbar .badge:not(.coins):not(.pend-badge), #statusbar .subject-dot { display: none; }
+  .drawer-btn { display: inline-block; padding: 8px 14px; }
+  /* 导航进抽屉（浮层 + 遮罩） */
+  #layout { flex-direction: column; }
+  #navrail { position: fixed; top: 0; left: 0; bottom: 0; z-index: 75; background: var(--c-card); box-shadow: 6px 0 24px rgba(0,0,0,.18); padding: 16px 10px; width: 190px; transform: translateX(-105%); transition: transform .22s; overflow: auto; }
+  #navrail a { justify-content: flex-start; padding: 12px 14px; font-size: 1rem; }
+  #navrail a span.nav-text { display: inline !important; /* 覆盖 ≤900 图标栏隐藏，抽屉内显示文字 */ }
+  body.nav-open #navrail { transform: translateX(0) !important; /* 压过上方收起态（v2.4 修正） */ }
+  body.nav-open::after { content: ""; position: fixed; inset: 0; background: rgba(60, 42, 20, .4); z-index: 74; }
+  /* 正文单列堆叠 */
+  .grid.cols2, .grid.cols3 { grid-template-columns: 1fr; }
+  .hero-card { flex-direction: column; gap: 10px; }
+  .card { padding: 14px; }
+  /* 触控目标 ≥44px */
+  .btn, .chip { min-height: 44px; }
+  .task-card .tick { width: 44px; height: 44px; }
+  .tabs .btn { flex: 1; }
+  .tb-leaf { flex-wrap: wrap; }
+  /* 弹窗改全屏底部抽屉 */
+  #modal-root:not(:empty) { place-items: end center; }
+  .modal-card { width: 100%; max-width: 100%; border-radius: 20px 20px 0 0; max-height: 90vh; overflow: auto; padding: 18px 16px calc(18px + env(safe-area-inset-bottom)); }
+  .evid-overlay { align-items: flex-end; }
+  .evid-card { width: 100%; border-radius: 20px 20px 0 0; max-height: 92vh; overflow: auto; padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+  /* 后台表格降级为卡片列表（table() 会给 td 标 data-col） */
+  .cfg-table thead { display: none; }
+  .cfg-table, .cfg-table tbody, .cfg-table tr, .cfg-table td { display: block; width: 100%; }
+  .cfg-table tr { border: 1px solid var(--c-line); border-radius: 12px; padding: 6px 12px; margin-bottom: 8px; background: #fff; }
+  .cfg-table td { display: flex; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 0; padding: 5px 0; }
+  .cfg-table td[data-col]::before { content: attr(data-col); color: var(--c-sub); flex: none; margin-right: 10px; }
+  .cfg-table input, .cfg-table select { max-width: 160px; }
+  /* 电子书阅读：撑满视口、工具栏吸顶 */
+  .pdf-box { width: 100vw; height: 100dvh; border-radius: 0; }
+  .lb-box { width: 100vw; max-height: 100dvh; border-radius: 0; }
+}

@@ -10,3 +10,6 @@ tmp-*
 .idea/
 *.iml
 .vscode/
+
+# 运维脚本运行时目录（PID 文件）
+run/

@@ -1,5 +1,5 @@
 // P4 生活营（docs/04 §2 P4）：作息 / 家务 / 屏幕 / 习惯 四宫格 + 本周双线。
-import { h, toast, floatCoin } from '../ui.js';
+import { h, toast, floatCoin, evidenceSheet } from '../ui.js';
 
 // 屏幕计时器 interval id（模块级；进入/重绘时清理，避免离开视图后仍在跑）。
 let screenTimer = null;
@@ -23,7 +23,8 @@ export async function render(main, ctx) {
     try {
       const r = await ctx.api.post('/life/sleep', { profileId: pid, kind });
       const word = kind === 'sleep' ? '按时睡觉' : '按时起床';
-      toast(r.rewarded > 0 ? `${word} +${r.rewarded}🪙` : '已记录！', r.rewarded > 0 ? 'ok' : '');
+      if (r.pending) toast(`${word}已记录，金币 ⏳ 待家长确认`, 'ok');
+      else toast(r.rewarded > 0 ? `${word} +${r.rewarded}🪙` : '已记录！', r.rewarded > 0 ? 'ok' : '');
       await ctx.store.refreshCoins();
       await reloadLife();
     } catch (e) { toast(e.message, 'err'); }
@@ -105,6 +106,7 @@ export async function render(main, ctx) {
       if (r.done) {
         toast(`已记录！连续 ${num(r.consecutive, 0)} 天`, 'ok');
         if (num(r.milestoneRewarded, 0) > 0) toast(`里程碑达成 +${r.milestoneRewarded}🪙！`, 'ok');
+        if (num(r.milestonePending, 0) > 0) toast(`里程碑达成！奖励 ⏳ 待家长确认（${r.milestonePending} 笔）`, 'ok');
       } else {
         toast('今天先休息，明天继续', '');
       }
@@ -159,20 +161,48 @@ export async function render(main, ctx) {
     }
     const list = h('div', { style: 'display:flex;flex-direction:column;gap:10px' });
     for (const t of items) {
-      const card = h('div', { class: `card task-card${t.done ? ' done' : ''}` },
+      const card = h('div', { class: `card task-card${t.done ? ' done' : ''}${t.pending && !t.done ? ' pend' : ''}` },
         h('span', { class: 'icon' }, t.icon || '🧹'),
-        h('span', { class: 'name' }, t.name),
+        h('span', { class: 'name' }, t.name, t.pending && !t.done ? h('span', { class: 'pill', style: 'margin-left:6px' }, '⏳ 待审核') : null),
         h('span', { class: 'amount' }, `+${t.amount}🪙`),
         h('span', { class: 'tick' }));
       card.style.cursor = 'pointer';
-      card.onclick = async () => {
+      card.onclick = async () => { // v2.3/v2.4 待审半透明勾 + 📸 佐证（同 P1 任务卡）
+        card.style.pointerEvents = 'none';
         try {
-          const r = await ctx.api.post('/plans/check', { profileId: pid, taskItemId: t.taskId });
-          floatCoin(card, r.done ? `+${r.tx.amount}🪙` : `-${Math.abs(r.tx.amount)}🪙`);
-          card.classList.toggle('done', r.done);
-          toast(r.done ? `${t.name} 完成！` : `${t.name} 已取消`, r.done ? 'ok' : '');
+          if (card.classList.contains('pend')) {
+            const r = await ctx.api.post('/plans/check', { profileId: pid, taskItemId: t.taskId });
+            if (r.state === 'pending' && !r.done) {
+              card.classList.remove('pend');
+              const pill = card.querySelector('.pill'); if (pill) pill.remove();
+              toast(`「${t.name}」的申请已撤回`, '');
+              await ctx.store.refreshCoins();
+            }
+            return;
+          }
+          let extra = {};
+          if (!card.classList.contains('done') && ctx.store.s.approvalEnabled && t.amount > 0) {
+            const ev = await evidenceSheet(ctx.api, {
+              title: `提交「${t.name}」`,
+              subtitle: `+${t.amount}🪙 · 家长确认后到账`,
+              kind: 'task',
+            });
+            if (!ev) return;
+            extra = { photoIds: ev.photoIds, note: ev.note };
+          }
+          const r = await ctx.api.post('/plans/check', { profileId: pid, taskItemId: t.taskId, ...extra });
+          if (r.state === 'pending') {
+            card.classList.add('pend');
+            card.querySelector('.name').append(h('span', { class: 'pill', style: 'margin-left:6px' }, '⏳ 待审核'));
+            floatCoin(card, '⏳ 已提交');
+            toast('⏳ 已提交，待家长确认', 'ok');
+          } else {
+            if (r.tx) floatCoin(card, r.done ? `+${r.tx.amount}🪙` : `-${Math.abs(r.tx.amount)}🪙`);
+            card.classList.toggle('done', r.done);
+            toast(r.done ? `${t.name} 完成！` : `${t.name} 已取消`, r.done ? 'ok' : '');
+          }
           await ctx.store.refreshCoins();
-        } catch (e) { toast(e.message, 'err'); }
+        } catch (e) { toast(e.message, 'err'); } finally { card.style.pointerEvents = ''; }
       };
       list.append(card);
     }

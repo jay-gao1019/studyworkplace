@@ -1,5 +1,5 @@
 // P1 学习台（docs/04 §2 P1）：金币柱状图 + 今日计划 + 连续/完成率悬浮卡 + 常显四进度 + 统计报表（M10 v2.2）。
-import { h, toast, floatCoin } from '../ui.js';
+import { h, toast, floatCoin, evidenceSheet } from '../ui.js';
 
 const M = { day: '日', month: '月', year: '年' };
 
@@ -220,22 +220,51 @@ async function loadPlan(box, ctx) {
         h('button', { class: 'btn primary', style: 'margin-top:12px', onclick: () => ctx.ui.go('admin') }, '请爸爸妈妈去后台配置'))));
   }
   for (const t of items) {
-    const card = h('div', { class: `card task-card ${t.done ? 'done' : ''}` },
+    const card = h('div', { class: `card task-card ${t.done ? 'done' : ''} ${t.pending && !t.done ? 'pend' : ''}` },
       h('span', { class: 'icon' }, t.icon || '📌'),
-      h('span', { class: 'name' }, t.name),
+      h('span', { class: 'name' }, t.name, t.pending && !t.done ? h('span', { class: 'pill', style: 'margin-left:6px' }, '⏳ 待审核') : null),
       h('span', { class: 'amount' }, `+${t.amount}🪙`),
       h('span', { class: 'tick' }));
     card.style.cursor = 'pointer';
     card.onclick = async () => {
+      card.style.pointerEvents = 'none';
       try {
-        const undo = card.classList.contains('done');
-        const r = await api.post('/plans/check', { profileId: pid, taskItemId: t.taskId });
-        // 家长修正过的任务取消时后端不再二次冲正，tx 为 null（M7.6）。
-        if (r.tx) floatCoin(card, r.done ? `+${r.tx.amount}🪙` : `-${Math.abs(r.tx.amount)}🪙`);
-        card.classList.toggle('done', r.done);
-        toast(r.done ? `${t.name} 完成！` : `${t.name} 已取消`, r.done ? 'ok' : '');
+        // v2.3/M11.3：半透明待审勾再点 = 撤回申请
+        if (card.classList.contains('pend')) {
+          const r = await api.post('/plans/check', { profileId: pid, taskItemId: t.taskId });
+          if (r.state === 'pending' && !r.done) {
+            card.classList.remove('pend');
+            const pill = card.querySelector('.pill'); if (pill) pill.remove();
+            toast(`「${t.name}」的申请已撤回`, '');
+            await store.refreshCoins();
+          }
+          return;
+        }
+        // v2.4/FR-32：审批启用时，加分勾选先弹 📸 佐证层（照片可选）
+        let extra = {};
+        if (!card.classList.contains('done') && store.s.approvalEnabled && t.amount > 0) {
+          const ev = await evidenceSheet(api, {
+            title: `提交「${t.name}」`,
+            subtitle: `+${t.amount}🪙 · 家长确认后到账`,
+            kind: 'task',
+          });
+          if (!ev) return; // 取消
+          extra = { photoIds: ev.photoIds, note: ev.note };
+        }
+        const r = await api.post('/plans/check', { profileId: pid, taskItemId: t.taskId, ...extra });
+        if (r.state === 'pending') {
+          card.classList.add('pend');
+          card.querySelector('.name').append(h('span', { class: 'pill', style: 'margin-left:6px' }, '⏳ 待审核'));
+          floatCoin(card, '⏳ 已提交');
+          toast('⏳ 已提交，待家长确认', 'ok');
+        } else {
+          // 家长修正过的任务取消时后端不再二次冲正，tx 为 null（M7.6）。
+          if (r.tx) floatCoin(card, r.done ? `+${r.tx.amount}🪙` : `-${Math.abs(r.tx.amount)}🪙`);
+          card.classList.toggle('done', r.done);
+          toast(r.done ? `${t.name} 完成！` : `${t.name} 已取消`, r.done ? 'ok' : '');
+        }
         await store.refreshCoins();
-      } catch (e) { toast(e.message, 'err'); }
+      } catch (e) { toast(e.message, 'err'); } finally { card.style.pointerEvents = ''; }
     };
     list.append(card);
   }

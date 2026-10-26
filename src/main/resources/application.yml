@@ -1,10 +1,14 @@
 server:
   port: 8080
-  address: 127.0.0.1        # 默认只监听本机；家庭局域网开放请改为 0.0.0.0（见 README）
+  address: 0.0.0.0        # v2.4/FR-31：默认监听全部网卡，手机/平板经局域网访问；仅本机用可改回 127.0.0.1
 
 spring:
   application:
     name: studyworkplace
+  servlet:
+    multipart:
+      max-file-size: 80MB     # 电子书 PDF（M14.1）
+      max-request-size: 90MB
   datasource:
     # MySQL root 凭据（家庭本机部署；如需改密只需改这两行）
     url: jdbc:mysql://127.0.0.1:3306/studyworkplace?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8
@@ -33,7 +37,8 @@ spring:
 studdy:
   admin-token-ttl-minutes: 30
   default-pin: "8888"
-  ebooks-dir: data/ebooks     # 人教 PDF drop-in 目录（FR-24/M4.7）：math-4上.pdf 等
+  ebooks-dir: data/ebooks     # 人教 PDF drop-in 目录（FR-24/M4.7）：math-4上.pdf 等；v2.4 起后台"教材资源"可直接上传
+  evidence-dir: data/evidence # v2.4/FR-32/M13：佐证照片目录（水印成品，不进库、不进备份 payload）
 
 logging:
   level:
