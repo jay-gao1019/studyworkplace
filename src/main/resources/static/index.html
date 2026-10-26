@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学习工作台 · studyworkplace</title>
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="shell" hidden>
+  <header id="statusbar"></header>
+  <div id="toolbar"></div>
+  <div id="layout">
+    <nav id="navrail"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+<div id="gate" class="gate">
+  <div class="gate-card">
+    <div class="gate-emoji">🌱</div>
+    <h1>欢迎使用学习工作台</h1>
+    <p>先给小朋友建一个档案吧</p>
+    <form id="gate-form">
+      <input id="gate-name" maxlength="8" placeholder="孩子昵称（1–8个字）" required>
+      <div class="gate-row">
+        <select id="gate-grade">
+          <option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option>
+          <option value="4" selected>四年级</option><option value="5">五年级</option><option value="6">六年级</option>
+        </select>
+        <select id="gate-term"><option value="上">上学期</option><option value="下">下学期</option></select>
+      </div>
+      <button type="submit">开始使用</button>
+    </form>
+    <p id="gate-err" class="gate-err"></p>
+  </div>
+</div>
+<div id="toast-root"></div>
+<div id="modal-root"></div>
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

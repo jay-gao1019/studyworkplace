@@ -1,0 +1,12 @@
+# 构建产物
+target/
+
+# 运行时数据（电子书 drop-in 目录、本地日志）
+data/
+*.log
+tmp-*
+
+# IDE
+.idea/
+*.iml
+.vscode/

@@ -1,0 +1,654 @@
+{
+  "subject": "math",
+  "terms": [
+    {
+      "grade": 1, "term": "上",
+      "modules": [
+        { "id": "tb-mat1a-g01", "title": "1 准备课", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l01", "title": "1 数一数" },
+            { "id": "tb-mat1a-l02", "title": "2 比多少" } ] },
+        { "id": "tb-mat1a-g02", "title": "2 位置", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l03", "title": "1 上、下、前、后" },
+            { "id": "tb-mat1a-l04", "title": "2 左、右" } ] },
+        { "id": "tb-mat1a-g03", "title": "3 认识图形（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l05", "title": "1 认识立体图形" },
+            { "id": "tb-mat1a-l06", "title": "2 图形的拼搭" } ] },
+        { "id": "tb-mat1a-g04", "title": "4 认识钟表", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l07", "title": "1 认识整时" } ] },
+        { "id": "tb-mat1a-g05", "title": "5 1-5的认识和加减法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l08", "title": "1 1-5各数的认识" },
+            { "id": "tb-mat1a-l09", "title": "2 比大小、第几" },
+            { "id": "tb-mat1a-l10", "title": "3 分与合" },
+            { "id": "tb-mat1a-l11", "title": "4 加、减法" } ] },
+        { "id": "tb-mat1a-g06", "title": "6 6-10的认识和加减法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l12", "title": "1 6和7的认识及加减法" },
+            { "id": "tb-mat1a-l13", "title": "2 8和9的认识及加减法" },
+            { "id": "tb-mat1a-l14", "title": "3 10的认识及相关加减法" },
+            { "id": "tb-mat1a-l15", "title": "4 连加、连减、加减混合" } ] },
+        { "id": "tb-mat1a-g07", "title": "7 11-20各数的认识", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l16", "title": "1 11-20各数的认识" },
+            { "id": "tb-mat1a-l17", "title": "2 10加几和相应的减法" } ] },
+        { "id": "tb-mat1a-g08", "title": "8 20以内的进位加法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l18", "title": "1 9加几" },
+            { "id": "tb-mat1a-l19", "title": "2 8、7、6加几" },
+            { "id": "tb-mat1a-l20", "title": "3 5、4、3、2加几" } ] },
+        { "id": "tb-mat1a-g09", "title": "9 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1a-l21", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat1a-g10", "title": "奥数·趣味找规律", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat1a-l22", "title": "1 图形的排列规律" },
+            { "id": "tb-mat1a-l23", "title": "2 数字的简单规律" } ] },
+        { "id": "tb-mat1a-g11", "title": "奥数·图形拼剪", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat1a-l24", "title": "1 七巧板初相识" },
+            { "id": "tb-mat1a-l25", "title": "2 剪一剪拼一拼" } ] },
+        { "id": "tb-mat1a-g12", "title": "奥数·智巧趣题", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat1a-l26", "title": "1 移多补少" },
+            { "id": "tb-mat1a-l27", "title": "2 火柴棒小游戏" } ] }
+      ]
+    },
+    {
+      "grade": 1, "term": "下",
+      "modules": [
+        { "id": "tb-mat1b-g01", "title": "1 认识图形（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1b-l01", "title": "1 认识长方形、正方形和三角形" },
+            { "id": "tb-mat1b-l02", "title": "2 认识圆与图形的拼组" } ] },
+        { "id": "tb-mat1b-g02", "title": "2 20以内的退位减法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1b-l03", "title": "1 十几减9" },
+            { "id": "tb-mat1b-l04", "title": "2 十几减8、7、6" },
+            { "id": "tb-mat1b-l05", "title": "3 十几减5、4、3、2" } ] },
+        { "id": "tb-mat1b-g03", "title": "3 分类与整理", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1b-l06", "title": "1 按给定标准分类" },
+            { "id": "tb-mat1b-l07", "title": "2 自选标准分类计数" } ] },
+        { "id": "tb-mat1b-g04", "title": "4 100以内数的认识", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1b-l08", "title": "1 数数与数的组成" },
+            { "id": "tb-mat1b-l09", "title": "2 读数、写数" },
+            { "id": "tb-mat1b-l10", "title": "3 数的顺序与比较大小" },
+            { "id": "tb-mat1b-l11", "title": "4 整十数加一位数及相应的减法" } ] },
+        { "id": "tb-mat1b-g05", "title": "5 认识人民币", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1b-l12", "title": "1 认识人民币及单位换算" },
+            { "id": "tb-mat1b-l13", "title": "2 人民币的简单计算" } ] },
+        { "id": "tb-mat1b-g06", "title": "6 100以内的加法和减法（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1b-l14", "title": "1 整十数加、减整十数" },
+            { "id": "tb-mat1b-l15", "title": "2 两位数加一位数、整十数" },
+            { "id": "tb-mat1b-l16", "title": "3 两位数减一位数、整十数" } ] },
+        { "id": "tb-mat1b-g07", "title": "7 找规律", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1b-l17", "title": "1 图形的变化规律" },
+            { "id": "tb-mat1b-l18", "title": "2 数字的变化规律" } ] },
+        { "id": "tb-mat1b-g08", "title": "8 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat1b-l19", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat1b-g09", "title": "奥数·趣味数独与推理", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat1b-l20", "title": "1 四宫格数独入门" },
+            { "id": "tb-mat1b-l21", "title": "2 谁高谁矮" } ] },
+        { "id": "tb-mat1b-g10", "title": "奥数·计算巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat1b-l22", "title": "1 凑十好朋友" },
+            { "id": "tb-mat1b-l23", "title": "2 连加凑整" } ] },
+        { "id": "tb-mat1b-g11", "title": "奥数·智巧趣题", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat1b-l24", "title": "1 排队与间隔" },
+            { "id": "tb-mat1b-l25", "title": "2 年龄小谜题" } ] }
+      ]
+    },
+    {
+      "grade": 2, "term": "上",
+      "modules": [
+        { "id": "tb-mat2a-g01", "title": "1 长度单位", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l01", "title": "1 统一长度单位、认识厘米" },
+            { "id": "tb-mat2a-l02", "title": "2 认识米、用米量" },
+            { "id": "tb-mat2a-l03", "title": "3 认识线段" } ] },
+        { "id": "tb-mat2a-g02", "title": "2 100以内的加法和减法（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l04", "title": "1 两位数加两位数（进位）" },
+            { "id": "tb-mat2a-l05", "title": "2 两位数减两位数（退位）" },
+            { "id": "tb-mat2a-l06", "title": "3 连加、连减与加减混合" } ] },
+        { "id": "tb-mat2a-g03", "title": "3 角的初步认识", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l07", "title": "1 认识角、比较角的大小" },
+            { "id": "tb-mat2a-l08", "title": "2 认识直角、锐角和钝角" } ] },
+        { "id": "tb-mat2a-g04", "title": "4 表内乘法（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l09", "title": "1 乘法的初步认识" },
+            { "id": "tb-mat2a-l10", "title": "2 2-6的乘法口诀" } ] },
+        { "id": "tb-mat2a-g05", "title": "5 观察物体（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l11", "title": "1 从不同位置观察物体" } ] },
+        { "id": "tb-mat2a-g06", "title": "6 表内乘法（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l12", "title": "1 7的乘法口诀" },
+            { "id": "tb-mat2a-l13", "title": "2 8、9的乘法口诀" } ] },
+        { "id": "tb-mat2a-g07", "title": "7 认识时间", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l14", "title": "1 认识几时几分" },
+            { "id": "tb-mat2a-l15", "title": "2 1时=60分" } ] },
+        { "id": "tb-mat2a-g08", "title": "8 数学广角——搭配（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l16", "title": "1 简单排列与组合" } ] },
+        { "id": "tb-mat2a-g09", "title": "9 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2a-l17", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat2a-g10", "title": "奥数·计算巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat2a-l18", "title": "1 乘法口诀巧用" },
+            { "id": "tb-mat2a-l19", "title": "2 加减混合巧算" } ] },
+        { "id": "tb-mat2a-g11", "title": "奥数·趣味数独与推理", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat2a-l20", "title": "1 四宫格与六宫格数独" },
+            { "id": "tb-mat2a-l21", "title": "2 图形算式谜" } ] },
+        { "id": "tb-mat2a-g12", "title": "奥数·智巧趣题", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat2a-l22", "title": "1 间隔与植树问题" },
+            { "id": "tb-mat2a-l23", "title": "2 周期问题入门" } ] }
+      ]
+    },
+    {
+      "grade": 2, "term": "下",
+      "modules": [
+        { "id": "tb-mat2b-g01", "title": "1 数据收集整理", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l01", "title": "1 调查与记录数据" } ] },
+        { "id": "tb-mat2b-g02", "title": "2 表内除法（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l02", "title": "1 平均分与除法的初步认识" },
+            { "id": "tb-mat2b-l03", "title": "2 用2-6的乘法口诀求商" } ] },
+        { "id": "tb-mat2b-g03", "title": "3 图形的运动（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l04", "title": "1 对称图形" },
+            { "id": "tb-mat2b-l05", "title": "2 平移与旋转" } ] },
+        { "id": "tb-mat2b-g04", "title": "4 表内除法（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l06", "title": "1 用7、8、9的乘法口诀求商" },
+            { "id": "tb-mat2b-l07", "title": "2 除法解决实际问题" } ] },
+        { "id": "tb-mat2b-g05", "title": "5 混合运算", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l08", "title": "1 不含括号的混合运算顺序" },
+            { "id": "tb-mat2b-l09", "title": "2 含小括号的混合运算" } ] },
+        { "id": "tb-mat2b-g06", "title": "6 有余数的除法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l10", "title": "1 有余数除法与竖式" },
+            { "id": "tb-mat2b-l11", "title": "2 余数与除数的关系" } ] },
+        { "id": "tb-mat2b-g07", "title": "7 万以内数的认识", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l12", "title": "1 千以内数的认识" },
+            { "id": "tb-mat2b-l13", "title": "2 万以内数的读、写" },
+            { "id": "tb-mat2b-l14", "title": "3 数的大小比较与近似数" },
+            { "id": "tb-mat2b-l15", "title": "4 整百、整千数加减法" } ] },
+        { "id": "tb-mat2b-g08", "title": "8 克和千克", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l16", "title": "1 认识克与千克" } ] },
+        { "id": "tb-mat2b-g09", "title": "9 数学广角——推理", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l17", "title": "1 简单推理" } ] },
+        { "id": "tb-mat2b-g10", "title": "10 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat2b-l18", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat2b-g11", "title": "奥数·有余数除法巧用", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat2b-l19", "title": "1 周期与余数" },
+            { "id": "tb-mat2b-l20", "title": "2 排队与余数" } ] },
+        { "id": "tb-mat2b-g12", "title": "奥数·图形拼剪", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat2b-l21", "title": "1 剪一剪拼一拼" },
+            { "id": "tb-mat2b-l22", "title": "2 折痕与对称" } ] },
+        { "id": "tb-mat2b-g13", "title": "奥数·应用题思维", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat2b-l23", "title": "1 归一问题" },
+            { "id": "tb-mat2b-l24", "title": "2 简单还原问题" } ] }
+      ]
+    },
+    {
+      "grade": 3, "term": "上",
+      "modules": [
+        { "id": "tb-mat3a-g01", "title": "1 时、分、秒", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l01", "title": "1 秒的认识" },
+            { "id": "tb-mat3a-l02", "title": "2 时间单位换算与时间的计算" } ] },
+        { "id": "tb-mat3a-g02", "title": "2 万以内的加法和减法（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l03", "title": "1 两位数加减两位数的口算" },
+            { "id": "tb-mat3a-l04", "title": "2 几百几十加减几百几十及估算" } ] },
+        { "id": "tb-mat3a-g03", "title": "3 测量", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l05", "title": "1 毫米、分米的认识" },
+            { "id": "tb-mat3a-l06", "title": "2 千米的认识" },
+            { "id": "tb-mat3a-l07", "title": "3 吨的认识" } ] },
+        { "id": "tb-mat3a-g04", "title": "4 万以内的加法和减法（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l08", "title": "1 三位数加法的笔算" },
+            { "id": "tb-mat3a-l09", "title": "2 三位数减法的笔算" },
+            { "id": "tb-mat3a-l10", "title": "3 加、减法的验算" } ] },
+        { "id": "tb-mat3a-g05", "title": "5 倍的认识", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l11", "title": "1 认识“倍”" },
+            { "id": "tb-mat3a-l12", "title": "2 求一个数是另一个数的几倍" } ] },
+        { "id": "tb-mat3a-g06", "title": "6 多位数乘一位数", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l13", "title": "1 口算乘法" },
+            { "id": "tb-mat3a-l14", "title": "2 笔算乘法（不进位、进位）" },
+            { "id": "tb-mat3a-l15", "title": "3 因数中间或末尾有0的乘法" } ] },
+        { "id": "tb-mat3a-g07", "title": "7 长方形和正方形", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l16", "title": "1 四边形与周长的认识" },
+            { "id": "tb-mat3a-l17", "title": "2 长方形、正方形的周长" } ] },
+        { "id": "tb-mat3a-g08", "title": "8 分数的初步认识", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l18", "title": "1 认识几分之一、几分之几" },
+            { "id": "tb-mat3a-l19", "title": "2 同分母分数简单加减法" } ] },
+        { "id": "tb-mat3a-g09", "title": "9 数学广角——集合", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l20", "title": "1 集合问题的直观图" } ] },
+        { "id": "tb-mat3a-g10", "title": "10 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3a-l21", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat3a-g11", "title": "奥数·计算巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat3a-l22", "title": "1 加减法凑整巧算" },
+            { "id": "tb-mat3a-l23", "title": "2 乘法巧算（25×4、125×8）" } ] },
+        { "id": "tb-mat3a-g12", "title": "奥数·趣味数独与推理", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat3a-l24", "title": "1 六宫格数独" },
+            { "id": "tb-mat3a-l25", "title": "2 逻辑对应推理" } ] },
+        { "id": "tb-mat3a-g13", "title": "奥数·智巧趣题", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat3a-l26", "title": "1 还原与倒推" },
+            { "id": "tb-mat3a-l27", "title": "2 图形中的数阵" } ] }
+      ]
+    },
+    {
+      "grade": 3, "term": "下",
+      "modules": [
+        { "id": "tb-mat3b-g01", "title": "1 位置与方向（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l01", "title": "1 认识东、南、西、北" },
+            { "id": "tb-mat3b-l02", "title": "2 认识东北、东南、西北、西南" } ] },
+        { "id": "tb-mat3b-g02", "title": "2 除数是一位数的除法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l03", "title": "1 口算除法" },
+            { "id": "tb-mat3b-l04", "title": "2 笔算除法与验算" },
+            { "id": "tb-mat3b-l05", "title": "3 商中间、末尾有0的除法" } ] },
+        { "id": "tb-mat3b-g03", "title": "3 复式统计表", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l06", "title": "1 认识复式统计表" } ] },
+        { "id": "tb-mat3b-g04", "title": "4 两位数乘两位数", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l07", "title": "1 口算乘法" },
+            { "id": "tb-mat3b-l08", "title": "2 笔算乘法（不进位、进位）" },
+            { "id": "tb-mat3b-l09", "title": "3 用乘法估算解决问题" } ] },
+        { "id": "tb-mat3b-g05", "title": "5 面积", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l10", "title": "1 面积与面积单位" },
+            { "id": "tb-mat3b-l11", "title": "2 长方形、正方形的面积" },
+            { "id": "tb-mat3b-l12", "title": "3 面积单位间的进率" } ] },
+        { "id": "tb-mat3b-g06", "title": "6 年、月、日", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l13", "title": "1 认识年、月、日与平年闰年" },
+            { "id": "tb-mat3b-l14", "title": "2 24时计时法" } ] },
+        { "id": "tb-mat3b-g07", "title": "7 小数的初步认识", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l15", "title": "1 认识小数、小数的大小比较" },
+            { "id": "tb-mat3b-l16", "title": "2 简单的小数加、减法" } ] },
+        { "id": "tb-mat3b-g08", "title": "8 数学广角——搭配（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l17", "title": "1 简单的搭配问题" } ] },
+        { "id": "tb-mat3b-g09", "title": "9 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat3b-l18", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat3b-g10", "title": "奥数·计算巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat3b-l19", "title": "1 除法中的算式谜" },
+            { "id": "tb-mat3b-l20", "title": "2 乘除混合速算" } ] },
+        { "id": "tb-mat3b-g11", "title": "奥数·图形拼剪与周长面积", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat3b-l21", "title": "1 平移法求周长" },
+            { "id": "tb-mat3b-l22", "title": "2 割补法求面积" } ] },
+        { "id": "tb-mat3b-g12", "title": "奥数·应用题思维", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat3b-l23", "title": "1 鸡兔同笼（列表与假设）" },
+            { "id": "tb-mat3b-l24", "title": "2 盈亏问题" } ] }
+      ]
+    },
+    {
+      "grade": 4, "term": "上",
+      "modules": [
+        { "id": "tb-mat4a-g01", "title": "1 大数的认识", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l01", "title": "1 亿以内数的认识与读写" },
+            { "id": "tb-mat4a-l02", "title": "2 亿以内数的大小比较与改写" },
+            { "id": "tb-mat4a-l03", "title": "3 求近似数（四舍五入）" },
+            { "id": "tb-mat4a-l04", "title": "4 亿以上数的认识" },
+            { "id": "tb-mat4a-l05", "title": "5 计算器与1亿有多大" } ] },
+        { "id": "tb-mat4a-g02", "title": "2 公顷和平方千米", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l06", "title": "1 认识公顷与平方千米" } ] },
+        { "id": "tb-mat4a-g03", "title": "3 角的度量", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l07", "title": "1 线段、直线和射线" },
+            { "id": "tb-mat4a-l08", "title": "2 角的度量与分类" },
+            { "id": "tb-mat4a-l09", "title": "3 画角" } ] },
+        { "id": "tb-mat4a-g04", "title": "4 三位数乘两位数", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l10", "title": "1 三位数乘两位数的笔算" },
+            { "id": "tb-mat4a-l11", "title": "2 积的变化规律" },
+            { "id": "tb-mat4a-l12", "title": "3 速度、时间与路程" } ] },
+        { "id": "tb-mat4a-g05", "title": "5 平行四边形和梯形", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l13", "title": "1 垂直与平行" },
+            { "id": "tb-mat4a-l14", "title": "2 平行四边形" },
+            { "id": "tb-mat4a-l15", "title": "3 梯形" } ] },
+        { "id": "tb-mat4a-g06", "title": "6 除数是两位数的除法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l16", "title": "1 口算除法" },
+            { "id": "tb-mat4a-l17", "title": "2 笔算除法（试商与调商）" },
+            { "id": "tb-mat4a-l18", "title": "3 商的变化规律" } ] },
+        { "id": "tb-mat4a-g07", "title": "7 条形统计图", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l19", "title": "1 认识条形统计图" } ] },
+        { "id": "tb-mat4a-g08", "title": "8 数学广角——优化", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l20", "title": "1 沏茶问题与烙饼问题" },
+            { "id": "tb-mat4a-l21", "title": "2 田忌赛马" } ] },
+        { "id": "tb-mat4a-g09", "title": "9 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4a-l22", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat4a-g10", "title": "奥数·计算巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat4a-l23", "title": "1 凑整与移动数巧算" },
+            { "id": "tb-mat4a-l24", "title": "2 乘法分配律巧算" } ] },
+        { "id": "tb-mat4a-g11", "title": "奥数·应用题思维", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat4a-l25", "title": "1 和差问题进阶" },
+            { "id": "tb-mat4a-l26", "title": "2 平均数问题" } ] },
+        { "id": "tb-mat4a-g12", "title": "奥数·趣味数独与推理", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat4a-l27", "title": "1 九宫格数独" },
+            { "id": "tb-mat4a-l28", "title": "2 幻方与数阵图" } ] }
+      ]
+    },
+    {
+      "grade": 4, "term": "下",
+      "modules": [
+        { "id": "tb-mat4b-g01", "title": "1 四则运算", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l01", "title": "1 不含括号的运算顺序" },
+            { "id": "tb-mat4b-l02", "title": "2 含括号的运算顺序" },
+            { "id": "tb-mat4b-l03", "title": "3 有关0的运算与方案问题" } ] },
+        { "id": "tb-mat4b-g02", "title": "2 观察物体（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l04", "title": "1 从多个方向观察立体图形" } ] },
+        { "id": "tb-mat4b-g03", "title": "3 运算定律", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l05", "title": "1 加法交换律与结合律" },
+            { "id": "tb-mat4b-l06", "title": "2 乘法交换律与结合律" },
+            { "id": "tb-mat4b-l07", "title": "3 乘法分配律及简便计算" } ] },
+        { "id": "tb-mat4b-g04", "title": "4 小数的意义和性质", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l08", "title": "1 小数的意义与读写法" },
+            { "id": "tb-mat4b-l09", "title": "2 小数的性质与大小比较" },
+            { "id": "tb-mat4b-l10", "title": "3 小数点移动引起小数大小的变化" },
+            { "id": "tb-mat4b-l11", "title": "4 小数与单位换算、近似数" } ] },
+        { "id": "tb-mat4b-g05", "title": "5 三角形", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l12", "title": "1 三角形的特性与三边关系" },
+            { "id": "tb-mat4b-l13", "title": "2 三角形的分类" },
+            { "id": "tb-mat4b-l14", "title": "3 三角形的内角和" } ] },
+        { "id": "tb-mat4b-g06", "title": "6 小数的加法和减法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l15", "title": "1 小数加减法的笔算" },
+            { "id": "tb-mat4b-l16", "title": "2 小数加减混合运算与简便计算" } ] },
+        { "id": "tb-mat4b-g07", "title": "7 图形的运动（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l17", "title": "1 轴对称（补全轴对称图形）" },
+            { "id": "tb-mat4b-l18", "title": "2 平移（方格纸上的平移）" } ] },
+        { "id": "tb-mat4b-g08", "title": "8 平均数与条形统计图", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l19", "title": "1 认识平均数" },
+            { "id": "tb-mat4b-l20", "title": "2 复式条形统计图" } ] },
+        { "id": "tb-mat4b-g09", "title": "9 数学广角——鸡兔同笼", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l21", "title": "1 列表法与假设法" } ] },
+        { "id": "tb-mat4b-g10", "title": "10 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat4b-l22", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat4b-g11", "title": "奥数·智巧趣题", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat4b-l23", "title": "1 鸡兔同笼变式" },
+            { "id": "tb-mat4b-l24", "title": "2 盈亏问题进阶" } ] },
+        { "id": "tb-mat4b-g12", "title": "奥数·应用题思维", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat4b-l25", "title": "1 行程问题入门" },
+            { "id": "tb-mat4b-l26", "title": "2 还原与年龄问题" } ] },
+        { "id": "tb-mat4b-g13", "title": "奥数·图形拼剪与巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat4b-l27", "title": "1 小数运算巧算" },
+            { "id": "tb-mat4b-l28", "title": "2 等积变形与面积拼剪" } ] }
+      ]
+    },
+    {
+      "grade": 5, "term": "上",
+      "modules": [
+        { "id": "tb-mat5a-g01", "title": "1 小数乘法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5a-l01", "title": "1 小数乘整数" },
+            { "id": "tb-mat5a-l02", "title": "2 小数乘小数" },
+            { "id": "tb-mat5a-l03", "title": "3 整数运算定律推广到小数" },
+            { "id": "tb-mat5a-l04", "title": "4 用估算解决问题（分段计费）" } ] },
+        { "id": "tb-mat5a-g02", "title": "2 位置", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5a-l05", "title": "1 用数对确定位置" } ] },
+        { "id": "tb-mat5a-g03", "title": "3 小数除法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5a-l06", "title": "1 小数除以整数" },
+            { "id": "tb-mat5a-l07", "title": "2 一个数除以小数" },
+            { "id": "tb-mat5a-l08", "title": "3 商的近似数与循环小数" },
+            { "id": "tb-mat5a-l09", "title": "4 用“进一”“去尾”法解决问题" } ] },
+        { "id": "tb-mat5a-g04", "title": "4 可能性", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5a-l10", "title": "1 事件发生的等可能性" } ] },
+        { "id": "tb-mat5a-g05", "title": "5 简易方程", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5a-l11", "title": "1 用字母表示数" },
+            { "id": "tb-mat5a-l12", "title": "2 方程的意义与等式的性质" },
+            { "id": "tb-mat5a-l13", "title": "3 解方程" },
+            { "id": "tb-mat5a-l14", "title": "4 实际问题与方程" } ] },
+        { "id": "tb-mat5a-g06", "title": "6 多边形的面积", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5a-l15", "title": "1 平行四边形的面积" },
+            { "id": "tb-mat5a-l16", "title": "2 三角形的面积" },
+            { "id": "tb-mat5a-l17", "title": "3 梯形的面积" },
+            { "id": "tb-mat5a-l18", "title": "4 组合图形与不规则图形的面积" } ] },
+        { "id": "tb-mat5a-g07", "title": "7 数学广角——植树问题", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5a-l19", "title": "1 直线上的植树问题" } ] },
+        { "id": "tb-mat5a-g08", "title": "8 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5a-l20", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat5a-g09", "title": "奥数·计算巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat5a-l21", "title": "1 小数乘除巧算" },
+            { "id": "tb-mat5a-l22", "title": "2 定义新运算" } ] },
+        { "id": "tb-mat5a-g10", "title": "奥数·应用题思维", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat5a-l23", "title": "1 用方程解还原问题" },
+            { "id": "tb-mat5a-l24", "title": "2 行程问题进阶" } ] },
+        { "id": "tb-mat5a-g11", "title": "奥数·趣味数独与推理", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat5a-l25", "title": "1 数独与幻方进阶" },
+            { "id": "tb-mat5a-l26", "title": "2 逻辑推理综合" } ] }
+      ]
+    },
+    {
+      "grade": 5, "term": "下",
+      "modules": [
+        { "id": "tb-mat5b-g01", "title": "1 观察物体（三）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l01", "title": "1 根据视图拼搭立体图形" } ] },
+        { "id": "tb-mat5b-g02", "title": "2 因数与质数", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l02", "title": "1 因数与倍数" },
+            { "id": "tb-mat5b-l03", "title": "2 2、5、3的倍数的特征" },
+            { "id": "tb-mat5b-l04", "title": "3 质数和合数" } ] },
+        { "id": "tb-mat5b-g03", "title": "3 长方体和正方体", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l05", "title": "1 长方体和正方体的认识" },
+            { "id": "tb-mat5b-l06", "title": "2 长方体、正方体的表面积" },
+            { "id": "tb-mat5b-l07", "title": "3 体积与体积单位" },
+            { "id": "tb-mat5b-l08", "title": "4 长方体、正方体的体积与容积" } ] },
+        { "id": "tb-mat5b-g04", "title": "4 分数的意义和性质", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l09", "title": "1 分数的意义与真分数、假分数" },
+            { "id": "tb-mat5b-l10", "title": "2 分数与除法" },
+            { "id": "tb-mat5b-l11", "title": "3 分数的基本性质与约分、通分" },
+            { "id": "tb-mat5b-l12", "title": "4 分数与小数互化" } ] },
+        { "id": "tb-mat5b-g05", "title": "5 图形的运动（三）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l13", "title": "1 旋转" },
+            { "id": "tb-mat5b-l14", "title": "2 运用平移、对称、旋转设计图案" } ] },
+        { "id": "tb-mat5b-g06", "title": "6 分数的加法和减法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l15", "title": "1 同分母分数加减法" },
+            { "id": "tb-mat5b-l16", "title": "2 异分母分数加减法" },
+            { "id": "tb-mat5b-l17", "title": "3 分数加减混合运算与简便计算" } ] },
+        { "id": "tb-mat5b-g07", "title": "7 折线统计图", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l18", "title": "1 单式与复式折线统计图" } ] },
+        { "id": "tb-mat5b-g08", "title": "8 数学广角——找次品", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l19", "title": "1 用天平找次品" } ] },
+        { "id": "tb-mat5b-g09", "title": "9 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat5b-l20", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat5b-g10", "title": "奥数·数论初步", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat5b-l21", "title": "1 因数与倍数的奥秘" },
+            { "id": "tb-mat5b-l22", "title": "2 整除特征的应用" } ] },
+        { "id": "tb-mat5b-g11", "title": "奥数·计算巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat5b-l23", "title": "1 分数加减巧算" },
+            { "id": "tb-mat5b-l24", "title": "2 裂项相消入门" } ] },
+        { "id": "tb-mat5b-g12", "title": "奥数·几何拼剪与推理", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat5b-l25", "title": "1 立体图形的拼剪" },
+            { "id": "tb-mat5b-l26", "title": "2 逻辑推理与数独综合" } ] }
+      ]
+    },
+    {
+      "grade": 6, "term": "上",
+      "modules": [
+        { "id": "tb-mat6a-g01", "title": "1 分数乘法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l01", "title": "1 分数乘整数、一个数乘分数" },
+            { "id": "tb-mat6a-l02", "title": "2 分数混合运算与运算定律" },
+            { "id": "tb-mat6a-l03", "title": "3 求一个数的几分之几的问题" } ] },
+        { "id": "tb-mat6a-g02", "title": "2 位置与方向（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l04", "title": "1 按方向和距离确定位置" } ] },
+        { "id": "tb-mat6a-g03", "title": "3 分数除法", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l05", "title": "1 倒数的认识" },
+            { "id": "tb-mat6a-l06", "title": "2 分数除法的计算" },
+            { "id": "tb-mat6a-l07", "title": "3 已知一个数的几分之几是多少求这个数" } ] },
+        { "id": "tb-mat6a-g04", "title": "4 比", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l08", "title": "1 比的意义与基本性质" },
+            { "id": "tb-mat6a-l09", "title": "2 按比分配" } ] },
+        { "id": "tb-mat6a-g05", "title": "5 圆", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l10", "title": "1 圆的认识" },
+            { "id": "tb-mat6a-l11", "title": "2 圆的周长" },
+            { "id": "tb-mat6a-l12", "title": "3 圆的面积" },
+            { "id": "tb-mat6a-l13", "title": "4 扇形的认识" } ] },
+        { "id": "tb-mat6a-g06", "title": "6 百分数（一）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l14", "title": "1 百分数的意义与读写" },
+            { "id": "tb-mat6a-l15", "title": "2 百分数与小数、分数的互化" },
+            { "id": "tb-mat6a-l16", "title": "3 用百分数解决问题" } ] },
+        { "id": "tb-mat6a-g07", "title": "7 扇形统计图", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l17", "title": "1 认识扇形统计图" } ] },
+        { "id": "tb-mat6a-g08", "title": "8 数学广角——数与形", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l18", "title": "1 用图形解释算式规律" } ] },
+        { "id": "tb-mat6a-g09", "title": "9 总复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6a-l19", "title": "1 复习与整理" } ] },
+        { "id": "tb-mat6a-g10", "title": "奥数·计算巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat6a-l20", "title": "1 分数四则巧算" },
+            { "id": "tb-mat6a-l21", "title": "2 数列求和入门" } ] },
+        { "id": "tb-mat6a-g11", "title": "奥数·应用题思维", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat6a-l22", "title": "1 工程问题" },
+            { "id": "tb-mat6a-l23", "title": "2 百分数与比的应用" } ] },
+        { "id": "tb-mat6a-g12", "title": "奥数·几何模型初步", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat6a-l24", "title": "1 圆与组合图形面积巧算" },
+            { "id": "tb-mat6a-l25", "title": "2 等高模型与等积变形" } ] }
+      ]
+    },
+    {
+      "grade": 6, "term": "下",
+      "modules": [
+        { "id": "tb-mat6b-g01", "title": "1 负数", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6b-l01", "title": "1 正、负数与0" },
+            { "id": "tb-mat6b-l02", "title": "2 在直线上表示负数" } ] },
+        { "id": "tb-mat6b-g02", "title": "2 百分数（二）", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6b-l03", "title": "1 折扣与成数" },
+            { "id": "tb-mat6b-l04", "title": "2 税率与利率" } ] },
+        { "id": "tb-mat6b-g03", "title": "3 圆柱与圆锥", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6b-l05", "title": "1 圆柱的认识" },
+            { "id": "tb-mat6b-l06", "title": "2 圆柱的表面积" },
+            { "id": "tb-mat6b-l07", "title": "3 圆柱的体积" },
+            { "id": "tb-mat6b-l08", "title": "4 圆锥的认识与体积" } ] },
+        { "id": "tb-mat6b-g04", "title": "4 比例", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6b-l09", "title": "1 比例的意义和基本性质" },
+            { "id": "tb-mat6b-l10", "title": "2 正比例和反比例" },
+            { "id": "tb-mat6b-l11", "title": "3 比例尺" },
+            { "id": "tb-mat6b-l12", "title": "4 图形的放大与缩小、用比例解决问题" } ] },
+        { "id": "tb-mat6b-g05", "title": "5 数学广角——鸽巢问题", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6b-l13", "title": "1 鸽巢原理" } ] },
+        { "id": "tb-mat6b-g06", "title": "6 整理和复习", "branch": "校内",
+          "leaves": [
+            { "id": "tb-mat6b-l14", "title": "1 数与代数" },
+            { "id": "tb-mat6b-l15", "title": "2 图形与几何" },
+            { "id": "tb-mat6b-l16", "title": "3 统计与概率、数学思考" } ] },
+        { "id": "tb-mat6b-g07", "title": "奥数·综合巧算", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat6b-l17", "title": "1 四则混合与分数裂项" },
+            { "id": "tb-mat6b-l18", "title": "2 定义新运算综合" } ] },
+        { "id": "tb-mat6b-g08", "title": "奥数·应用题思维", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat6b-l19", "title": "1 浓度与经济利润问题" },
+            { "id": "tb-mat6b-l20", "title": "2 行程问题综合" } ] },
+        { "id": "tb-mat6b-g09", "title": "奥数·逻辑推理与数论", "branch": "奥数",
+          "leaves": [
+            { "id": "tb-mat6b-l21", "title": "1 逻辑推理综合" },
+            { "id": "tb-mat6b-l22", "title": "2 数论与综合应用" } ] }
+      ]
+    }
+  ]
+}

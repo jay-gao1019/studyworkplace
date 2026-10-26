@@ -1,0 +1,1121 @@
+{
+  "subject": "en",
+  "terms": [
+    {
+      "grade": 1, "term": "上",
+      "modules": [
+        { "id": "tb-eng1a-g01", "title": "Unit 1 Hello!（打招呼）",
+          "groups": [
+            { "id": "tb-eng1a-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1a-l01", "title": "A部分词汇：问候语 hello, hi, I'm, name" },
+                { "id": "tb-eng1a-l02", "title": "B部分词汇：告别语 goodbye, bye, see you" } ] },
+            { "id": "tb-eng1a-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1a-l03", "title": "A部分句型：Hello! I'm... 自我介绍与应答" },
+                { "id": "tb-eng1a-l04", "title": "B部分句型：Good morning! / Goodbye! 日常问候" } ] },
+            { "id": "tb-eng1a-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1a-l05", "title": "字母启蒙：认读 Aa-Gg 的名称音（字母歌）" } ] },
+            { "id": "tb-eng1a-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1a-l06", "title": "中外小学生打招呼与自我介绍的礼仪" } ] } ] },
+        { "id": "tb-eng1a-g06", "title": "Unit 2 My School Things（学习用品）",
+          "groups": [
+            { "id": "tb-eng1a-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1a-l07", "title": "A部分词汇：pen, pencil, book, bag" },
+                { "id": "tb-eng1a-l08", "title": "B部分词汇：ruler, eraser, pencil-case" } ] },
+            { "id": "tb-eng1a-g08", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1a-l09", "title": "A部分句型：What's this? It's a pen." },
+                { "id": "tb-eng1a-l10", "title": "B部分句型：I have a ruler. 描述与展示物品" } ] },
+            { "id": "tb-eng1a-g09", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1a-l11", "title": "字母启蒙：认读 Hh-Nn 的名称音与字形" } ] },
+            { "id": "tb-eng1a-g10", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1a-l12", "title": "整理文具好习惯与借用物品的礼貌用语" } ] } ] },
+        { "id": "tb-eng1a-g11", "title": "Unit 3 Colours Around Us（身边的颜色）",
+          "groups": [
+            { "id": "tb-eng1a-g12", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1a-l13", "title": "A部分词汇：red, yellow, blue, green" },
+                { "id": "tb-eng1a-l14", "title": "B部分词汇：black, white, brown, orange, pink" } ] },
+            { "id": "tb-eng1a-g13", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1a-l15", "title": "A部分句型：What colour is it? It's red." },
+                { "id": "tb-eng1a-l16", "title": "B部分句型：Show me blue. / Colour it yellow." } ] },
+            { "id": "tb-eng1a-g14", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1a-l17", "title": "字母启蒙：认读 Oo-Uu，初识五个元音字母" } ] },
+            { "id": "tb-eng1a-g15", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1a-l18", "title": "颜色的文化含义：红色在中西方的不同寓意" } ] } ] },
+        { "id": "tb-eng1a-g16", "title": "Unit 4 Lovely Animals（可爱的动物）",
+          "groups": [
+            { "id": "tb-eng1a-g17", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1a-l19", "title": "A部分词汇：cat, dog, bird, fish" },
+                { "id": "tb-eng1a-l20", "title": "B部分词汇：rabbit, panda, monkey, duck" } ] },
+            { "id": "tb-eng1a-g18", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1a-l21", "title": "A部分句型：What's this? It's a panda." },
+                { "id": "tb-eng1a-l22", "title": "B部分句型：I like cats. Act like a monkey!" } ] },
+            { "id": "tb-eng1a-g19", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1a-l23", "title": "字母启蒙：认读 Vv-Zz，完整串起 26 个字母" } ] },
+            { "id": "tb-eng1a-g20", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1a-l24", "title": "熊猫‘国宝’名片与中外儿童喜欢的动物" } ] } ] },
+        { "id": "tb-eng1a-g21", "title": "Unit 5 Numbers Fun（有趣的数字）",
+          "groups": [
+            { "id": "tb-eng1a-g22", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1a-l25", "title": "A部分词汇：one, two, three, four, five" },
+                { "id": "tb-eng1a-l26", "title": "B部分词汇：six, seven, eight, nine, ten" } ] },
+            { "id": "tb-eng1a-g23", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1a-l27", "title": "A部分句型：How many birds? Two." },
+                { "id": "tb-eng1a-l28", "title": "B部分句型：Show me three fingers. Count with me!" } ] },
+            { "id": "tb-eng1a-g24", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1a-l29", "title": "字母回环复习：按 a-z 顺序指读与抢答" } ] },
+            { "id": "tb-eng1a-g25", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1a-l30", "title": "数字手势游戏与中外计数儿歌" } ] } ] }
+      ]
+    },
+    {
+      "grade": 1, "term": "下",
+      "modules": [
+        { "id": "tb-eng1b-g01", "title": "Unit 1 My Body（我的身体）",
+          "groups": [
+            { "id": "tb-eng1b-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1b-l01", "title": "A部分词汇：head, face, eye, ear" },
+                { "id": "tb-eng1b-l02", "title": "B部分词汇：nose, mouth, arm, hand, leg, foot" } ] },
+            { "id": "tb-eng1b-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1b-l03", "title": "A部分句型：Touch your nose! 指令应答" },
+                { "id": "tb-eng1b-l04", "title": "B部分句型：This is my face. / I have two eyes." } ] },
+            { "id": "tb-eng1b-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1b-l05", "title": "字母启蒙：大小写配对游戏（Aa-Zz）" } ] },
+            { "id": "tb-eng1b-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1b-l06", "title": "保护眼睛耳朵等健康习惯养成" } ] } ] },
+        { "id": "tb-eng1b-g06", "title": "Unit 2 My Family（我的家人）",
+          "groups": [
+            { "id": "tb-eng1b-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1b-l07", "title": "A部分词汇：father, mother, brother, sister" },
+                { "id": "tb-eng1b-l08", "title": "B部分词汇：grandpa, grandma, me, family" } ] },
+            { "id": "tb-eng1b-g08", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1b-l09", "title": "A部分句型：This is my mother." },
+                { "id": "tb-eng1b-l10", "title": "B部分句型：Who's he? He's my dad." } ] },
+            { "id": "tb-eng1b-g09", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1b-l11", "title": "字母书写启蒙：四线三格中描临 Aa-Mm" } ] },
+            { "id": "tb-eng1b-g10", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1b-l12", "title": "中外家庭称谓差异与爱的表达" } ] } ] },
+        { "id": "tb-eng1b-g11", "title": "Unit 3 Food I Like（我喜欢的食物）",
+          "groups": [
+            { "id": "tb-eng1b-g12", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1b-l13", "title": "A部分词汇：apple, banana, pear, orange" },
+                { "id": "tb-eng1b-l14", "title": "B部分词汇：cake, milk, juice, egg, rice" } ] },
+            { "id": "tb-eng1b-g13", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1b-l15", "title": "A部分句型：I like apples." },
+                { "id": "tb-eng1b-l16", "title": "B部分句型：Have some cake! Thanks." } ] },
+            { "id": "tb-eng1b-g14", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1b-l17", "title": "字母书写启蒙：四线三格中描临 Nn-Zz" } ] },
+            { "id": "tb-eng1b-g15", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1b-l18", "title": "中外早餐差异与餐桌基本礼仪" } ] } ] },
+        { "id": "tb-eng1b-g16", "title": "Unit 4 In the Zoo（去动物园）",
+          "groups": [
+            { "id": "tb-eng1b-g17", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1b-l19", "title": "A部分词汇：lion, tiger, panda, monkey" },
+                { "id": "tb-eng1b-l20", "title": "B部分词汇：elephant, bear, giraffe, zebra" } ] },
+            { "id": "tb-eng1b-g18", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1b-l21", "title": "A部分句型：Look at the elephant! It's big." },
+                { "id": "tb-eng1b-l22", "title": "B部分句型：I can see a giraffe. It's tall." } ] },
+            { "id": "tb-eng1b-g19", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1b-l23", "title": "字母首音感知：听辨 /s/ /m/ /b/ 等起始音" } ] },
+            { "id": "tb-eng1b-g20", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1b-l24", "title": "动物园参观规则与爱护动物" } ] } ] },
+        { "id": "tb-eng1b-g21", "title": "Unit 5 Seasons and Weather（季节与天气）",
+          "groups": [
+            { "id": "tb-eng1b-g22", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng1b-l25", "title": "A部分词汇：sunny, rainy, windy, cloudy" },
+                { "id": "tb-eng1b-l26", "title": "B部分词汇：spring, summer, autumn, winter" } ] },
+            { "id": "tb-eng1b-g23", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng1b-l27", "title": "A部分句型：How's the weather? It's sunny." },
+                { "id": "tb-eng1b-l28", "title": "B部分句型：Let's fly a kite! It's spring." } ] },
+            { "id": "tb-eng1b-g24", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng1b-l29", "title": "字母歌谣复习：韵律chant中的字母音" } ] },
+            { "id": "tb-eng1b-g25", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng1b-l30", "title": "四季活动与中外节日里的天气习俗" } ] } ] }
+      ]
+    },
+    {
+      "grade": 2, "term": "上",
+      "modules": [
+        { "id": "tb-eng2a-g01", "title": "Unit 1 My circle（我的小圈子）",
+          "groups": [
+            { "id": "tb-eng2a-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2a-l01", "title": "A部分词汇：boy, girl, teacher, me" },
+                { "id": "tb-eng2a-l02", "title": "B部分词汇：friend, classmate, school" } ] },
+            { "id": "tb-eng2a-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2a-l03", "title": "A部分句型：This is my teacher. Who's he?" },
+                { "id": "tb-eng2a-l04", "title": "B部分句型：I'm... / He's... / She's... 介绍他人" } ] },
+            { "id": "tb-eng2a-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2a-l05", "title": "拼读启蒙：短元音 a /æ/（cat, bag, hat）" } ] },
+            { "id": "tb-eng2a-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2a-l06", "title": "主动问好与自我介绍：交友第一步" } ] } ] },
+        { "id": "tb-eng2a-g06", "title": "Unit 2 Friends me（朋友与我）",
+          "groups": [
+            { "id": "tb-eng2a-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2a-l07", "title": "A部分词汇：play, read, draw, sing" },
+                { "id": "tb-eng2a-l08", "title": "B部分词汇：dance, share, help, together" } ] },
+            { "id": "tb-eng2a-g08", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2a-l09", "title": "A部分句型：I can draw. What can you do?" },
+                { "id": "tb-eng2a-l10", "title": "B部分句型：Let's play! Let's share!" } ] },
+            { "id": "tb-eng2a-g09", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2a-l11", "title": "拼读启蒙：短元音 i /ɪ/（pig, sit, big）" } ] },
+            { "id": "tb-eng2a-g10", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2a-l12", "title": "分享与助人：中外课堂的同伴交往" } ] } ] },
+        { "id": "tb-eng2a-g11", "title": "Unit 3 Our Classroom（我们的教室）",
+          "groups": [
+            { "id": "tb-eng2a-g12", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2a-l13", "title": "A部分词汇：desk, chair, door, window" },
+                { "id": "tb-eng2a-l14", "title": "B部分词汇：board, light, picture, clean" } ] },
+            { "id": "tb-eng2a-g13", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2a-l15", "title": "A部分句型：Open the door. Close the window." },
+                { "id": "tb-eng2a-l16", "title": "B部分句型：Where is my chair? Here it is." } ] },
+            { "id": "tb-eng2a-g14", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2a-l17", "title": "拼读启蒙：短元音 o /ɒ/（dog, box, hot）" } ] },
+            { "id": "tb-eng2a-g15", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2a-l18", "title": "值日分工与爱护教室公物" } ] } ] },
+        { "id": "tb-eng2a-g16", "title": "Unit 4 Pets at Home（家里的宠物）",
+          "groups": [
+            { "id": "tb-eng2a-g17", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2a-l19", "title": "A部分词汇：dog, cat, fish, bird" },
+                { "id": "tb-eng2a-l20", "title": "B部分词汇：turtle, rabbit, cute, lovely" } ] },
+            { "id": "tb-eng2a-g18", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2a-l21", "title": "A部分句型：I have a pet. It's a cat." },
+                { "id": "tb-eng2a-l22", "title": "B部分句型：Do you like dogs? Yes, I do. / No, I don't." } ] },
+            { "id": "tb-eng2a-g19", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2a-l23", "title": "拼读启蒙：短元音 u /ʌ/（cup, bus, sun）" } ] },
+            { "id": "tb-eng2a-g20", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2a-l24", "title": "养宠物的责任与中外家庭宠物文化" } ] } ] },
+        { "id": "tb-eng2a-g21", "title": "Unit 5 Let's Move!（动起来）",
+          "groups": [
+            { "id": "tb-eng2a-g22", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2a-l25", "title": "A部分词汇：run, jump, swim, walk" },
+                { "id": "tb-eng2a-l26", "title": "B部分词汇：dance, ride, skip, sport" } ] },
+            { "id": "tb-eng2a-g23", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2a-l27", "title": "A部分句型：I can swim. Can you jump?" },
+                { "id": "tb-eng2a-l28", "title": "B部分句型：Yes, I can. / No, I can't. 应答" } ] },
+            { "id": "tb-eng2a-g24", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2a-l29", "title": "CVC 拼读综合：cat, pin, hot, cup 直呼练习" } ] },
+            { "id": "tb-eng2a-g25", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2a-l30", "title": "课间安全游戏与中外儿童运动项目" } ] } ] }
+      ]
+    },
+    {
+      "grade": 2, "term": "下",
+      "modules": [
+        { "id": "tb-eng2b-g01", "title": "Unit 1 Way to School（上学路上）",
+          "groups": [
+            { "id": "tb-eng2b-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2b-l01", "title": "A部分词汇：bus, bike, car, train" },
+                { "id": "tb-eng2b-l02", "title": "B部分词汇：school, street, walk, on foot" } ] },
+            { "id": "tb-eng2b-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2b-l03", "title": "A部分句型：How do you come to school? By bus." },
+                { "id": "tb-eng2b-l04", "title": "B部分句型：I go to school on foot. Look! traffic lights." } ] },
+            { "id": "tb-eng2b-g05", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2b-l05", "title": "拼读衔接：辅音＋短元音直呼（sad, wet, big）" } ] },
+            { "id": "tb-eng2b-g06", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2b-l06", "title": "交通规则与中外上学方式（校车/步行）" } ] } ] },
+        { "id": "tb-eng2b-g07", "title": "Unit 2 Fruit and Drinks（水果与饮品）",
+          "groups": [
+            { "id": "tb-eng2b-g08", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2b-l07", "title": "A部分词汇：apple, pear, peach, melon" },
+                { "id": "tb-eng2b-l08", "title": "B部分词汇：water, tea, juice, milk, coffee" } ] },
+            { "id": "tb-eng2b-g09", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2b-l09", "title": "A部分句型：Do you like pears? Yes, I do." },
+                { "id": "tb-eng2b-l10", "title": "B部分句型：I'd like some juice. Here you are." } ] },
+            { "id": "tb-eng2b-g10", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2b-l11", "title": "元音字母开音节初识：a-e（cake, name）" } ] },
+            { "id": "tb-eng2b-g11", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2b-l12", "title": "待客奉茶与水果的中外饮食礼仪" } ] } ] },
+        { "id": "tb-eng2b-g12", "title": "Unit 3 Little Musicians（小小音乐家）",
+          "groups": [
+            { "id": "tb-eng2b-g13", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2b-l13", "title": "A部分词汇：song, sing, piano, guitar" },
+                { "id": "tb-eng2b-l14", "title": "B部分词汇：drum, bell, listen, hear" } ] },
+            { "id": "tb-eng2b-g15", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2b-l15", "title": "A部分句型：Listen! What can you hear?" },
+                { "id": "tb-eng2b-l16", "title": "B部分句型：I can play the piano. This is a drum." } ] },
+            { "id": "tb-eng2b-g16", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2b-l17", "title": "开音节 e-e：he, she, me, we 的长音" } ] },
+            { "id": "tb-eng2b-g17", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2b-l18", "title": "中外儿歌与乐器认知（古筝与钢琴）" } ] } ] },
+        { "id": "tb-eng2b-g18", "title": "Unit 4 Dress Up Day（装扮日）",
+          "groups": [
+            { "id": "tb-eng2b-g19", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2b-l19", "title": "A部分词汇：shirt, skirt, dress, hat" },
+                { "id": "tb-eng2b-l20", "title": "B部分词汇：shoes, socks, coat, pants" } ] },
+            { "id": "tb-eng2b-g20", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2b-l21", "title": "A部分句型：Put on your hat. Take off your coat." },
+                { "id": "tb-eng2b-l22", "title": "B部分句型：These are my shoes. What are these?" } ] },
+            { "id": "tb-eng2b-g21", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2b-l23", "title": "开音节 i-e：kite, five, nice 的长音" } ] },
+            { "id": "tb-eng2b-g22", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2b-l24", "title": "穿着场合与中外民族服饰（裙子与旗袍）" } ] } ] },
+        { "id": "tb-eng2b-g23", "title": "Unit 5 Happy Time（快乐时光）",
+          "groups": [
+            { "id": "tb-eng2b-g24", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng2b-l25", "title": "A部分词汇：birthday, party, gift, card" },
+                { "id": "tb-eng2b-l26", "title": "B部分词汇：game, happy, fun, dear" } ] },
+            { "id": "tb-eng2b-g25", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng2b-l27", "title": "A部分句型：Happy birthday! This gift is for you." },
+                { "id": "tb-eng2b-l28", "title": "B部分句型：Let's play games! Have a good time." } ] },
+            { "id": "tb-eng2b-g26", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng2b-l29", "title": "开音节 o-e / u-e：home, note, cute, use" } ] },
+            { "id": "tb-eng2b-g27", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng2b-l30", "title": "中外生日习俗与祝福语表达" } ] } ] }
+      ]
+    },
+    {
+      "grade": 3, "term": "上",
+      "modules": [
+        { "id": "tb-eng3a-g01", "title": "Unit 1 Hello!（你好！）",
+          "groups": [
+            { "id": "tb-eng3a-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3a-l01", "title": "Part A 词汇：hello, hi, I'm, name, nice" },
+                { "id": "tb-eng3a-l02", "title": "Part B 词汇：goodbye, bye, miss, morning, afternoon" } ] },
+            { "id": "tb-eng3a-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3a-l03", "title": "Part A Let's talk：Hello! I'm Sarah. What's your name?" },
+                { "id": "tb-eng3a-l04", "title": "Part B Let's talk：Goodbye! See you later. 告别应答" } ] },
+            { "id": "tb-eng3a-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3a-l05", "title": "Let's spell：字母 Aa 的名称音与首音 /æ/" } ] },
+            { "id": "tb-eng3a-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3a-l06", "title": "开学问候礼仪与英文名字的称呼习惯" } ] } ] },
+        { "id": "tb-eng3a-g06", "title": "Unit 2 Colours（颜色）",
+          "groups": [
+            { "id": "tb-eng3a-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3a-l07", "title": "Part A 词汇：red, yellow, green, blue" },
+                { "id": "tb-eng3a-l08", "title": "Part B 词汇：black, white, brown, orange, pink, purple" } ] },
+            { "id": "tb-eng3a-g09", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3a-l09", "title": "Part A Let's talk：What colour is it? It's blue." },
+                { "id": "tb-eng3a-l10", "title": "Part B Let's talk：I can see... Show me your crayons." } ] },
+            { "id": "tb-eng3a-g10", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3a-l11", "title": "Let's spell：字母 Ee 的名称音与首音 /e/" } ] },
+            { "id": "tb-eng3a-g11", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3a-l12", "title": "颜色与国旗、交通标志中的文化信息" } ] } ] },
+        { "id": "tb-eng3a-g12", "title": "Unit 3 Look at me!（看我！）",
+          "groups": [
+            { "id": "tb-eng3a-g13", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3a-l13", "title": "Part A 词汇：head, face, nose, mouth, eye, ear" },
+                { "id": "tb-eng3a-l14", "title": "Part B 词汇：arm, hand, leg, foot, body" } ] },
+            { "id": "tb-eng3a-g14", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3a-l15", "title": "Part A Let's talk：Look at me! This is my nose." },
+                { "id": "tb-eng3a-l16", "title": "Part B Let's talk：Touch your face. Wave your arms." } ] },
+            { "id": "tb-eng3a-g15", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3a-l17", "title": "Let's spell：字母 Ii 的名称音与首音 /ɪ/" } ] },
+            { "id": "tb-eng3a-g16", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3a-l18", "title": "保护身体的健康儿歌与动作游戏文化" } ] } ] },
+        { "id": "tb-eng3a-g17", "title": "Unit 4 We Love Animals（我们爱动物）",
+          "groups": [
+            { "id": "tb-eng3a-g18", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3a-l19", "title": "Part A 词汇：cat, dog, pig, duck, bear" },
+                { "id": "tb-eng3a-l20", "title": "Part B 词汇：bird, monkey, panda, elephant, rabbit" } ] },
+            { "id": "tb-eng3a-g19", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3a-l21", "title": "Part A Let's talk：What's this? It's a panda." },
+                { "id": "tb-eng3a-l22", "title": "Part B Let's talk：I have a toy dog. He's cute. Act like a monkey!" } ] },
+            { "id": "tb-eng3a-g20", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3a-l23", "title": "Let's spell：字母 Oo 的名称音与首音 /ɒ/" } ] },
+            { "id": "tb-eng3a-g21", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3a-l24", "title": "爱护动物主题与中外儿童喜爱的动物形象" } ] } ] },
+        { "id": "tb-eng3a-g22", "title": "Unit 5 Let's Eat!（用餐）",
+          "groups": [
+            { "id": "tb-eng3a-g23", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3a-l25", "title": "Part A 词汇：cake, bread, hot dog, hamburger, chicken" },
+                { "id": "tb-eng3a-l26", "title": "Part B 词汇：juice, milk, water, tea, coffee, egg" } ] },
+            { "id": "tb-eng3a-g24", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3a-l27", "title": "Part A Let's talk：Have some cake. Thanks! / I'd like some juice." },
+                { "id": "tb-eng3a-l28", "title": "Part B Let's talk：Can I have some eggs? Here you are." } ] },
+            { "id": "tb-eng3a-g25", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3a-l29", "title": "Let's spell：字母 Uu 的名称音与首音 /ʌ/" } ] },
+            { "id": "tb-eng3a-g26", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3a-l30", "title": "中西方早餐与请客用餐的礼貌差异" } ] } ] },
+        { "id": "tb-eng3a-g27", "title": "Unit 6 Happy Birthday!（生日快乐）",
+          "groups": [
+            { "id": "tb-eng3a-g28", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3a-l31", "title": "Part A 词汇：one-ten 数字综合与 age" },
+                { "id": "tb-eng3a-l32", "title": "Part B 词汇：birthday, gift, plate, balloon, candle" } ] },
+            { "id": "tb-eng3a-g29", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3a-l33", "title": "Part A Let's talk：Happy birthday! How old are you? I'm six." },
+                { "id": "tb-eng3a-l34", "title": "Part B Let's talk：This gift is for you. Make a wish!" } ] },
+            { "id": "tb-eng3a-g30", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3a-l35", "title": "Let's spell：五个元音字母 Aa-Uu 名称音与短音综合复习" } ] },
+            { "id": "tb-eng3a-g31", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3a-l36", "title": "中外生日祝福、礼物与年龄表达习俗" } ] } ] }
+      ]
+    },
+    {
+      "grade": 3, "term": "下",
+      "modules": [
+        { "id": "tb-eng3b-g01", "title": "Unit 1 Welcome back to school!（欢迎返校）",
+          "groups": [
+            { "id": "tb-eng3b-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3b-l01", "title": "Part A 词汇：new, student, teacher, friend, today" },
+                { "id": "tb-eng3b-l02", "title": "Part B 词汇：UK, Canada, USA, China 国别与国旗" } ] },
+            { "id": "tb-eng3b-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3b-l03", "title": "Part A Let's talk：We have two new friends today. Welcome!" },
+                { "id": "tb-eng3b-l04", "title": "Part B Let's talk：I'm from the UK. What about you?" } ] },
+            { "id": "tb-eng3b-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3b-l05", "title": "Let's spell：短元音 a 拼读（cat, bag, dad, hat）" } ] },
+            { "id": "tb-eng3b-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3b-l06", "title": "欢迎新同学的表达与中外课堂问候方式" } ] } ] },
+        { "id": "tb-eng3b-g06", "title": "Unit 2 My School（我的学校）",
+          "groups": [
+            { "id": "tb-eng3b-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3b-l07", "title": "Part A 词汇：classroom, window, blackboard, desk, chair" },
+                { "id": "tb-eng3b-l08", "title": "Part B 词汇：library, playground, canteen, computer" } ] },
+            { "id": "tb-eng3b-g09", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3b-l09", "title": "Part A Let's talk：This is my school. It's nice!" },
+                { "id": "tb-eng3b-l10", "title": "Part B Let's talk：Let's go to the playground. OK!" } ] },
+            { "id": "tb-eng3b-g10", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3b-l11", "title": "Let's spell：短元音 e 拼读（bed, red, pen, leg）" } ] },
+            { "id": "tb-eng3b-g11", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3b-l12", "title": "图书馆与操场的公共规则（安静、排队）" } ] } ] },
+        { "id": "tb-eng3b-g12", "title": "Unit 3 At the Zoo（在动物园）",
+          "groups": [
+            { "id": "tb-eng3b-g13", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3b-l13", "title": "Part A 词汇：tall, short, fat, thin" },
+                { "id": "tb-eng3b-l14", "title": "Part B 词汇：giraffe, lion, deer 等动物与 tail, body" } ] },
+            { "id": "tb-eng3b-g14", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3b-l15", "title": "Part A Let's talk：Look at that giraffe! It's so tall." },
+                { "id": "tb-eng3b-l16", "title": "Part B Let's talk：It's fat. Its tail is short. 描述特征" } ] },
+            { "id": "tb-eng3b-g15", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3b-l17", "title": "Let's spell：短元音 i 拼读（pig, big, sit, six）" } ] },
+            { "id": "tb-eng3b-g16", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3b-l18", "title": "文明参观动物园与动物保护常识" } ] } ] },
+        { "id": "tb-eng3b-g17", "title": "Unit 4 Where Is My Car?（我的汽车在哪儿）",
+          "groups": [
+            { "id": "tb-eng3b-g18", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3b-l19", "title": "Part A 词汇：desk, chair, under, in, on" },
+                { "id": "tb-eng3b-l20", "title": "Part B 词汇：boat, cap, ball, car, map" } ] },
+            { "id": "tb-eng3b-g19", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3b-l21", "title": "Part A Let's talk：Where is my car? Is it in the toy box?" },
+                { "id": "tb-eng3b-l22", "title": "Part B Let's talk：Put your book on the desk. Where is my cap?" } ] },
+            { "id": "tb-eng3b-g20", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3b-l23", "title": "Let's spell：短元音 o 拼读（dog, box, hot, lost）" } ] },
+            { "id": "tb-eng3b-g21", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3b-l24", "title": "整理个人物品的好习惯与方位表达差异" } ] } ] },
+        { "id": "tb-eng3b-g22", "title": "Unit 5 Do You Like Pears?（你喜欢梨吗）",
+          "groups": [
+            { "id": "tb-eng3b-g23", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3b-l25", "title": "Part A 词汇：pear, apple, orange, banana" },
+                { "id": "tb-eng3b-l26", "title": "Part B 词汇：watermelon, grape, peach, mango" } ] },
+            { "id": "tb-eng3b-g24", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3b-l27", "title": "Part A Let's talk：Do you like pears? Yes, I do. / No, I don't." },
+                { "id": "tb-eng3b-l28", "title": "Part B Let's talk：Have some grapes. Thanks! / I don't like..." } ] },
+            { "id": "tb-eng3b-g25", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3b-l29", "title": "Let's spell：短元音 u 拼读（bus, cup, cut, run）" } ] },
+            { "id": "tb-eng3b-g26", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3b-l30", "title": "中外常见水果与待客水果礼仪" } ] } ] },
+        { "id": "tb-eng3b-g27", "title": "Unit 6 How Many?（有多少）",
+          "groups": [
+            { "id": "tb-eng3b-g28", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng3b-l31", "title": "Part A 词汇：eleven- nineteen 数字" },
+                { "id": "tb-eng3b-l32", "title": "Part B 词汇：twenty 与 kite, bird 数量描述" } ] },
+            { "id": "tb-eng3b-g29", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng3b-l33", "title": "Part A Let's talk：How many kites do you see? I see twelve." },
+                { "id": "tb-eng3b-l34", "title": "Part B Let's talk：How many birds do you have? Let's count!" } ] },
+            { "id": "tb-eng3b-g30", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng3b-l35", "title": "Let's spell：CVC 短元音拼读综合复习（a, e, i, o, u）" } ] },
+            { "id": "tb-eng3b-g31", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng3b-l36", "title": "放风筝等中外儿童游戏与数字歌谣" } ] } ] }
+      ]
+    },
+    {
+      "grade": 4, "term": "上",
+      "modules": [
+        { "id": "tb-eng4a-g01", "title": "Unit 1 My Classroom（我的教室）",
+          "groups": [
+            { "id": "tb-eng4a-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4a-l01", "title": "Part A 词汇：classroom, window, door, picture, light" },
+                { "id": "tb-eng4a-l02", "title": "Part B 词汇：teacher's desk, computer, fan, wall, clean" } ] },
+            { "id": "tb-eng4a-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4a-l03", "title": "Part A Let's talk：What's in the classroom? There is a computer." },
+                { "id": "tb-eng4a-l04", "title": "Part B Let's talk：Let's clean the desks and chairs. Where is my seat?" } ] },
+            { "id": "tb-eng4a-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4a-l05", "title": "Let's spell：开音节 a-e（name, cake, face, date）" } ] },
+            { "id": "tb-eng4a-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4a-l06", "title": "中外教室布置对比与共同维护班级公约" } ] } ] },
+        { "id": "tb-eng4a-g06", "title": "Unit 2 My Schoolbag（我的书包）",
+          "groups": [
+            { "id": "tb-eng4a-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4a-l07", "title": "Part A 词汇：schoolbag, maths book, English book, Chinese book" },
+                { "id": "tb-eng4a-l08", "title": "Part B 词汇：storybook, notebook, candy, key, lost, found" } ] },
+            { "id": "tb-eng4a-g09", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4a-l09", "title": "Part A Let's talk：What's in your schoolbag? I have... " },
+                { "id": "tb-eng4a-l10", "title": "Part B Let's talk：My schoolbag is heavy. Who lost a notebook?" } ] },
+            { "id": "tb-eng4a-g10", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4a-l11", "title": "Let's spell：开音节 i-e（kite, five, ride, nice）" } ] },
+            { "id": "tb-eng4a-g11", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4a-l12", "title": "整理书包与失物招领的校园用语" } ] } ] },
+        { "id": "tb-eng4a-g12", "title": "Unit 3 My Friends（我的朋友）",
+          "groups": [
+            { "id": "tb-eng4a-g13", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4a-l13", "title": "Part A 词汇：tall, short, strong, thin, friendly" },
+                { "id": "tb-eng4a-l14", "title": "Part B 词汇：hair, shoe, glasses, quiet, his, her" } ] },
+            { "id": "tb-eng4a-g14", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4a-l15", "title": "Part A Let's talk：Who is your best friend? He's tall and strong." },
+                { "id": "tb-eng4a-l16", "title": "Part B Let's talk：She has glasses. Her name is... Describe and guess" } ] },
+            { "id": "tb-eng4a-g15", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4a-l17", "title": "Let's spell：开音节 e-e（he, she, me, we, these）" } ] },
+            { "id": "tb-eng4a-g16", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4a-l18", "title": "描述朋友要看内在品质：中外交友观" } ] } ] },
+        { "id": "tb-eng4a-g17", "title": "Unit 4 My Home（我的家）",
+          "groups": [
+            { "id": "tb-eng4a-g18", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4a-l19", "title": "Part A 词汇：bedroom, living room, study, kitchen, bathroom" },
+                { "id": "tb-eng4a-l20", "title": "Part B 词汇：bed, phone, table, sofa, fridge, find, use" } ] },
+            { "id": "tb-eng4a-g19", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4a-l21", "title": "Part A Let's talk：Is this the living room? Yes. / Where is my ruler?" },
+                { "id": "tb-eng4a-l22", "title": "Part B Let's talk：Is she in the study? No, she isn't. She's in the kitchen." } ] },
+            { "id": "tb-eng4a-g20", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4a-l23", "title": "Let's spell：开音节 o-e（home, note, phone, hope）" } ] },
+            { "id": "tb-eng4a-g21", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4a-l24", "title": "中外住房房间功能差异与做客礼仪" } ] } ] },
+        { "id": "tb-eng4a-g22", "title": "Unit 5 Dinner's Ready（晚餐准备好了）",
+          "groups": [
+            { "id": "tb-eng4a-g23", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4a-l25", "title": "Part A 词汇：beef, chicken, noodles, soup, vegetable" },
+                { "id": "tb-eng4a-l26", "title": "Part B 词汇：chopsticks, bowl, fork, knife, spoon, pass, help" } ] },
+            { "id": "tb-eng4a-g24", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4a-l27", "title": "Part A Let's talk：What's ready? Dinner's ready! What would you like?" },
+                { "id": "tb-eng4a-l28", "title": "Part B Let's talk：I'd like some noodles. Pass me the fork, please." } ] },
+            { "id": "tb-eng4a-g25", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4a-l29", "title": "Let's spell：开音节 u-e（cute, use, excuse, tube）" } ] },
+            { "id": "tb-eng4a-g26", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4a-l30", "title": "中西餐具（筷子与刀叉）与餐桌礼仪" } ] } ] },
+        { "id": "tb-eng4a-g27", "title": "Unit 6 Meet My Family!（见见我的家人）",
+          "groups": [
+            { "id": "tb-eng4a-g28", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4a-l31", "title": "Part A 词汇：family, parents, uncle, aunt, baby" },
+                { "id": "tb-eng4a-l32", "title": "Part B 词汇：doctor, cook, driver, farmer, nurse, football player" } ] },
+            { "id": "tb-eng4a-g29", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4a-l33", "title": "Part A Let's talk：How many people are there in your family? Six." },
+                { "id": "tb-eng4a-l34", "title": "Part B Let's talk：Is this your father? Yes, it is. He's a doctor." } ] },
+            { "id": "tb-eng4a-g30", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4a-l35", "title": "Let's spell：开音节（a-e 至 u-e）综合复习与辨析" } ] },
+            { "id": "tb-eng4a-g31", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4a-l36", "title": "中外家庭称谓与‘大家庭’文化、职业尊重" } ] } ] }
+      ]
+    },
+    {
+      "grade": 4, "term": "下",
+      "modules": [
+        { "id": "tb-eng4b-g01", "title": "Unit 1 My Playground（我的操场）",
+          "groups": [
+            { "id": "tb-eng4b-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4b-l01", "title": "Part A 词汇：playground, garden, teachers' office, library" },
+                { "id": "tb-eng4b-l02", "title": "Part B 词汇：art room, music room, computer room, first floor, next to" } ] },
+            { "id": "tb-eng4b-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4b-l03", "title": "Part A Let's talk：Where is the playground? It's next to the garden." },
+                { "id": "tb-eng4b-l04", "title": "Part B Let's talk：Is this the teachers' office? Yes. Let's go!" } ] },
+            { "id": "tb-eng4b-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4b-l05", "title": "Let's spell：r 控制音节 ar（car, farm, park, arm）" } ] },
+            { "id": "tb-eng4b-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4b-l06", "title": "中外小学校园功能区域与参观介绍" } ] } ] },
+        { "id": "tb-eng4b-g06", "title": "Unit 2 What Time Is It?（几点了）",
+          "groups": [
+            { "id": "tb-eng4b-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4b-l07", "title": "Part A 词汇：breakfast, lunch, dinner 与时间整点表达" },
+                { "id": "tb-eng4b-l08", "title": "Part B 词汇：get up, go to school, go to bed, kid, thirty, forty" } ] },
+            { "id": "tb-eng4b-g09", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4b-l09", "title": "Part A Let's talk：What time is it? It's 8 o'clock. Let's go to school!" },
+                { "id": "tb-eng4b-l10", "title": "Part B Let's talk：It's time for dinner. Hurry! Just a minute." } ] },
+            { "id": "tb-eng4b-g10", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4b-l11", "title": "Let's spell：r 控制音节 er（teacher, sister, mother, her）" } ] },
+            { "id": "tb-eng4b-g11", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4b-l12", "title": "中外小学生作息时间表对比与守时" } ] } ] },
+        { "id": "tb-eng4b-g12", "title": "Unit 3 Weather（天气）",
+          "groups": [
+            { "id": "tb-eng4b-g13", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4b-l13", "title": "Part A 词汇：cold, warm, hot, cool, weather" },
+                { "id": "tb-eng4b-l14", "title": "Part B 词汇：sunny, snowy, rainy, windy, cloudy, degrees, outside" } ] },
+            { "id": "tb-eng4b-g14", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4b-l15", "title": "Part A Let's talk：What's the weather like in Sydney? It's warm." },
+                { "id": "tb-eng4b-l16", "title": "Part B Let's talk：Can I go outside? No, it's rainy outside." } ] },
+            { "id": "tb-eng4b-g15", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4b-l17", "title": "Let's spell：r 控制音节 ir / ur（girl, bird, first, nurse, turn）" } ] },
+            { "id": "tb-eng4b-g16", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4b-l18", "title": "中外城市气候差异与天气预报用语" } ] } ] },
+        { "id": "tb-eng4b-g17", "title": "Unit 4 At the Farm（在农场）",
+          "groups": [
+            { "id": "tb-eng4b-g18", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4b-l19", "title": "Part A 词汇：sheep, hen, lamb, goat, cow, horse" },
+                { "id": "tb-eng4b-l20", "title": "Part B 词汇：tomato, potato, carrot, green beans, these, those" } ] },
+            { "id": "tb-eng4b-g19", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4b-l21", "title": "Part A Let's talk：What are these? They're carrots. Are these potatoes?" },
+                { "id": "tb-eng4b-l22", "title": "Part B Let's talk：How many sheep do you have? Look at those goats!" } ] },
+            { "id": "tb-eng4b-g20", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4b-l23", "title": "Let's spell：r 控制音节 or（fork, horse, morning, short）" } ] },
+            { "id": "tb-eng4b-g21", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4b-l24", "title": "中外农场生产方式与食物来源认知" } ] } ] },
+        { "id": "tb-eng4b-g22", "title": "Unit 5 My Clothes（我的衣物）",
+          "groups": [
+            { "id": "tb-eng4b-g23", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4b-l25", "title": "Part A 词汇：hat, dress, skirt, sweater, jacket, coat, shirt" },
+                { "id": "tb-eng4b-l26", "title": "Part B 词汇：pants, socks, shorts, clothes, whose, mine" } ] },
+            { "id": "tb-eng4b-g24", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4b-l27", "title": "Part A Let's talk：Time to get up! Put on your jacket. What are these?" },
+                { "id": "tb-eng4b-l28", "title": "Part B Let's talk：Whose sweater is this? Is it yours? No, it's mine." } ] },
+            { "id": "tb-eng4b-g25", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4b-l29", "title": "Let's spell：辅音连缀与组合 th / ch / sh（three, chair, ship）" } ] },
+            { "id": "tb-eng4b-g26", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4b-l30", "title": "各国校服文化与按天气穿衣" } ] } ] },
+        { "id": "tb-eng4b-g27", "title": "Unit 6 Shopping（购物）",
+          "groups": [
+            { "id": "tb-eng4b-g28", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng4b-l31", "title": "Part A 词汇：sunglasses, gloves, scarf, umbrella, cheap, expensive" },
+                { "id": "tb-eng4b-l32", "title": "Part B 词汇：pretty, size, yuan, dollar, try on, sale" } ] },
+            { "id": "tb-eng4b-g29", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng4b-l33", "title": "Part A Let's talk：Can I help you? How much is this scarf?" },
+                { "id": "tb-eng4b-l34", "title": "Part B Let's talk：How much are they? They're 30 yuan. I'll take it." } ] },
+            { "id": "tb-eng4b-g30", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng4b-l35", "title": "Let's spell：语音对比综合复习（ar/er/ir/or/ur 听辨）" } ] },
+            { "id": "tb-eng4b-g31", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng4b-l36", "title": "中外货币与购物问价礼貌用语" } ] } ] }
+      ]
+    },
+    {
+      "grade": 5, "term": "上",
+      "modules": [
+        { "id": "tb-eng5a-g01", "title": "Unit 1 What's He Like?（他是什么样的人）",
+          "groups": [
+            { "id": "tb-eng5a-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5a-l01", "title": "Part A 词汇：old, young, funny, kind, strict" },
+                { "id": "tb-eng5a-l02", "title": "Part B 词汇：polite, hard-working, helpful, shy, know" } ] },
+            { "id": "tb-eng5a-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5a-l03", "title": "Part A Let's talk：What's your music teacher like? He's old." },
+                { "id": "tb-eng5a-l04", "title": "Part B Let's talk：Is she strict? Yes, sometimes. Describe and guess" } ] },
+            { "id": "tb-eng5a-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5a-l05", "title": "Let's spell：字母组合 ai / ay（rain, train, day, play）" } ] },
+            { "id": "tb-eng5a-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5a-l06", "title": "中外课堂喜欢的老师特质与礼貌表达" } ] } ] },
+        { "id": "tb-eng5a-g06", "title": "Unit 2 My Week（我的一周）",
+          "groups": [
+            { "id": "tb-eng5a-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5a-l07", "title": "Part A 词汇：Monday-Sunday 星期与 weekend" },
+                { "id": "tb-eng5a-l08", "title": "Part B 词汇：often, sometimes, wash my clothes, do homework, read books" } ] },
+            { "id": "tb-eng5a-g08", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5a-l09", "title": "Part A Let's talk：What do you have on Tuesdays? I have... " },
+                { "id": "tb-eng5a-l10", "title": "Part B Let's talk：What do you often do on the weekend? I often watch TV." } ] },
+            { "id": "tb-eng5a-g09", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5a-l11", "title": "Let's spell：字母组合 ee / ea（see, sheep, tea, read）" } ] },
+            { "id": "tb-eng5a-g10", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5a-l12", "title": "中外学生课程表与一周安排差异" } ] } ] },
+        { "id": "tb-eng5a-g11", "title": "Unit 3 What Would You Like?（你想要什么）",
+          "groups": [
+            { "id": "tb-eng5a-g12", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5a-l13", "title": "Part A 词汇：sandwich, salad, hamburger, ice cream, tea" },
+                { "id": "tb-eng5a-l14", "title": "Part B 词汇：fresh, healthy, delicious, hot, sweet" } ] },
+            { "id": "tb-eng5a-g13", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5a-l15", "title": "Part A Let's talk：What would you like to eat/drink? I'd like a sandwich." },
+                { "id": "tb-eng5a-l16", "title": "Part B Let's talk：Is it hot? Yes, it's spicy. favourite food" } ] },
+            { "id": "tb-eng5a-g14", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5a-l17", "title": "Let's spell：字母组合 oa / ow（boat, coat, snow, show）" } ] },
+            { "id": "tb-eng5a-g15", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5a-l18", "title": "健康饮食金字塔与英国下午茶文化" } ] } ] },
+        { "id": "tb-eng5a-g16", "title": "Unit 4 What Can You Do?（你会做什么）",
+          "groups": [
+            { "id": "tb-eng5a-g17", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5a-l19", "title": "Part A 词汇：sing, dance, draw cartoons, play the pipa, do kung fu" },
+                { "id": "tb-eng5a-l20", "title": "Part B 词汇：cook, clean the floor, make the bed, maths, difficult" } ] },
+            { "id": "tb-eng5a-g18", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5a-l21", "title": "Part A Let's talk：What can you do for the party? I can sing." },
+                { "id": "tb-eng5a-l22", "title": "Part B Let's talk：Can you make the bed? Yes, I can. / No, but I can..." } ] },
+            { "id": "tb-eng5a-g19", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5a-l23", "title": "Let's spell：字母组合 oo（food, moon, zoo 与 book, look）" } ] },
+            { "id": "tb-eng5a-g20", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5a-l24", "title": "家务劳动分担与中外才艺（功夫与乐器）" } ] } ] },
+        { "id": "tb-eng5a-g21", "title": "Unit 5 There Is a Big Bed（有一张大床）",
+          "groups": [
+            { "id": "tb-eng5a-g22", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5a-l25", "title": "Part A 词汇：clock, water bottle, photo, plant, bike, bottle" },
+                { "id": "tb-eng5a-l26", "title": "Part B 词汇：front, beside, behind, above, between, beside" } ] },
+            { "id": "tb-eng5a-g23", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5a-l27", "title": "Part A Let's talk：There is a big bed. There are two clocks." },
+                { "id": "tb-eng5a-l28", "title": "Part B Let's talk：Is there a... ? Yes, there is. Where is the... ?" } ] },
+            { "id": "tb-eng5a-g24", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5a-l29", "title": "Let's spell：字母组合 ou / ow（house, mouth, now, cow）" } ] },
+            { "id": "tb-eng5a-g25", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5a-l30", "title": "房间布置审美与整洁生活习惯" } ] } ] },
+        { "id": "tb-eng5a-g26", "title": "Unit 6 In a Nature Park（自然公园）",
+          "groups": [
+            { "id": "tb-eng5a-g27", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5a-l31", "title": "Part A 词汇：forest, river, lake, mountain, road" },
+                { "id": "tb-eng5a-l32", "title": "Part B 词汇：village, house, bridge, building, tree, nature" } ] },
+            { "id": "tb-eng5a-g28", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5a-l33", "title": "Part A Let's talk：Is there a river in the forest? Yes, there is." },
+                { "id": "tb-eng5a-l34", "title": "Part B Let's talk：There are many buildings. What's in... ? 描述风景" } ] },
+            { "id": "tb-eng5a-g29", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5a-l35", "title": "Let's spell：元音组合综合复习（ai/ee/oa/oo/ou 听辨）" } ] },
+            { "id": "tb-eng5a-g30", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5a-l36", "title": "中外国家公园与自然保护意识" } ] } ] }
+      ]
+    },
+    {
+      "grade": 5, "term": "下",
+      "modules": [
+        { "id": "tb-eng5b-g01", "title": "Unit 1 My Day（我的一天）",
+          "groups": [
+            { "id": "tb-eng5b-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5b-l01", "title": "Part A 词汇：do morning exercises, eat breakfast, have... class, play sports" },
+                { "id": "tb-eng5b-l02", "title": "Part B 词汇：usually, late, early, finish, exercise, healthy" } ] },
+            { "id": "tb-eng5b-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5b-l03", "title": "Part A Let's talk：When do you finish class in the morning? At 11:30." },
+                { "id": "tb-eng5b-l04", "title": "Part B Let's talk：I usually... at 7 a.m. What about you?" } ] },
+            { "id": "tb-eng5b-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5b-l05", "title": "Let's spell：辅音连缀 bl / cl（blue, classroom, clean, fly?）" } ] },
+            { "id": "tb-eng5b-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5b-l06", "title": "中外学生一日作息与体育锻炼习惯" } ] } ] },
+        { "id": "tb-eng5b-g06", "title": "Unit 2 My Favourite Season（最喜欢的季节）",
+          "groups": [
+            { "id": "tb-eng5b-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5b-l07", "title": "Part A 词汇：spring, summer, autumn, winter, season" },
+                { "id": "tb-eng5b-l08", "title": "Part B 词汇：picnic, vacation, swim, snowman, because, lovely" } ] },
+            { "id": "tb-eng5b-g08", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5b-l09", "title": "Part A Let's talk：Which season do you like best? Winter." },
+                { "id": "tb-eng5b-l10", "title": "Part B Let's talk：Why do you like... ? Because I can... " } ] },
+            { "id": "tb-eng5b-g09", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5b-l11", "title": "Let's spell：辅音连缀 br / fr（bring, green? 与 from, frog）" } ] },
+            { "id": "tb-eng5b-g10", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5b-l12", "title": "中外四季活动与假期旅行文化" } ] } ] },
+        { "id": "tb-eng5b-g11", "title": "Unit 3 When Is Easter?（复活节在什么时候）",
+          "groups": [
+            { "id": "tb-eng5b-g12", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5b-l13", "title": "Part A 词汇：January-December 十二个月份" },
+                { "id": "tb-eng5b-l14", "title": "Part B 词汇：Easter, Chinese New Year, Christmas, birthday, date" } ] },
+            { "id": "tb-eng5b-g13", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5b-l15", "title": "Part A Let's talk：When is Easter? It's in April. 月份问答" },
+                { "id": "tb-eng5b-l16", "title": "Part B Let's talk：When is your birthday? My birthday is in May." } ] },
+            { "id": "tb-eng5b-g14", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5b-l17", "title": "Let's spell：辅音连缀 dr / tr（draw, dress? 与 tree, travel）" } ] },
+            { "id": "tb-eng5b-g15", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5b-l18", "title": "中外重要节日的日期与习俗对比" } ] } ] },
+        { "id": "tb-eng5b-g16", "title": "Unit 4 When Is the Art Show?（画展什么时候举行）",
+          "groups": [
+            { "id": "tb-eng5b-g17", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5b-l19", "title": "Part A 词汇：序数词 first-tenth 与日期" },
+                { "id": "tb-eng5b-l20", "title": "Part B 词汇：eleventh-twentieth, special, fun, show, contest" } ] },
+            { "id": "tb-eng5b-g18", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5b-l21", "title": "Part A Let's talk：When is the art show? It's on April 20th." },
+                { "id": "tb-eng5b-l22", "title": "Part B Let's talk：What will you do for... ? 活动日程表达" } ] },
+            { "id": "tb-eng5b-g19", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5b-l23", "title": "Let's spell：辅音连缀 fl / pl（fly, floor 与 plant, play）" } ] },
+            { "id": "tb-eng5b-g20", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5b-l24", "title": "校园活动日历与中外学校展览比赛" } ] } ] },
+        { "id": "tb-eng5b-g21", "title": "Unit 5 Whose Dog Is It?（这是谁的狗）",
+          "groups": [
+            { "id": "tb-eng5b-g22", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5b-l25", "title": "Part A 词汇：mine, yours, his, hers 名词性物主代词" },
+                { "id": "tb-eng5b-l26", "title": "Part B 词汇：dog, cat, rabbit? 与 whose, owner, love, adopt" } ] },
+            { "id": "tb-eng5b-g23", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5b-l27", "title": "Part A Let's talk：Whose dog is it? It's theirs. Is this yours?" },
+                { "id": "tb-eng5b-l28", "title": "Part B Let's talk：They're playing! Look after... 照看宠物表达" } ] },
+            { "id": "tb-eng5b-g24", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5b-l29", "title": "Let's spell：辅音连缀 pr / gr / cr（present, green, cry? cross）" } ] },
+            { "id": "tb-eng5b-g25", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5b-l30", "title": "失物招领与领养代替购买的爱护动物观念" } ] } ] },
+        { "id": "tb-eng5b-g26", "title": "Unit 6 Work Quickly!（赶快干活）",
+          "groups": [
+            { "id": "tb-eng5b-g27", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng5b-l31", "title": "Part A 词汇：climbing, eating, playing, shopping, sleeping（现在分词）" },
+                { "id": "tb-eng5b-l32", "title": "Part B 词汇：fighting, swinging, running, quickly, slowly" } ] },
+            { "id": "tb-eng5b-g28", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng5b-l33", "title": "Part A Let's talk：What is he doing? He's sleeping. Are they... ?" },
+                { "id": "tb-eng5b-l34", "title": "Part B Let's talk：What are the monkeys doing? They're fighting. Work quickly!" } ] },
+            { "id": "tb-eng5b-g29", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng5b-l35", "title": "Let's spell：辅音连缀综合复习与词内拆分（spring, freeze）" } ] },
+            { "id": "tb-eng5b-g30", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng5b-l36", "title": "劳动与家务参与：中外孩子的暑期计划" } ] } ] }
+      ]
+    },
+    {
+      "grade": 6, "term": "上",
+      "modules": [
+        { "id": "tb-eng6a-g01", "title": "Unit 1 How Can I Get There?（怎样到那儿）",
+          "groups": [
+            { "id": "tb-eng6a-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6a-l01", "title": "Part A 词汇：left, right, straight, across? 与 turn" },
+                { "id": "tb-eng6a-l02", "title": "Part B 词汇：science museum, bookstore, cinema, hospital, post office" } ] },
+            { "id": "tb-eng6a-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6a-l03", "title": "Part A Let's talk：How can I get there? Turn left at the..." },
+                { "id": "tb-eng6a-l04", "title": "Part B Let's talk：Where is the... ? It's near/next to... Excuse me" } ] },
+            { "id": "tb-eng6a-g04", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6a-l05", "title": "Let's spell：字母组合 au / aw（autumn, audience? 与 saw, draw）" } ] },
+            { "id": "tb-eng6a-g05", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6a-l06", "title": "问路指路礼貌用语与中英街道路标差异" } ] } ] },
+        { "id": "tb-eng6a-g06", "title": "Unit 2 Ways to Go to School（上学方式）",
+          "groups": [
+            { "id": "tb-eng6a-g07", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6a-l07", "title": "Part A 词汇：by bus/plane/taxi/ship/subway, on foot" },
+                { "id": "tb-eng6a-l08", "title": "Part B 词汇：slow down, stop, traffic, lights, rules, helmet" } ] },
+            { "id": "tb-eng6a-g08", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6a-l09", "title": "Part A Let's talk：How do you come to school? I often go by bike." },
+                { "id": "tb-eng6a-l10", "title": "Part B Let's talk：You must stop at a red light. Don't... 交通规则" } ] },
+            { "id": "tb-eng6a-g09", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6a-l11", "title": "Let's spell：字母组合 al / ll（walk, ball, small, tall）" } ] },
+            { "id": "tb-eng6a-g10", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6a-l12", "title": "世界各地孩子上学方式（雪橇、渡船、地铁）" } ] } ] },
+        { "id": "tb-eng6a-g11", "title": "Unit 3 My Weekend Plan（我的周末计划）",
+          "groups": [
+            { "id": "tb-eng6a-g12", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6a-l13", "title": "Part A 词汇：tonight, tomorrow, next week, dictionary, comic book" },
+                { "id": "tb-eng6a-l14", "title": "Part B 词汇：take a trip, visit my grandparents, see a film, post office, word" } ] },
+            { "id": "tb-eng6a-g13", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6a-l15", "title": "Part A Let's talk：What are you going to do tomorrow? I'm going to..." },
+                { "id": "tb-eng6a-l16", "title": "Part B Let's talk：Where are we going? When is... ? be going to 计划" } ] },
+            { "id": "tb-eng6a-g14", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6a-l17", "title": "Let's spell：字母组合 oi / oy（oil, boil, boy, toy）" } ] },
+            { "id": "tb-eng6a-g15", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6a-l18", "title": "中外家庭周末活动与计划制定习惯" } ] } ] },
+        { "id": "tb-eng6a-g16", "title": "Unit 4 I Have a Pen Pal（我有一位笔友）",
+          "groups": [
+            { "id": "tb-eng6a-g17", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6a-l19", "title": "Part A 词汇：hobby, read... stories? playing football, going hiking, pen pal" },
+                { "id": "tb-eng6a-l20", "title": "Part B 词汇：live, does, teaches? country, study, cooking? reading" } ] },
+            { "id": "tb-eng6a-g18", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6a-l21", "title": "Part A Let's talk：Does he like doing word puzzles? Yes, he does." },
+                { "id": "tb-eng6a-l22", "title": "Part B Let's talk：What are his hobbies? He likes... 三单询问" } ] },
+            { "id": "tb-eng6a-g19", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6a-l23", "title": "Let's spell：字母组合 ear / er（hear, near, year 与 her?）" } ] },
+            { "id": "tb-eng6a-g20", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6a-l24", "title": "笔友文化与世界各国孩子的兴趣爱好" } ] } ] },
+        { "id": "tb-eng6a-g21", "title": "Unit 5 What Does He Do?（他做什么工作）",
+          "groups": [
+            { "id": "tb-eng6a-g22", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6a-l25", "title": "Part A 词汇：factory worker, postman, businessman, police officer" },
+                { "id": "tb-eng6a-l26", "title": "Part B 词汇：fisherman, scientist, pilot, coach? , work, sea, study" } ] },
+            { "id": "tb-eng6a-g23", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6a-l27", "title": "Part A Let's talk：What does your mother do? She's a scientist." },
+                { "id": "tb-eng6a-l28", "title": "Part B Let's talk：Where does he work? How does he go to work? 职业问答" } ] },
+            { "id": "tb-eng6a-g24", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6a-l29", "title": "Let's spell：字母组合 air / are（air, careful 与 care, share?）" } ] },
+            { "id": "tb-eng6a-g25", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6a-l30", "title": "职业理想与劳动平等观（各行各业都重要）" } ] } ] },
+        { "id": "tb-eng6a-g26", "title": "Unit 6 How Do You Feel?（你感觉怎样）",
+          "groups": [
+            { "id": "tb-eng6a-g27", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6a-l31", "title": "Part A 词汇：angry, afraid, sad, worried, happy" },
+                { "id": "tb-eng6a-l32", "title": "Part B 词汇：see a doctor? wear a seat belt, take a deep breath, count to ten" } ] },
+            { "id": "tb-eng6a-g28", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6a-l33", "title": "Part A Let's talk：What's wrong? He is ill. How does he feel?" },
+                { "id": "tb-eng6a-l34", "title": "Part B Let's talk：You should see a doctor. Don't worry. 建议表达" } ] },
+            { "id": "tb-eng6a-g29", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6a-l35", "title": "Let's spell：元音组合综合复习（au/oi/ear/air 听辨拼写）" } ] },
+            { "id": "tb-eng6a-g30", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6a-l36", "title": "情绪管理与关心他人的中外表达" } ] } ] }
+      ]
+    },
+    {
+      "grade": 6, "term": "下",
+      "modules": [
+        { "id": "tb-eng6b-g01", "title": "Unit 1 How Tall Are You?（你多高）",
+          "groups": [
+            { "id": "tb-eng6b-g02", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6b-l01", "title": "Part A 词汇：taller, shorter, older, younger 比较级" },
+                { "id": "tb-eng6b-l02", "title": "Part B 词汇：bigger, smaller, heavier, thinner, metres, dinosaur" } ] },
+            { "id": "tb-eng6b-g03", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6b-l03", "title": "Part A Let's talk：How tall are you? I'm 1.6 metres. You're taller than..." },
+                { "id": "tb-eng6b-l04", "title": "Part B Let's talk：Your dinosaur is bigger than mine. 比较句运用" } ] },
+            { "id": "tb-eng6b-g05", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6b-l05", "title": "语音技巧：句子重音与连贯朗读（比较句节奏）" } ] },
+            { "id": "tb-eng6b-g06", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6b-l06", "title": "中外年龄身高话题的礼貌边界（避免问体重年龄）" } ] } ] },
+        { "id": "tb-eng6b-g07", "title": "Unit 2 Last Weekend（上周末）",
+          "groups": [
+            { "id": "tb-eng6b-g08", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6b-l07", "title": "Part A 词汇：cleaned my room, washed my clothes, stayed at home" },
+                { "id": "tb-eng6b-l08", "title": "Part B 词汇：watched TV, read a book, had a cold, slept, late" } ] },
+            { "id": "tb-eng6b-g09", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6b-l09", "title": "Part A Let's talk：What did you do last weekend? I stayed at home." },
+                { "id": "tb-eng6b-l10", "title": "Part B Let's talk：Did you do... ? Yes, I did. / No, I didn't. 一般过去疑问" } ] },
+            { "id": "tb-eng6b-g10", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6b-l11", "title": "语音技巧：动词过去式 -ed 的三种读音 /t/ /d/ /ɪd/" } ] },
+            { "id": "tb-eng6b-g11", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6b-l12", "title": "中外家庭周末活动与家务分担" } ] } ] },
+        { "id": "tb-eng6b-g12", "title": "Unit 3 Where Did You Go?（你去了哪里）",
+          "groups": [
+            { "id": "tb-eng6b-g13", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6b-l13", "title": "Part A 词汇：went to Turpan? saw grapes? rode a horse, ate fresh food" },
+                { "id": "tb-eng6b-l14", "title": "Part B 词汇：took pictures, bought gifts? hurt, fell, holiday, camping" } ] },
+            { "id": "tb-eng6b-g14", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6b-l15", "title": "Part A Let's talk：Where did you go over the winter holiday? I went to..." },
+                { "id": "tb-eng6b-l16", "title": "Part B Let's talk：How was your holiday? It was... What did you do there?" } ] },
+            { "id": "tb-eng6b-g15", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6b-l17", "title": "语音技巧：陈述句降调与特殊疑问句语调" } ] },
+            { "id": "tb-eng6b-g16", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6b-l18", "title": "中国名胜与旅行文化（吐鲁番、长城）及中外假期" } ] } ] },
+        { "id": "tb-eng6b-g17", "title": "Unit 4 Then and Now（从前与现在）",
+          "groups": [
+            { "id": "tb-eng6b-g18", "title": "话题词汇",
+              "leaves": [
+                { "id": "tb-eng6b-l19", "title": "Part A 词汇：before, now, then, grass? dining hall, library 变化场所" },
+                { "id": "tb-eng6b-l20", "title": "Part B 词汇：cycling? ice-skating, badminton? 与 was, were, there was/there were" } ] },
+            { "id": "tb-eng6b-g19", "title": "核心句型",
+              "leaves": [
+                { "id": "tb-eng6b-l21", "title": "Part A Let's talk：Before, I... Now, I... 过去与现在对比" },
+                { "id": "tb-eng6b-l22", "title": "Part B Let's talk：There was... There are now... 描述变化" } ] },
+            { "id": "tb-eng6b-g20", "title": "语音（Phonics）",
+              "leaves": [
+                { "id": "tb-eng6b-l23", "title": "语音总复习：小学阶段字母组合音系小结（音系图）" } ] },
+            { "id": "tb-eng6b-g21", "title": "交际与文化",
+              "leaves": [
+                { "id": "tb-eng6b-l24", "title": "生活环境的变迁与珍惜当下、小升初衔接" } ] } ] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2846 @@
+{
+  "subject": "cn",
+  "terms": [
+    {
+      "grade": 1,
+      "term": "上",
+      "modules": [
+        {
+          "id": "kn-cny1a-m01",
+          "title": "汉语拼音",
+          "units": [
+            {
+              "id": "kn-cny1a-u01",
+              "title": "声母韵母与音节",
+              "leaves": [
+                {
+                  "id": "kn-cny1a-f01",
+                  "title": "认读单韵母",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1a-f01-1",
+                      "type": "single",
+                      "stem": "下面哪个是单韵母？",
+                      "options": [
+                        { "id": "A", "text": "ai" },
+                        { "id": "B", "text": "o" },
+                        { "id": "C", "text": "ei" },
+                        { "id": "D", "text": "ou" }
+                      ],
+                      "answer": "B",
+                      "explanation": "ai、ei、ou 都是由两个单韵母合成的复韵母，只有 o 是单韵母。"
+                    },
+                    {
+                      "id": "qz-kn-cny1a-f01-2",
+                      "type": "blank",
+                      "stem": "音节“bò”的声母是 b，韵母是____。",
+                      "answer": "o",
+                      "answerAccepts": ["o"],
+                      "explanation": "音节 bò 由声母 b 和韵母 o 拼成，声调标在韵母上，所以韵母是 o。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny1a-f02",
+                  "title": "平舌音与翘舌音",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1a-f02-1",
+                      "type": "single",
+                      "stem": "下面哪个声母是翘舌音？",
+                      "options": [
+                        { "id": "A", "text": "z" },
+                        { "id": "B", "text": "c" },
+                        { "id": "C", "text": "sh" },
+                        { "id": "D", "text": "s" }
+                      ],
+                      "answer": "C",
+                      "explanation": "z、c、s 发音时舌头放平，是平舌音；zh、ch、sh、r 要把舌尖翘起来，是翘舌音，所以选 sh。"
+                    },
+                    {
+                      "id": "qz-kn-cny1a-f02-2",
+                      "type": "blank",
+                      "stem": "音节“zhī”的声母是____。",
+                      "answer": "zh",
+                      "answerAccepts": ["zh"],
+                      "explanation": "zhī 由声母 zh 和韵母 i 拼成，发音时舌尖翘起，声母是翘舌音 zh。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny1a-m02",
+          "title": "识字与写字",
+          "units": [
+            {
+              "id": "kn-cny1a-u02",
+              "title": "基本笔画与象形字",
+              "leaves": [
+                {
+                  "id": "kn-cny1a-f03",
+                  "title": "笔画顺序",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1a-f03-1",
+                      "type": "single",
+                      "stem": "“十”字的第一笔是什么？",
+                      "options": [
+                        { "id": "A", "text": "横" },
+                        { "id": "B", "text": "竖" },
+                        { "id": "C", "text": "撇" },
+                        { "id": "D", "text": "点" }
+                      ],
+                      "answer": "A",
+                      "explanation": "写字要遵循“先横后竖”的规则，“十”先写横再写竖，所以第一笔是横。"
+                    },
+                    {
+                      "id": "qz-kn-cny1a-f03-2",
+                      "type": "blank",
+                      "stem": "“人”字一共有____画。",
+                      "answer": "2",
+                      "answerAccepts": ["2", "二"],
+                      "explanation": "“人”先写一撇，再写一捺，一共两画。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny1a-f04",
+                  "title": "象形字",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1a-f04-1",
+                      "type": "single",
+                      "stem": "下面哪个字是象形字？",
+                      "options": [
+                        { "id": "A", "text": "明" },
+                        { "id": "B", "text": "日" },
+                        { "id": "C", "text": "早" },
+                        { "id": "D", "text": "好" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“日”的字形像太阳的轮廓，是描画事物形状造出来的象形字；“明”“早”“好”都是由部件组合成的会意字。"
+                    },
+                    {
+                      "id": "qz-kn-cny1a-f04-2",
+                      "type": "blank",
+                      "stem": "像“日、月、水、火”这样依照事物形状造出来的字叫____字。",
+                      "answer": "象形",
+                      "answerAccepts": ["象形"],
+                      "explanation": "这类字用描画实物外形的方法造字，字形就像图画，所以叫象形字。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny1a-m03",
+          "title": "口语与积累",
+          "units": [
+            {
+              "id": "kn-cny1a-u03",
+              "title": "数量词与对韵",
+              "leaves": [
+                {
+                  "id": "kn-cny1a-f05",
+                  "title": "常用量词",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1a-f05-1",
+                      "type": "single",
+                      "stem": "“一（ ）牛”应该填哪个量词？",
+                      "options": [
+                        { "id": "A", "text": "头" },
+                        { "id": "B", "text": "只" },
+                        { "id": "C", "text": "朵" },
+                        { "id": "D", "text": "条" }
+                      ],
+                      "answer": "A",
+                      "explanation": "形容体积较大的牲畜常用“头”，如一头牛、一头猪；小鸟常用“只”，花朵用“朵”，细长的东西用“条”。"
+                    },
+                    {
+                      "id": "qz-kn-cny1a-f05-2",
+                      "type": "blank",
+                      "stem": "填一个合适的量词：一____小鸟。",
+                      "answer": "只",
+                      "answerAccepts": ["只"],
+                      "explanation": "鸟类通常用“只”作量词，如一只小鸟、一只鸭子。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny1a-f06",
+                  "title": "对韵积累",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1a-f06-1",
+                      "type": "single",
+                      "stem": "对韵歌中“云对雨，雪对风”，与“云”相对的是哪个字？",
+                      "options": [
+                        { "id": "A", "text": "风" },
+                        { "id": "B", "text": "雨" },
+                        { "id": "C", "text": "雪" },
+                        { "id": "D", "text": "花" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“云对雨、雪对风”是把意思或类别相对的字两两配对，与“云”相对的是“雨”，与“雪”相对的才是“风”。"
+                    },
+                    {
+                      "id": "qz-kn-cny1a-f06-2",
+                      "type": "blank",
+                      "stem": "把对子补充完整：山清对____。",
+                      "answer": "水秀",
+                      "answerAccepts": ["水秀"],
+                      "explanation": "“山清对水秀，柳绿对花红”，山对水、清对秀，词义类别一一对应，读起来朗朗上口。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 1,
+      "term": "下",
+      "modules": [
+        {
+          "id": "kn-cny1b-m01",
+          "title": "汉语拼音巩固",
+          "units": [
+            {
+              "id": "kn-cny1b-u01",
+              "title": "拼写规则与整体认读音节",
+              "leaves": [
+                {
+                  "id": "kn-cny1b-f01",
+                  "title": "ü与j q x相拼",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1b-f01-1",
+                      "type": "single",
+                      "stem": "韵母 ü 和声母 j、q、x 相拼时，书写上有什么变化？",
+                      "options": [
+                        { "id": "A", "text": "去掉 ü 上的两点" },
+                        { "id": "B", "text": "ü 变成 i" },
+                        { "id": "C", "text": " ü 要写成 w" },
+                        { "id": "D", "text": "完全没有变化" }
+                      ],
+                      "answer": "A",
+                      "explanation": "小 ü 见了 j、q、x 去掉两点，比如“句”写作 ju，但读音仍然是 ü 的音，这是ü 的拼写规则。"
+                    },
+                    {
+                      "id": "qz-kn-cny1b-f01-2",
+                      "type": "blank",
+                      "stem": "“许”字的拼音是 xǔ，它的声母是____。",
+                      "answer": "x",
+                      "answerAccepts": ["x"],
+                      "explanation": "xǔ 由声母 x 和韵母 ü 相拼而来，拼写时 ü 去掉两点，声母是 x。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny1b-f02",
+                  "title": "整体认读音节",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1b-f02-1",
+                      "type": "single",
+                      "stem": "下面哪个是整体认读音节？",
+                      "options": [
+                        { "id": "A", "text": "zh" },
+                        { "id": "B", "text": "yi" },
+                        { "id": "C", "text": "n" },
+                        { "id": "D", "text": "h" }
+                      ],
+                      "answer": "B",
+                      "explanation": "zh、n、h 只是声母，不能单独成为音节；yi 不用拼读、要整个认读，是整体认读音节。"
+                    },
+                    {
+                      "id": "qz-kn-cny1b-f02-2",
+                      "type": "blank",
+                      "stem": "“一”字的拼音是____。",
+                      "answer": "yi",
+                      "answerAccepts": ["yi", "yī"],
+                      "explanation": "“一”读整体认读音节 yi，标调后写作 yī。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny1b-m02",
+          "title": "识字与写字",
+          "units": [
+            {
+              "id": "kn-cny1b-u02",
+              "title": "识字方法",
+              "leaves": [
+                {
+                  "id": "kn-cny1b-f03",
+                  "title": "偏旁表义",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1b-f03-1",
+                      "type": "single",
+                      "stem": "“说”字的偏旁是什么？",
+                      "options": [
+                        { "id": "A", "text": "讠" },
+                        { "id": "B", "text": "月" },
+                        { "id": "C", "text": "见" },
+                        { "id": "D", "text": "冫" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“说”左边是言字旁“讠”，表示意思与说话有关；右边“兑”提示读音，所以偏旁是讠。"
+                    },
+                    {
+                      "id": "qz-kn-cny1b-f03-2",
+                      "type": "blank",
+                      "stem": "带有三点水“氵”的字，意思大多与____有关。",
+                      "answer": "水",
+                      "answerAccepts": ["水"],
+                      "explanation": "偏旁常常表示字义的类别，江、河、湖、海都带“氵”，意思都和水有关。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny1b-f04",
+                  "title": "加一加识字",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1b-f04-1",
+                      "type": "single",
+                      "stem": "“女”和“马”合在一起是什么字？",
+                      "options": [
+                        { "id": "A", "text": "妈" },
+                        { "id": "B", "text": "她" },
+                        { "id": "C", "text": "好" },
+                        { "id": "D", "text": "如" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“女”加“马”组成“妈”：妈妈是女性，女字旁表义，“马”提示读音。"
+                    },
+                    {
+                      "id": "qz-kn-cny1b-f04-2",
+                      "type": "blank",
+                      "stem": "“日”和“月”合在一起是____字。",
+                      "answer": "明",
+                      "answerAccepts": ["明"],
+                      "explanation": "太阳和月亮都能带来光亮，所以“日”加“月”合成表示明亮的“明”字。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny1b-m03",
+          "title": "古诗与积累",
+          "units": [
+            {
+              "id": "kn-cny1b-u03",
+              "title": "古诗诵读与词语积累",
+              "leaves": [
+                {
+                  "id": "kn-cny1b-f05",
+                  "title": "古诗理解",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1b-f05-1",
+                      "type": "single",
+                      "stem": "“床前明月光，疑是地上霜”的作者是谁？",
+                      "options": [
+                        { "id": "A", "text": "李白" },
+                        { "id": "B", "text": "杜甫" },
+                        { "id": "C", "text": "白居易" },
+                        { "id": "D", "text": "王维" }
+                      ],
+                      "answer": "A",
+                      "explanation": "《静夜思》是唐代诗人李白写的，他借月光如霜的夜晚景象表达思乡之情。"
+                    },
+                    {
+                      "id": "qz-kn-cny1b-f05-2",
+                      "type": "blank",
+                      "stem": "把诗句补充完整：举头望明月，低头思____。",
+                      "answer": "故乡",
+                      "answerAccepts": ["故乡"],
+                      "explanation": "诗人抬头望月，自然想起远方的家，“低头思故乡”抒发思念家乡的感情。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny1b-f06",
+                  "title": "季节词语积累",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny1b-f06-1",
+                      "type": "single",
+                      "stem": "下面哪个词语是描写春天的？",
+                      "options": [
+                        { "id": "A", "text": "冰天雪地" },
+                        { "id": "B", "text": "春暖花开" },
+                        { "id": "C", "text": "秋高气爽" },
+                        { "id": "D", "text": "寒风刺骨" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“春暖花开”写春天天气温暖、百花开放；A、D 写冬天寒冷，C 写秋天的清爽。"
+                    },
+                    {
+                      "id": "qz-kn-cny1b-f06-2",
+                      "type": "blank",
+                      "stem": "把词语补充完整：春回____。",
+                      "answer": "大地",
+                      "answerAccepts": ["大地"],
+                      "explanation": "“春回大地”指春天又回到大地，万物开始复苏，是常用的描写春天的词语。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 2,
+      "term": "上",
+      "modules": [
+        {
+          "id": "kn-cny2a-m01",
+          "title": "识字与写字",
+          "units": [
+            {
+              "id": "kn-cny2a-u01",
+              "title": "偏旁与笔画",
+              "leaves": [
+                {
+                  "id": "kn-cny2a-f01",
+                  "title": "偏旁的意思",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2a-f01-1",
+                      "type": "single",
+                      "stem": "草字头“艹”的字大多与什么有关？",
+                      "options": [
+                        { "id": "A", "text": "植物" },
+                        { "id": "B", "text": "水" },
+                        { "id": "C", "text": "金属" },
+                        { "id": "D", "text": "说话" }
+                      ],
+                      "answer": "A",
+                      "explanation": "草字头表示字义与花草植物有关，如花、草、莲；与水有关的是三点水，与说话有关的是言字旁。"
+                    },
+                    {
+                      "id": "qz-kn-cny2a-f01-2",
+                      "type": "blank",
+                      "stem": "“海”字的偏旁是____。",
+                      "answer": "氵",
+                      "answerAccepts": ["氵", "三点水"],
+                      "explanation": "“海”是左右结构，左边的三点水表示它与水有关，右边的“每”提示读音。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny2a-f02",
+                  "title": "笔画数与笔顺",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2a-f02-1",
+                      "type": "single",
+                      "stem": "“四”字的第四笔是什么？",
+                      "options": [
+                        { "id": "A", "text": "撇" },
+                        { "id": "B", "text": "竖" },
+                        { "id": "C", "text": "横" },
+                        { "id": "D", "text": "竖弯钩" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“四”的笔顺是：竖、横折、横、撇、竖弯、横，第四笔是撇。"
+                    },
+                    {
+                      "id": "qz-kn-cny2a-f02-2",
+                      "type": "blank",
+                      "stem": "“西”字一共有____画。",
+                      "answer": "6",
+                      "answerAccepts": ["6", "六"],
+                      "explanation": "“西”按笔顺写：横、竖、横折、撇、竖弯、横，共六画。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny2a-m02",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny2a-u02",
+              "title": "近义词与常用字",
+              "leaves": [
+                {
+                  "id": "kn-cny2a-f03",
+                  "title": "近义词",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2a-f03-1",
+                      "type": "single",
+                      "stem": "“高兴”的近义词是哪个？",
+                      "options": [
+                        { "id": "A", "text": "难过" },
+                        { "id": "B", "text": "快乐" },
+                        { "id": "C", "text": "生气" },
+                        { "id": "D", "text": "害怕" }
+                      ],
+                      "answer": "B",
+                      "explanation": "近义词意思要相近，“快乐”和“高兴”都表示心情好；“难过”“生气”“害怕”意思不同甚至相反。"
+                    },
+                    {
+                      "id": "qz-kn-cny2a-f03-2",
+                      "type": "blank",
+                      "stem": "写出“马上”的一个近义词：____。",
+                      "answer": "立刻",
+                      "answerAccepts": ["立刻", "立即"],
+                      "explanation": "“马上、立刻、立即”都表示时间很短、动作很快发生，是一对近义词。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny2a-f04",
+                  "title": "的、地、得",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2a-f04-1",
+                      "type": "single",
+                      "stem": "“弟弟跑（ ）真快”括号里应该填哪个字？",
+                      "options": [
+                        { "id": "A", "text": "的" },
+                        { "id": "B", "text": "得" },
+                        { "id": "C", "text": "地" },
+                        { "id": "D", "text": "着" }
+                      ],
+                      "answer": "B",
+                      "explanation": "动词后面补充说明程度、结果时用“得”，如“跑得快”；“的”用在名词前，“地”用在动词前。"
+                    },
+                    {
+                      "id": "qz-kn-cny2a-f04-2",
+                      "type": "blank",
+                      "stem": "填上合适的字：可爱____小鸟飞走了。",
+                      "answer": "的",
+                      "answerAccepts": ["的"],
+                      "explanation": "“可爱”修饰名词“小鸟”，名词前面用“的”，如“可爱的鸟、蓝蓝的天”。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny2a-m03",
+          "title": "古诗与积累",
+          "units": [
+            {
+              "id": "kn-cny2a-u03",
+              "title": "古诗与量词儿歌",
+              "leaves": [
+                {
+                  "id": "kn-cny2a-f05",
+                  "title": "登鹳雀楼",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2a-f05-1",
+                      "type": "single",
+                      "stem": "“欲穷千里目”的下一句是什么？",
+                      "options": [
+                        { "id": "A", "text": "更上一层楼" },
+                        { "id": "B", "text": "白日依山尽" },
+                        { "id": "C", "text": "黄河入海流" },
+                        { "id": "D", "text": "一览众山小" }
+                      ],
+                      "answer": "A",
+                      "explanation": "《登鹳雀楼》的后两句是“欲穷千里目，更上一层楼”，意思是想看得更远就要再登高一层。"
+                    },
+                    {
+                      "id": "qz-kn-cny2a-f05-2",
+                      "type": "blank",
+                      "stem": "“白日依山尽，黄河入海流”中的“河”在诗中指____。",
+                      "answer": "黄河",
+                      "answerAccepts": ["黄河"],
+                      "explanation": "古诗里单用一个“河”字，通常专指黄河，这句写黄河奔腾流向大海。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny2a-f06",
+                  "title": "量词搭配与成语",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2a-f06-1",
+                      "type": "single",
+                      "stem": "下面量词搭配正确的一项是：一（ ）轮船",
+                      "options": [
+                        { "id": "A", "text": "艘" },
+                        { "id": "B", "text": "头" },
+                        { "id": "C", "text": "匹" },
+                        { "id": "D", "text": "朵" }
+                      ],
+                      "answer": "A",
+                      "explanation": "船只的量词用“艘”，如一艘轮船；“头”用于大牲口，“匹”用于马，“朵”用于花。"
+                    },
+                    {
+                      "id": "qz-kn-cny2a-f06-2",
+                      "type": "blank",
+                      "stem": "把成语补充完整：七上八____。",
+                      "answer": "下",
+                      "answerAccepts": ["下"],
+                      "explanation": "“七上八下”形容心里慌乱不安，像有东西一会儿上去一会儿下来，是含数字的成语。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 2,
+      "term": "下",
+      "modules": [
+        {
+          "id": "kn-cny2b-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny2b-u01",
+              "title": "成语与数量表达",
+              "leaves": [
+                {
+                  "id": "kn-cny2b-f01",
+                  "title": "寓言成语",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2b-f01-1",
+                      "type": "single",
+                      "stem": "“亡羊补牢”告诉我们，羊丢失以后应该怎么做？",
+                      "options": [
+                        { "id": "A", "text": "赶紧把羊圈修一修" },
+                        { "id": "B", "text": "再也不养羊了" },
+                        { "id": "C", "text": "只顾责怪别人" },
+                        { "id": "D", "text": "不用管羊圈" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“亡羊补牢”意思是羊丢了再修补羊圈还不算晚，比喻犯了错误及时改正、补救，就不算晚。"
+                    },
+                    {
+                      "id": "qz-kn-cny2b-f01-2",
+                      "type": "blank",
+                      "stem": "“亡羊补牢”的本义是：羊丢失之后去____。",
+                      "answer": "修羊圈",
+                      "answerAccepts": ["修羊圈", "把羊圈修好", "补羊圈"],
+                      "explanation": "“亡”是丢失，“牢”是关牲畜的圈，这个成语本义就是羊丢了以后去把羊圈修补好。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny2b-f02",
+                  "title": "量词搭配",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2b-f02-1",
+                      "type": "single",
+                      "stem": "“一（ ）明月”填哪个量词最合适？",
+                      "options": [
+                        { "id": "A", "text": "轮" },
+                        { "id": "B", "text": "头" },
+                        { "id": "C", "text": "匹" },
+                        { "id": "D", "text": "只" }
+                      ],
+                      "answer": "A",
+                      "explanation": "圆月像车轮一样圆，常用“轮”作量词，如一轮明月；“头、匹、只”不能修饰月亮。"
+                    },
+                    {
+                      "id": "qz-kn-cny2b-f02-2",
+                      "type": "blank",
+                      "stem": "填上合适的量词：一____鲜花。",
+                      "answer": "朵",
+                      "answerAccepts": ["朵", "束"],
+                      "explanation": "花朵用“朵”，扎成一捆的花用“束”，“一朵鲜花”“一束鲜花”都搭配得当。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny2b-m02",
+          "title": "古诗文",
+          "units": [
+            {
+              "id": "kn-cny2b-u02",
+              "title": "春天的古诗",
+              "leaves": [
+                {
+                  "id": "kn-cny2b-f03",
+                  "title": "《村居》理解",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2b-f03-1",
+                      "type": "single",
+                      "stem": "“儿童散学归来早，忙趁东风放纸鸢”中的“纸鸢”指什么？",
+                      "options": [
+                        { "id": "A", "text": "风筝" },
+                        { "id": "B", "text": "纸质玩具人" },
+                        { "id": "C", "text": "灯笼" },
+                        { "id": "D", "text": "小船" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“纸鸢”就是风筝，鸢是老鹰，风筝飞上天像老鹰，所以古人称风筝为纸鸢。"
+                    },
+                    {
+                      "id": "qz-kn-cny2b-f03-2",
+                      "type": "blank",
+                      "stem": "“草长莺飞二月天”描写的是哪个季节？填：____。",
+                      "answer": "春天",
+                      "answerAccepts": ["春天", "春季", "春"],
+                      "explanation": "农历二月正是早春，青草生长、黄莺飞舞，这句写的是春天的景色。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny2b-f04",
+                  "title": "《咏柳》理解",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2b-f04-1",
+                      "type": "single",
+                      "stem": "“不知细叶谁裁出”的下一句是什么？",
+                      "options": [
+                        { "id": "A", "text": "二月春风似剪刀" },
+                        { "id": "B", "text": "万条垂下绿丝绦" },
+                        { "id": "C", "text": "碧玉妆成一树高" },
+                        { "id": "D", "text": "拂堤杨柳醉春烟" }
+                      ],
+                      "answer": "A",
+                      "explanation": "《咏柳》后两句自问自答：纤细的柳叶是谁裁剪出来的？原来是“二月春风似剪刀”，把春风比作剪刀。"
+                    },
+                    {
+                      "id": "qz-kn-cny2b-f04-2",
+                      "type": "blank",
+                      "stem": "“碧玉妆成一树高”咏叹的植物是____。",
+                      "answer": "柳树",
+                      "answerAccepts": ["柳树", "柳"],
+                      "explanation": "《咏柳》全诗写柳树：高高的柳树像碧玉打扮成，垂下的柳枝像绿色丝带，所以句中植物是柳树。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny2b-m03",
+          "title": "口语与积累",
+          "units": [
+            {
+              "id": "kn-cny2b-u03",
+              "title": "传统文化常识",
+              "leaves": [
+                {
+                  "id": "kn-cny2b-f05",
+                  "title": "传统节日",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2b-f05-1",
+                      "type": "single",
+                      "stem": "端午节人们常常做什么？",
+                      "options": [
+                        { "id": "A", "text": "吃月饼、赏月" },
+                        { "id": "B", "text": "吃粽子、赛龙舟" },
+                        { "id": "C", "text": "吃汤圆、看花灯" },
+                        { "id": "D", "text": "扫墓、踏青" }
+                      ],
+                      "answer": "B",
+                      "explanation": "端午节在农历五月初五，习俗是吃粽子、赛龙舟，纪念屈原；A 是中秋，C 是元宵，D 与清明相关。"
+                    },
+                    {
+                      "id": "qz-kn-cny2b-f05-2",
+                      "type": "blank",
+                      "stem": "农历九月初九的传统节日是____。",
+                      "answer": "重阳节",
+                      "answerAccepts": ["重阳节"],
+                      "explanation": "九在数字中为阳数，两九相重，所以农历九月初九叫重阳节，有登高、赏菊的习俗。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny2b-f06",
+                  "title": "十二生肖",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny2b-f06-1",
+                      "type": "single",
+                      "stem": "十二生肖一共有多少种动物？",
+                      "options": [
+                        { "id": "A", "text": "10" },
+                        { "id": "B", "text": "12" },
+                        { "id": "C", "text": "8" },
+                        { "id": "D", "text": "6" }
+                      ],
+                      "answer": "B",
+                      "explanation": "十二生肖按顺序是子鼠、丑牛、寅虎、卯兔等，一共十二种动物，对应十二地支。"
+                    },
+                    {
+                      "id": "qz-kn-cny2b-f06-2",
+                      "type": "blank",
+                      "stem": "生肖歌中，“子鼠”后面紧跟的是____。",
+                      "answer": "丑牛",
+                      "answerAccepts": ["丑牛", "牛"],
+                      "explanation": "十二生肖顺序固定：鼠、牛、虎、兔……“子鼠”之后排在第二的就是“丑牛”。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "term": "上",
+      "modules": [
+        {
+          "id": "kn-cny3a-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny3a-u01",
+              "title": "近反义词与标点",
+              "leaves": [
+                {
+                  "id": "kn-cny3a-f01",
+                  "title": "近反义词",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3a-f01-1",
+                      "type": "single",
+                      "stem": "“热闹”的反义词是哪个？",
+                      "options": [
+                        { "id": "A", "text": "冷清" },
+                        { "id": "B", "text": "喧哗" },
+                        { "id": "C", "text": "繁华" },
+                        { "id": "D", "text": "热烈" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“热闹”形容人众多、气氛活跃，意思相反的是冷落清静的“冷清”；喧哗、繁华、热烈都与它意思相近或相关。"
+                    },
+                    {
+                      "id": "qz-kn-cny3a-f01-2",
+                      "type": "blank",
+                      "stem": "写出“立即”的一个近义词：____。",
+                      "answer": "马上",
+                      "answerAccepts": ["马上", "立刻"],
+                      "explanation": "“立即、马上、立刻”都表示动作赶快发生、不拖延，互为近义词。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny3a-f02",
+                  "title": "标点符号用法",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3a-f02-1",
+                      "type": "single",
+                      "stem": "表示问话的句子末尾应该用什么标点？",
+                      "options": [
+                        { "id": "A", "text": "句号" },
+                        { "id": "B", "text": "问号" },
+                        { "id": "C", "text": "感叹号" },
+                        { "id": "D", "text": "逗号" }
+                      ],
+                      "answer": "B",
+                      "explanation": "疑问句表示提出问题，句末用问号；陈述句用句号，表示强烈感情的句子用感叹号。"
+                    },
+                    {
+                      "id": "qz-kn-cny3a-f02-2",
+                      "type": "blank",
+                      "stem": "给句子选合适的末尾标点（写符号）：花园里的花真美啊____",
+                      "answer": "!",
+                      "answerAccepts": ["!", "！", "感叹号"],
+                      "explanation": "“真美啊”带有赞叹的语气，感叹句末尾要用感叹号。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny3a-m02",
+          "title": "阅读理解",
+          "units": [
+            {
+              "id": "kn-cny3a-u02",
+              "title": "读懂句段的方法",
+              "leaves": [
+                {
+                  "id": "kn-cny3a-f03",
+                  "title": "找中心句",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3a-f03-1",
+                      "type": "single",
+                      "stem": "有的自然段开头先总起、后面分述，读懂这类段落应重点把握哪句话？",
+                      "options": [
+                        { "id": "A", "text": "开头总起的那句" },
+                        { "id": "B", "text": "中间随意一句" },
+                        { "id": "C", "text": "最后的标点" },
+                        { "id": "D", "text": "最短的一句" }
+                      ],
+                      "answer": "A",
+                      "explanation": "总分结构的段落里，总起句概括了整个自然段的主要意思，抓住它就能读懂全段，后面的句子都是围绕它展开的。"
+                    },
+                    {
+                      "id": "qz-kn-cny3a-f03-2",
+                      "type": "blank",
+                      "stem": "能概括整个自然段主要意思的句子，我们把它叫____句。",
+                      "answer": "中心",
+                      "answerAccepts": ["中心", "重点"],
+                      "explanation": "一段话中统领全段、概括主要意思的句子叫中心句，常常在段首或段尾。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny3a-f04",
+                  "title": "理解词语的意思",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3a-f04-1",
+                      "type": "single",
+                      "stem": "结合句子猜一猜：“他抢着回答问题，把手举得高高的，非常踊跃。”“踊跃”的意思接近于？",
+                      "options": [
+                        { "id": "A", "text": "积极热烈" },
+                        { "id": "B", "text": "十分害怕" },
+                        { "id": "C", "text": "动作慢" },
+                        { "id": "D", "text": "无话可说" }
+                      ],
+                      "answer": "A",
+                      "explanation": "从句中“抢着回答、手举得高高的”这些表现可以推出“踊跃”是情绪高涨、争先恐后的样子，意思接近“积极热烈”。"
+                    },
+                    {
+                      "id": "qz-kn-cny3a-f04-2",
+                      "type": "blank",
+                      "stem": "他做事前怕狼后怕虎，总拿不定主意，可以用词语“____”来形容。",
+                      "answer": "犹豫",
+                      "answerAccepts": ["犹豫", "犹豫不决"],
+                      "explanation": "拿不定主意、迟疑不决就是“犹豫”，所以人们常用“犹豫”形容前怕狼后怕虎的心态。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny3a-m03",
+          "title": "古诗文",
+          "units": [
+            {
+              "id": "kn-cny3a-u03",
+              "title": "秋天古诗与谚语",
+              "leaves": [
+                {
+                  "id": "kn-cny3a-f05",
+                  "title": "《山行》理解",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3a-f05-1",
+                      "type": "single",
+                      "stem": "“停车坐爱枫林晚，霜叶红于二月花”描写的是哪个季节？",
+                      "options": [
+                        { "id": "A", "text": "春" },
+                        { "id": "B", "text": "夏" },
+                        { "id": "C", "text": "秋" },
+                        { "id": "D", "text": "冬" }
+                      ],
+                      "answer": "C",
+                      "explanation": "经霜的枫叶比二月春花还红，“霜叶”点出深秋时节，这句诗写的是秋天山林的美景。"
+                    },
+                    {
+                      "id": "qz-kn-cny3a-f05-2",
+                      "type": "blank",
+                      "stem": "《山行》的作者是唐代诗人____。",
+                      "answer": "杜牧",
+                      "answerAccepts": ["杜牧"],
+                      "explanation": "《山行》是晚唐诗人杜牧的作品，他借枫叶抒发对秋天山林的喜爱。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny3a-f06",
+                  "title": "谚语积累",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3a-f06-1",
+                      "type": "single",
+                      "stem": "“一年之计在于春”的下一句是什么？",
+                      "options": [
+                        { "id": "A", "text": "一日之计在于晨" },
+                        { "id": "B", "text": "一年之计在于春" },
+                        { "id": "C", "text": "一寸光阴一寸金" },
+                        { "id": "D", "text": "少壮不努力" }
+                      ],
+                      "answer": "A",
+                      "explanation": "谚语“一年之计在于春，一日之计在于晨”把春天和早晨并称，说明一年的收成、一天的事情都要趁早打算。"
+                    },
+                    {
+                      "id": "qz-kn-cny3a-f06-2",
+                      "type": "blank",
+                      "stem": "把谚语补充完整：一年之计在于____。",
+                      "answer": "春",
+                      "answerAccepts": ["春", "春季"],
+                      "explanation": "春天是一年的开端，庄稼要在春天播种，计划要在春天安排，所以“一年之计在于春”。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "term": "下",
+      "modules": [
+        {
+          "id": "kn-cny3b-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny3b-u01",
+              "title": "运用与修辞",
+              "leaves": [
+                {
+                  "id": "kn-cny3b-f01",
+                  "title": "修改用词不当",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3b-f01-1",
+                      "type": "single",
+                      "stem": "下面哪句话中加点词语运用不恰当？",
+                      "options": [
+                        { "id": "A", "text": "妈妈的医术很高明" },
+                        { "id": "B", "text": "春天到了，花儿绽开了笑脸" },
+                        { "id": "C", "text": "他穿戴着一顶帽子去上学" },
+                        { "id": "D", "text": "我们爱护班级的一草一木" }
+                      ],
+                      "answer": "C",
+                      "explanation": "“穿戴”中“穿”搭配衣服、“戴”搭配帽子，帽子只能说“戴着”，不能说“穿戴着一顶帽子”，所以 C 用词不当。"
+                    },
+                    {
+                      "id": "qz-kn-cny3b-f01-2",
+                      "type": "blank",
+                      "stem": "“联欢会上，我们演唱了很多舞蹈。”这句话应把“演唱”改为____。",
+                      "answer": "表演",
+                      "answerAccepts": ["表演", "跳"],
+                      "explanation": "舞蹈是跳的，不能说“演唱”，可以改为“表演了很多舞蹈”或“跳了很多舞蹈”。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny3b-f02",
+                  "title": "修辞手法判断",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3b-f02-1",
+                      "type": "single",
+                      "stem": "“小星星在夜空中眨着眼睛”运用了什么修辞手法？",
+                      "options": [
+                        { "id": "A", "text": "比喻" },
+                        { "id": "B", "text": "拟人" },
+                        { "id": "C", "text": "排比" },
+                        { "id": "D", "text": "夸张" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“眨眼睛”是人才有的动作，句子把星星当作人来写，所以是拟人；比喻要有把一物比作另一物的“像”等词。"
+                    },
+                    {
+                      "id": "qz-kn-cny3b-f02-2",
+                      "type": "blank",
+                      "stem": "“月光像银色的水洒满院子”运用的修辞手法是____。",
+                      "answer": "比喻",
+                      "answerAccepts": ["比喻"],
+                      "explanation": "这句把月光比作银色的水，有本体、喻体和比喻词“像”，是比喻手法。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny3b-m02",
+          "title": "阅读理解",
+          "units": [
+            {
+              "id": "kn-cny3b-u02",
+              "title": "把握内容的方法",
+              "leaves": [
+                {
+                  "id": "kn-cny3b-f03",
+                  "title": "把握主要内容",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3b-f03-1",
+                      "type": "single",
+                      "stem": "读一个记叙性的故事，要把握主要内容，应重点弄清哪些信息？",
+                      "options": [
+                        { "id": "A", "text": "时间、地点、人物和事情的起因、经过、结果" },
+                        { "id": "B", "text": "一共有几个自然段" },
+                        { "id": "C", "text": "每个字的笔画" },
+                        { "id": "D", "text": "作者写字用了什么笔" }
+                      ],
+                      "answer": "A",
+                      "explanation": "记叙文有六要素：时间、地点、人物、起因、经过、结果，把它们连起来，故事的主要内容就清楚了。"
+                    },
+                    {
+                      "id": "qz-kn-cny3b-f03-2",
+                      "type": "blank",
+                      "stem": "写一件事要把六要素写明白：时间、地点、人物、起因、经过和____。",
+                      "answer": "结果",
+                      "answerAccepts": ["结果"],
+                      "explanation": "事情的来龙去脉由起因、经过、结果三部分构成，缺少结果，别人就不知道这件事最后怎么样了。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny3b-f04",
+                  "title": "了解写作顺序",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3b-f04-1",
+                      "type": "single",
+                      "stem": "一段话按“发芽—长叶—开花—结果”的顺序写一棵树，这是什么顺序？",
+                      "options": [
+                        { "id": "A", "text": "时间顺序" },
+                        { "id": "B", "text": "空间顺序" },
+                        { "id": "C", "text": "倒叙顺序" },
+                        { "id": "D", "text": "由此及彼的顺序" }
+                      ],
+                      "answer": "A",
+                      "explanation": "发芽、长叶、开花、结果是植物随季节一步步生长的过程，按先后时间展开，所以是时间顺序。"
+                    },
+                    {
+                      "id": "qz-kn-cny3b-f04-2",
+                      "type": "blank",
+                      "stem": "描写景物时按“远—近—上—下”来安排内容，这是按____顺序写的。",
+                      "answer": "空间",
+                      "answerAccepts": ["空间", "方位", "空间顺序"],
+                      "explanation": "远近上下表示位置的变化，按观察位置安排材料，就是空间顺序。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny3b-m03",
+          "title": "古诗文与传统文化",
+          "units": [
+            {
+              "id": "kn-cny3b-u03",
+              "title": "节日古诗与常识",
+              "leaves": [
+                {
+                  "id": "kn-cny3b-f05",
+                  "title": "节日中的古诗",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3b-f05-1",
+                      "type": "single",
+                      "stem": "“爆竹声中一岁除，春风送暖入屠苏”描写的是哪个节日？",
+                      "options": [
+                        { "id": "A", "text": "春节" },
+                        { "id": "B", "text": "端午节" },
+                        { "id": "C", "text": "七夕节" },
+                        { "id": "D", "text": "中秋节" }
+                      ],
+                      "answer": "A",
+                      "explanation": "放爆竹、喝屠苏酒都是辞旧迎新的过年习俗，“一岁除”说明旧的一年过去了，写的是春节。"
+                    },
+                    {
+                      "id": "qz-kn-cny3b-f05-2",
+                      "type": "blank",
+                      "stem": "《清明》这首诗的作者是____。",
+                      "answer": "杜牧",
+                      "answerAccepts": ["杜牧"],
+                      "explanation": "“清明时节雨纷纷”出自唐代诗人杜牧的《清明》，写清明时节的路上行人思乡之情。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny3b-f06",
+                  "title": "传统文化知识",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny3b-f06-1",
+                      "type": "single",
+                      "stem": "下列哪位诗人被称为“诗仙”？",
+                      "options": [
+                        { "id": "A", "text": "杜甫" },
+                        { "id": "B", "text": "李白" },
+                        { "id": "C", "text": "白居易" },
+                        { "id": "D", "text": "苏轼" }
+                      ],
+                      "answer": "B",
+                      "explanation": "李白的诗想象奇特、风格豪放，像神仙之笔，被称为“诗仙”；杜甫被称为“诗圣”。"
+                    },
+                    {
+                      "id": "qz-kn-cny3b-f06-2",
+                      "type": "blank",
+                      "stem": "中国古代四大发明是造纸术、印刷术、火药和____。",
+                      "answer": "指南针",
+                      "answerAccepts": ["指南针"],
+                      "explanation": "四大发明对世界文明影响深远，除了造纸术、印刷术、火药，剩下的一项是辨别方向的指南针。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "term": "上",
+      "modules": [
+        {
+          "id": "kn-cny4a-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny4a-u01",
+              "title": "词义与句式",
+              "leaves": [
+                {
+                  "id": "kn-cny4a-f01",
+                  "title": "字的意思",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4a-f01-1",
+                      "type": "single",
+                      "stem": "“精疲力竭”中“竭”的意思是？",
+                      "options": [
+                        { "id": "A", "text": "尽、用尽" },
+                        { "id": "B", "text": "达到" },
+                        { "id": "C", "text": "帮助" },
+                        { "id": "D", "text": "节约" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“竭”是尽的意思，“精疲力竭”指精神、力气全部用完，一点不剩，所以选“尽、用尽”。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f01-2",
+                      "type": "blank",
+                      "stem": "给“方”字加上草字头“艹”，变成新字____。",
+                      "answer": "芳",
+                      "answerAccepts": ["芳"],
+                      "explanation": "草字头加“方”组成“芳”，如“芬芳”，“方”提示读音，这是形声的构字方法。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f01-3",
+                      "type": "single",
+                      "stem": "“左顾右盼”中“顾”的意思是？",
+                      "options": [
+                        { "id": "A", "text": "照看、优待" },
+                        { "id": "B", "text": "拜访" },
+                        { "id": "C", "text": "看" },
+                        { "id": "D", "text": "想到、惦记" }
+                      ],
+                      "answer": "C",
+                      "explanation": "“左顾右盼”指向左右看看，“顾”和“盼”都是“看”的意思；“照顾”的“顾”是照看，“三顾茅庐”的“顾”是拜访，用在本词里都不合。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny4a-f02",
+                  "title": "缩句与句式转换",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4a-f02-1",
+                      "type": "single",
+                      "stem": "“操场上，同学们认真地观看着足球比赛。”缩句后正确的是？",
+                      "options": [
+                        { "id": "A", "text": "同学们观看着比赛" },
+                        { "id": "B", "text": "操场上观看" },
+                        { "id": "C", "text": "同学们足球" },
+                        { "id": "D", "text": "观看比赛足球" }
+                      ],
+                      "answer": "A",
+                      "explanation": "缩句要留下主干“谁做什么”：主语是同学们，动作是观看着比赛，“操场上”“认真地”“足球”都是枝叶，要去掉。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f02-2",
+                      "type": "blank",
+                      "stem": "“大风把树枝吹断了”改成用“被”的句子：树枝____大风吹断了。",
+                      "answer": "被",
+                      "answerAccepts": ["被"],
+                      "explanation": "“把”字句和“被”字句表达同一件事，句式互换时主动者与承受者位置对调，承受者“树枝”在前要用“被”。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f02-3",
+                      "type": "blank",
+                      "stem": "“小红的妹妹在院子里快乐地唱歌。”缩句后剩下的句子主干是：妹妹______。",
+                      "answer": "唱歌",
+                      "answerAccepts": ["唱歌"],
+                      "explanation": "缩句要留下“谁干什么”的主干：“小红的”是带“的”的定语、“在院子里”“快乐地”是状语，都要删去，主语中心“妹妹”和谓语“唱歌”保留。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny4a-m02",
+          "title": "阅读理解",
+          "units": [
+            {
+              "id": "kn-cny4a-u02",
+              "title": "提问策略与概括",
+              "leaves": [
+                {
+                  "id": "kn-cny4a-f03",
+                  "title": "提问策略",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4a-f03-1",
+                      "type": "single",
+                      "stem": "关于边读边提问，下面做法最恰当的是？",
+                      "options": [
+                        { "id": "A", "text": "只关心故事情节，不必思考" },
+                        { "id": "B", "text": "试着从内容、写法、得到的启发等不同角度提问" },
+                        { "id": "C", "text": "遇到不懂的字立刻跳过，不去想办法" },
+                        { "id": "D", "text": "只抄写好词好句" }
+                      ],
+                      "answer": "B",
+                      "explanation": "提问角度可以很多：针对内容问“写了什么”，针对写法问“怎样写”，针对启发问“得到什么”，多角度提问才能读得深。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f03-2",
+                      "type": "blank",
+                      "stem": "阅读时主动提问：这篇文章写了什么人、什么____。",
+                      "answer": "事",
+                      "answerAccepts": ["事"],
+                      "explanation": "读记叙类文章，先从“人物和事件”入手提问，是最简单有效的提问角度。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f03-3",
+                      "type": "single",
+                      "stem": "读完一段话，下面提出的四个问题中，最有助于深入理解内容的是？",
+                      "options": [
+                        { "id": "A", "text": "这一段一共有多少句话" },
+                        { "id": "B", "text": "这一页上有几幅插图" },
+                        { "id": "C", "text": "作者为什么要这样写，想告诉我们什么" },
+                        { "id": "D", "text": "这段话的第一个字是什么" }
+                      ],
+                      "answer": "C",
+                      "explanation": "好的提问要指向理解和思考：C 从写法与用意入手，能帮读者读懂文章深处的意思；A、B、D 只是数一数、认一认的机械问题，对理解帮助很小。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny4a-f04",
+                  "title": "概括段意层意",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4a-f04-1",
+                      "type": "single",
+                      "stem": "概括一段话的主要意思，正确的方法是？",
+                      "options": [
+                        { "id": "A", "text": "逐字逐句翻译成大白话" },
+                        { "id": "B", "text": "找准主要人物和主要事件，用简洁的话表述" },
+                        { "id": "C", "text": "把整段全部抄下来" },
+                        { "id": "D", "text": "只看最后一个标点" }
+                      ],
+                      "answer": "B",
+                      "explanation": "概括要“舍弃枝叶、留下主干”：抓住谁做了什么、结果怎样，再用简练的话连起来，才能又准又短。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f04-2",
+                      "type": "blank",
+                      "stem": "总—分—总结构的段落，概括完层意后，可以用段中的____句来检验是否准确。",
+                      "answer": "中心",
+                      "answerAccepts": ["中心"],
+                      "explanation": "总起句、总结句往往就是中心句，概括的层意与它意思一致，说明概括得准确。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f04-3",
+                      "type": "blank",
+                      "stem": "概括一段故事时，可以把时间、地点、人物和事件的起因、经过、结果这些______连成一句简练的话，段意就又完整又清楚。",
+                      "answer": "要素",
+                      "answerAccepts": ["要素"],
+                      "explanation": "时间、地点、人物、起因、经过、结果合称记叙的“要素”，先把要素找齐再连成一句话，概括就不会丢主干、也不会啰嗦。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny4a-m03",
+          "title": "古诗文与积累",
+          "units": [
+            {
+              "id": "kn-cny4a-u03",
+              "title": "哲理诗与神话成语",
+              "leaves": [
+                {
+                  "id": "kn-cny4a-f05",
+                  "title": "题西林壁",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4a-f05-1",
+                      "type": "single",
+                      "stem": "《题西林壁》中蕴含“当局者迷”哲理的诗句是？",
+                      "options": [
+                        { "id": "A", "text": "横看成岭侧成峰" },
+                        { "id": "B", "text": "不识庐山真面目，只缘身在此山中" },
+                        { "id": "C", "text": "日照香炉生紫烟" },
+                        { "id": "D", "text": "远近高低各不同" }
+                      ],
+                      "answer": "B",
+                      "explanation": "正因为身处山中，视野被山峰挡住，才看不清庐山全貌，这句告诉我们看问题要跳出局限，客观全面。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f05-2",
+                      "type": "blank",
+                      "stem": "把诗句补充完整：不识庐山真面目，____。",
+                      "answer": "只缘身在此山中",
+                      "answerAccepts": ["只缘身在此山中"],
+                      "explanation": "“缘”是因为，苏轼说认不清庐山真面目，只因为自己身在庐山之中。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f05-3",
+                      "type": "single",
+                      "stem": "《题西林壁》的“题”在诗题中的意思是？",
+                      "options": [
+                        { "id": "A", "text": "诗的题目" },
+                        { "id": "B", "text": "书写、题写" },
+                        { "id": "C", "text": "欣赏、品评" },
+                        { "id": "D", "text": "一种文章体裁" }
+                      ],
+                      "answer": "B",
+                      "explanation": "古人常把诗写在寺观楼阁的墙壁上，“题”在这里是动词“写”，诗题意思是“题写在西林寺墙壁上的诗”，不是指题目、欣赏或体裁。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny4a-f06",
+                  "title": "神话成语积累",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4a-f06-1",
+                      "type": "single",
+                      "stem": "下面哪个成语来自中国古代神话故事？",
+                      "options": [
+                        { "id": "A", "text": "刻舟求剑" },
+                        { "id": "B", "text": "女娲补天" },
+                        { "id": "C", "text": "掩耳盗铃" },
+                        { "id": "D", "text": "守株待兔" }
+                      ],
+                      "answer": "B",
+                      "explanation": "女娲炼石补天是神话；刻舟求剑、掩耳盗铃、守株待兔都出自寓言故事，通过小事讲道理。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f06-2",
+                      "type": "blank",
+                      "stem": "把歇后语补充完整：八仙过海——各显____。",
+                      "answer": "神通",
+                      "answerAccepts": ["神通"],
+                      "explanation": "传说八仙各凭本领渡海，所以用“各显神通”比喻大家各自拿出自己的本领做好事。"
+                    },
+                    {
+                      "id": "qz-kn-cny4a-f06-3",
+                      "type": "single",
+                      "stem": "下面神话人物与故事对应正确的是？",
+                      "options": [
+                        { "id": "A", "text": "女娲——填海" },
+                        { "id": "B", "text": "后羿——射日" },
+                        { "id": "C", "text": "精卫——补天" },
+                        { "id": "D", "text": "盘古——尝百草" }
+                      ],
+                      "answer": "B",
+                      "explanation": "射日的是后羿，B 正确；填海的是精卫，补天的是女娲，开天辟地的是盘古，尝百草的是神农炎帝，A、C 把人物和故事互换了，D 张冠李戴。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "term": "下",
+      "modules": [
+        {
+          "id": "kn-cny4b-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny4b-u01",
+              "title": "搭配与关联词",
+              "leaves": [
+                {
+                  "id": "kn-cny4b-f01",
+                  "title": "词语搭配",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4b-f01-1",
+                      "type": "single",
+                      "stem": "下面词语搭配不恰当的一项是？",
+                      "options": [
+                        { "id": "A", "text": "提高效率" },
+                        { "id": "B", "text": "解决问题" },
+                        { "id": "C", "text": "养成习惯" },
+                        { "id": "D", "text": "改正态度" }
+                      ],
+                      "answer": "D",
+                      "explanation": "“改正”搭配的是错误、缺点，态度应该用“端正”来搭配，“改正态度”搭配不当；其余三项都搭配正确。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f01-2",
+                      "type": "blank",
+                      "stem": "填上合适的词语：我们要____时间，不能浪费。",
+                      "answer": "珍惜",
+                      "answerAccepts": ["珍惜", "爱惜"],
+                      "explanation": "时间一去不复返，值得重视爱护，“珍惜时间”“爱惜时间”都通顺，意思相近。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f01-3",
+                      "type": "blank",
+                      "stem": "填上合适的词语：爷爷每天清晨坚持锻炼，身体十分______。",
+                      "answer": "健康",
+                      "answerAccepts": ["健康", "结实", "硬朗"],
+                      "explanation": "“身体”常与“健康”搭配，指没有疾病、体质好；“结实”侧重强壮，“硬朗”多用于老人，三个词用在这句里都说得通。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny4b-f02",
+                  "title": "关联词语",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4b-f02-1",
+                      "type": "single",
+                      "stem": "“雨来（ ）年龄小，（ ）很勇敢”应填哪组关联词？",
+                      "options": [
+                        { "id": "A", "text": "因为……所以……" },
+                        { "id": "B", "text": "虽然……但是……" },
+                        { "id": "C", "text": "不但……而且……" },
+                        { "id": "D", "text": "只有……才……" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“年龄小”和“很勇敢”意思上有转折：按常理年龄小可能胆小，实际却很勇敢，所以用表示转折关系的“虽然……但是……”。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f02-2",
+                      "type": "blank",
+                      "stem": "填上合适的关联词（只填第一组的前半）：（____）平日的刻苦训练，比赛中（才）能取得好成绩。",
+                      "answer": "只有",
+                      "answerAccepts": ["只有"],
+                      "explanation": "后半句用“才”时，前半要搭配“只有”，表示这是唯一的条件：不刻苦训练就取不了好成绩。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f02-3",
+                      "type": "single",
+                      "stem": "“小明的字（ ）写得正确，（ ）写得美观。”应填哪组关联词？",
+                      "options": [
+                        { "id": "A", "text": "因为……所以……" },
+                        { "id": "B", "text": "不但……而且……" },
+                        { "id": "C", "text": "虽然……但是……" },
+                        { "id": "D", "text": "只有……才……" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“正确”和“美观”都是对字的夸奖，后一层意思更进一步，是递进关系，用“不但……而且……”；因果、转折、条件关系都与句意不合。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny4b-m02",
+          "title": "阅读理解",
+          "units": [
+            {
+              "id": "kn-cny4b-u02",
+              "title": "说明文与情感体会",
+              "leaves": [
+                {
+                  "id": "kn-cny4b-f03",
+                  "title": "说明方法",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4b-f03-1",
+                      "type": "single",
+                      "stem": "课文把鲸跟大象作比较，突出鲸“比象大得多”，这种说明方法是？",
+                      "options": [
+                        { "id": "A", "text": "作比较" },
+                        { "id": "B", "text": "列数字" },
+                        { "id": "C", "text": "打比方" },
+                        { "id": "D", "text": "分类别" }
+                      ],
+                      "answer": "A",
+                      "explanation": "拿熟悉的大象跟鲸对照，用两者的大小差异来说明鲸有多大，这正是“作比较”的说明方法。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f03-2",
+                      "type": "blank",
+                      "stem": "“赵州桥的主拱跨度约37米”用了具体数据说明特点，这种说明方法叫____。",
+                      "answer": "列数字",
+                      "answerAccepts": ["列数字"],
+                      "explanation": "用准确数字说明事物的大小、数量等，叫“列数字”，它让说明更科学、更有说服力。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f03-3",
+                      "type": "single",
+                      "stem": "介绍云的形状时说它“像羽毛、像棉絮、像鱼鳞”，这种说明方法是？",
+                      "options": [
+                        { "id": "A", "text": "列数字" },
+                        { "id": "B", "text": "打比方" },
+                        { "id": "C", "text": "举例子" },
+                        { "id": "D", "text": "作比较" }
+                      ],
+                      "answer": "B",
+                      "explanation": "打比方就是借助比喻来说明事物，把云比作羽毛、棉絮，让形态写得形象可感；句中没有数据，也不是拿两种事物对照或列举具体实例。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny4b-f04",
+                  "title": "体会课文情感",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4b-f04-1",
+                      "type": "single",
+                      "stem": "作家写自己长期饲养、观察的猫，字里行间一般流露出什么情感？",
+                      "options": [
+                        { "id": "A", "text": "讨厌和嫌弃" },
+                        { "id": "B", "text": "欣赏与喜爱" },
+                        { "id": "C", "text": "恐惧和紧张" },
+                        { "id": "D", "text": "冷漠与无所谓" }
+                      ],
+                      "answer": "B",
+                      "explanation": "愿意长期写猫古怪的性格、写猫淘气，本身就说明作者把猫当作朋友，满含喜爱之情。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f04-2",
+                      "type": "blank",
+                      "stem": "表达情感的常见方法之一，是把情融进具体的描写对象中，这叫借____抒情。",
+                      "answer": "景",
+                      "answerAccepts": ["景", "景物"],
+                      "explanation": "“借景抒情”指通过描写景物自然流露心情，景语即情语，感情不说破反而更动人。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f04-3",
+                      "type": "single",
+                      "stem": "作家把乡间画面写得这样有趣：屋前瓜藤攀架、鲜花按着时令开放、一群鸭子结伴戏水。字里行间一般寄托着怎样的情感？",
+                      "options": [
+                        { "id": "A", "text": "对城市繁华的向往" },
+                        { "id": "B", "text": "对乡村独特风光的喜爱与向往" },
+                        { "id": "C", "text": "对农活劳累的抱怨" },
+                        { "id": "D", "text": "对天气变化的担忧" }
+                      ],
+                      "answer": "B",
+                      "explanation": "愿意细细描写瓜藤攀架、鲜花按时开放、鸭群戏水的人，心里装的对乡村生活满是喜欢，这样的画面寄托着对农家独特风光的向往。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny4b-m03",
+          "title": "古诗文",
+          "units": [
+            {
+              "id": "kn-cny4b-u03",
+              "title": "托物言志与励志故事",
+              "leaves": [
+                {
+                  "id": "kn-cny4b-f05",
+                  "title": "芙蓉楼送辛渐",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4b-f05-1",
+                      "type": "single",
+                      "stem": "“洛阳亲友如相问，一片冰心在玉壶”表达了诗人怎样的心志？",
+                      "options": [
+                        { "id": "A", "text": "思念家乡的亲人" },
+                        { "id": "B", "text": "保持清正高洁、不向毁誉低头" },
+                        { "id": "C", "text": "对边塞战事的担忧" },
+                        { "id": "D", "text": "送别友人的依依不舍" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“冰心玉壶”比喻心地像冰一样晶莹、像玉壶一样清白，诗人托友人转告亲友：自己依然操守高洁。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f05-2",
+                      "type": "blank",
+                      "stem": "把诗句补充完整：寒雨连江夜入吴，____。",
+                      "answer": "平明送客楚山孤",
+                      "answerAccepts": ["平明送客楚山孤"],
+                      "explanation": "“平明”是天亮的时候，天亮送客远去，只见楚山孤立，景中的“孤”正衬别情。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f05-3",
+                      "type": "blank",
+                      "stem": "《芙蓉楼送辛渐》的作者是唐代诗人______。",
+                      "answer": "王昌龄",
+                      "answerAccepts": ["王昌龄"],
+                      "explanation": "这首送别诗出自唐代诗人王昌龄之手，他尤其擅长七言绝句，诗中借“冰心玉壶”向亲友表明自己品格清白高洁。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny4b-f06",
+                  "title": "囊萤夜读",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny4b-f06-1",
+                      "type": "single",
+                      "stem": "“囊萤夜读”的主人公用什么照亮书本读书？",
+                      "options": [
+                        { "id": "A", "text": "蜡烛" },
+                        { "id": "B", "text": "萤火虫" },
+                        { "id": "C", "text": "油灯" },
+                        { "id": "D", "text": "火把" }
+                      ],
+                      "answer": "B",
+                      "explanation": "家贫买不起灯油，车胤把萤火虫装在白绢袋里，借着萤光夜读，“囊萤”就是用口袋装萤火虫。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f06-2",
+                      "type": "blank",
+                      "stem": "“铁杵成针”的故事，常用来比喻____的精神。",
+                      "answer": "持之以恒",
+                      "answerAccepts": ["持之以恒", "坚持不懈"],
+                      "explanation": "把铁棒磨成绣花针靠的是天天磨、不停磨，这个故事说明只要坚持不懈，功夫到了自然成功。"
+                    },
+                    {
+                      "id": "qz-kn-cny4b-f06-3",
+                      "type": "single",
+                      "stem": "与“囊萤夜读”一样形容勤学苦读的故事“映雪读书”，借的是什么光？",
+                      "options": [
+                        { "id": "A", "text": "月光" },
+                        { "id": "B", "text": "雪光" },
+                        { "id": "C", "text": "火光" },
+                        { "id": "D", "text": "星光" }
+                      ],
+                      "answer": "B",
+                      "explanation": "晋代孙康家贫无灯，冬夜借助雪地反射的微光读书，与车胤借萤光的“囊萤”并称勤学典范；映的是雪光，不是月光、火光或星光。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "term": "上",
+      "modules": [
+        {
+          "id": "kn-cny5a-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny5a-u01",
+              "title": "近反义词与成语",
+              "leaves": [
+                {
+                  "id": "kn-cny5a-f01",
+                  "title": "近义词",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5a-f01-1",
+                      "type": "single",
+                      "stem": "“一路走，山路十分崎岖”，句中“崎岖”的近义词是？",
+                      "options": [
+                        { "id": "A", "text": "平坦" },
+                        { "id": "B", "text": "坎坷" },
+                        { "id": "C", "text": "笔直" },
+                        { "id": "D", "text": "光滑" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“崎岖”形容山路高低不平，“坎坷”也是坑坑洼洼、不平坦的意思；平坦、笔直、光滑都与它意思相反。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f01-2",
+                      "type": "blank",
+                      "stem": "写出“简陋”的一个反义词：____。",
+                      "answer": "豪华",
+                      "answerAccepts": ["豪华", "华丽"],
+                      "explanation": "“简陋”指房屋、设备等简单粗陋、不完备，意思相反的就是富丽堂皇的“豪华”。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f01-3",
+                      "type": "single",
+                      "stem": "“他望着那条陡峭的小路，犹豫了一会儿，还是往上走去。”句中“犹豫”的近义词是？",
+                      "options": [
+                        { "id": "A", "text": "果断" },
+                        { "id": "B", "text": "迟疑" },
+                        { "id": "C", "text": "坚决" },
+                        { "id": "D", "text": "痛快" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“犹豫”是拿不定主意的样子，“迟疑”同样指踌躇不决，意思相近；果断、坚决、痛快都是干脆利落，与“犹豫”意思相反。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny5a-f02",
+                  "title": "根据意思写成语",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5a-f02-1",
+                      "type": "single",
+                      "stem": "“心里完全想着、注视着同一件事”，对应的成语是？",
+                      "options": [
+                        { "id": "A", "text": "三心二意" },
+                        { "id": "B", "text": "专心致志" },
+                        { "id": "C", "text": "左顾右盼" },
+                        { "id": "D", "text": "心不在焉" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“专心致志”就是把心思全放在一件事上；三心二意、左顾右盼、心不在焉形容的都是不专心。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f02-2",
+                      "type": "blank",
+                      "stem": "与“万众一心”意思相近的成语是：众志____。",
+                      "answer": "成城",
+                      "answerAccepts": ["成城"],
+                      "explanation": "“众志成城”指大家同心协力，团结得像坚固的城墙，与“万众一心”意思相近。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f02-3",
+                      "type": "single",
+                      "stem": "“勇敢地一直向前，绝不退缩”，对应的成语是？",
+                      "options": [
+                        { "id": "A", "text": "犹豫不决" },
+                        { "id": "B", "text": "勇往直前" },
+                        { "id": "C", "text": "半途而废" },
+                        { "id": "D", "text": "止步不前" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“勇往直前”正是勇敢地一直向前、不退缩；犹豫不决指拿不定主意，半途而废、止步不前说的都是不能坚持向前，与题意相反。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny5a-m02",
+          "title": "阅读理解",
+          "units": [
+            {
+              "id": "kn-cny5a-u02",
+              "title": "提高阅读速度",
+              "leaves": [
+                {
+                  "id": "kn-cny5a-f03",
+                  "title": "快速阅读方法",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5a-f03-1",
+                      "type": "single",
+                      "stem": "为了提高阅读速度，正确的做法是？",
+                      "options": [
+                        { "id": "A", "text": "一个字一个字地指读" },
+                        { "id": "B", "text": "连词成句地读，集中注意力，不回读" },
+                        { "id": "C", "text": "每读一句都要背下来" },
+                        { "id": "D", "text": "只大声朗读，不许默读" }
+                      ],
+                      "answer": "B",
+                      "explanation": "视线一次捕捉的词语越多，读得越快；边读边回头重读会打断思路、拖慢速度，所以要连词成句地读、避免回读。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f03-2",
+                      "type": "blank",
+                      "stem": "连词成句地读，不要一个字一个字地读，也不要____。",
+                      "answer": "回读",
+                      "answerAccepts": ["回读", "回头"],
+                      "explanation": "“回读”指读过后不放心又回头重读，它是影响阅读速度的坏习惯，快速阅读时要克服。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f03-3",
+                      "type": "single",
+                      "stem": "快速阅读时遇到一两个不懂的词语，最好的做法是？",
+                      "options": [
+                        { "id": "A", "text": "立刻停下查字典，弄懂再继续" },
+                        { "id": "B", "text": "若不影响理解就先跳过，连着往下读" },
+                        { "id": "C", "text": "把生词全部抄进本子上再读" },
+                        { "id": "D", "text": "把这一句反复读五遍" }
+                      ],
+                      "answer": "B",
+                      "explanation": "查字典、抄写、反复重读都会打断连贯的视线移动，拖慢速度；对不影响主要内容的生词先跳过，读完再集中解决，才能读得快又读得顺。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny5a-f04",
+                  "title": "标题的作用",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5a-f04-1",
+                      "type": "single",
+                      "stem": "关于文章标题，下面说法正确的是？",
+                      "options": [
+                        { "id": "A", "text": "标题可有可无" },
+                        { "id": "B", "text": "标题只能标明时间" },
+                        { "id": "C", "text": "标题可能提示中心、也可能是贯穿全文的线索" },
+                        { "id": "D", "text": "标题越长越好" }
+                      ],
+                      "answer": "C",
+                      "explanation": "好的标题能概括内容、提示文章中心，或以某一事物为线索串起全文，读文章常从标题入手提出问题。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f04-2",
+                      "type": "blank",
+                      "stem": "读文章先关注题目，常常能预判课文的主要内容和文章的____。",
+                      "answer": "中心",
+                      "answerAccepts": ["中心", "主题", "主旨"],
+                      "explanation": "很多标题本身就点明或暗示中心，抓住题眼，就能提纲挈领地把整篇文章读快读透。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f04-3",
+                      "type": "blank",
+                      "stem": "有的文章以一件物品或一处景物为题，它贯穿全文、把各部分内容连在一起，这样的题目同时就是文章的______。",
+                      "answer": "线索",
+                      "answerAccepts": ["线索"],
+                      "explanation": "题目点出的事物在文中反复出现，材料围绕它组织起来，这条贯穿全文的脉络就叫“线索”，抓住线索就能理清文章顺序。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny5a-m03",
+          "title": "古诗文",
+          "units": [
+            {
+              "id": "kn-cny5a-u03",
+              "title": "爱国诗篇",
+              "leaves": [
+                {
+                  "id": "kn-cny5a-f05",
+                  "title": "示儿",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5a-f05-1",
+                      "type": "single",
+                      "stem": "《示儿》中“但悲不见九州同”的“悲”是因为什么？",
+                      "options": [
+                        { "id": "A", "text": "家中贫穷没有财产" },
+                        { "id": "B", "text": "没能看到祖国重新统一" },
+                        { "id": "C", "text": "远离家乡思念亲人" },
+                        { "id": "D", "text": "做官不顺不得志" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“九州同”指全国统一，诗人临终唯一悲痛的是此生未见收复中原，悲痛中饱含至死不渝的爱国之情。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f05-2",
+                      "type": "blank",
+                      "stem": "把诗句补充完整：王师北定中原日，____。",
+                      "answer": "家祭无忘告乃翁",
+                      "answerAccepts": ["家祭无忘告乃翁"],
+                      "explanation": "诗人叮嘱儿子：等到朝廷军队收复中原的那一天，家里祭祀时千万别忘了把这个好消息告诉父亲。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f05-3",
+                      "type": "single",
+                      "stem": "《示儿》中诗人让儿子在家祭时别忘了告知“北定中原”的喜讯，这表明他？",
+                      "options": [
+                        { "id": "A", "text": "坚信失地终将收复" },
+                        { "id": "B", "text": "打算亲自带兵北伐" },
+                        { "id": "C", "text": "希望儿子长大做官" },
+                        { "id": "D", "text": "为自己一生不得志而抱怨" }
+                      ],
+                      "answer": "A",
+                      "explanation": "遗嘱里叮嘱“等到那一天记得告诉我”，前提是相信“那一天”一定会到来，至死仍盼统一，这正是陆游爱国信念的动人之处。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny5a-f06",
+                  "title": "己亥杂诗",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5a-f06-1",
+                      "type": "single",
+                      "stem": "“我劝天公重抖擞，不拘一格降人才”表达了诗人怎样的愿望？",
+                      "options": [
+                        { "id": "A", "text": "饱览壮丽的山河美景" },
+                        { "id": "B", "text": "期盼上天破格降下更多人才" },
+                        { "id": "C", "text": "表达对友人的惜别" },
+                        { "id": "D", "text": "描写田园生活的悠闲" }
+                      ],
+                      "answer": "B",
+                      "explanation": "龚自珍看到社会沉闷、人才受束缚，所以“劝天公”打破常规降下人才，呼唤变革与涌现人才。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f06-2",
+                      "type": "blank",
+                      "stem": "“九州生气恃风雷”中的“九州”在诗中指____。",
+                      "answer": "中国",
+                      "answerAccepts": ["中国"],
+                      "explanation": "古代把天下分为九州，“九州”成了中国的代称，诗中指的是整个中国要有蓬勃的生气。"
+                    },
+                    {
+                      "id": "qz-kn-cny5a-f06-3",
+                      "type": "blank",
+                      "stem": "《己亥杂诗》的作者是清代诗人______。",
+                      "answer": "龚自珍",
+                      "answerAccepts": ["龚自珍"],
+                      "explanation": "龚自珍是清代思想家、文学家，道光己亥年（1839年）辞官南归途中写下组诗《己亥杂诗》共三百多首，课本选的是其中第五首。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "term": "下",
+      "modules": [
+        {
+          "id": "kn-cny5b-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny5b-u01",
+              "title": "古典词语与成语",
+              "leaves": [
+                {
+                  "id": "kn-cny5b-f01",
+                  "title": "古典白话词语理解",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5b-f01-1",
+                      "type": "single",
+                      "stem": "古白话小说里“请勿推辞”中“推辞”的意思是？",
+                      "options": [
+                        { "id": "A", "text": "答应下来" },
+                        { "id": "B", "text": "表示拒绝、不接受" },
+                        { "id": "C", "text": "用力推开" },
+                        { "id": "D", "text": "恭敬行礼" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“推辞”指对别人的邀请、馈赠等表示拒绝、不接受，“请勿推辞”就是请不要客气拒绝。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f01-2",
+                      "type": "blank",
+                      "stem": "古典小说写人“面如重枣、浓眉大眼”，“天庭饱满”中的“天庭”指人的____。",
+                      "answer": "额头",
+                      "answerAccepts": ["额头"],
+                      "explanation": "古白话里“天庭”指人脸的上部，也就是额头，是描写人物相貌的用词。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f01-3",
+                      "type": "single",
+                      "stem": "古典小说里写武松看了榜文才知山上真有虎，这里的“榜文”指的是？",
+                      "options": [
+                        { "id": "A", "text": "一篇精彩的文章" },
+                        { "id": "B", "text": "官府张贴的告示" },
+                        { "id": "C", "text": "亲友寄来的书信" },
+                        { "id": "D", "text": "酒店门口的招牌" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“榜文”是旧时官府把公告写在木榜上张贴出来告知百姓的文书，武松正是读了官府关于虎情的告示才恍然大悟；它不是文章、书信或招牌。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny5b-f02",
+                  "title": "成语的运用",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5b-f02-1",
+                      "type": "single",
+                      "stem": "下面哪句话中成语使用不当？",
+                      "options": [
+                        { "id": "A", "text": "他说话吞吞吐吐，毫不含糊" },
+                        { "id": "B", "text": "诸葛亮足智多谋，料事如神" },
+                        { "id": "C", "text": "他斩钉截铁地拒绝了这个要求" },
+                        { "id": "D", "text": "同学们把教室打扫得井井有条" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“吞吞吐吐”形容想说又停、不爽快，与“毫不含糊”前后矛盾，所以 A 用词不当；其余句子成语使用都恰当。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f02-2",
+                      "type": "blank",
+                      "stem": "草船借箭最集中体现了诸葛亮的哪个成语特点？填：____（四字成语）。",
+                      "answer": "神机妙算",
+                      "answerAccepts": ["神机妙算", "足智多谋"],
+                      "explanation": "算好天气、算好人心、算好船阵，借箭全在预料之中，“神机妙算”最能概括这种过人的机智。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f02-3",
+                      "type": "blank",
+                      "stem": "填成语：他说话总是绕来绕去，不直接把意思说清楚，可以形容他说话______。",
+                      "answer": "拐弯抹角",
+                      "answerAccepts": ["拐弯抹角", "转弯抹角"],
+                      "explanation": "“拐弯抹角”本义是沿着弯弯曲曲的路走，比喻说话绕圈子、不直截了当，正合句意；“吞吞吐吐”侧重想说又不说，与“绕弯子”不同。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny5b-m02",
+          "title": "阅读理解",
+          "units": [
+            {
+              "id": "kn-cny5b-u02",
+              "title": "人物描写与故事复述",
+              "leaves": [
+                {
+                  "id": "kn-cny5b-f03",
+                  "title": "人物描写方法",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5b-f03-1",
+                      "type": "single",
+                      "stem": "“他把两眼睁得滴溜圆”属于哪种人物描写？",
+                      "options": [
+                        { "id": "A", "text": "语言描写" },
+                        { "id": "B", "text": "动作描写" },
+                        { "id": "C", "text": "神态描写" },
+                        { "id": "D", "text": "心理描写" }
+                      ],
+                      "answer": "C",
+                      "explanation": "“两眼睁得滴溜圆”写的是脸上神情、眼神的变化，属于神态描写；心理描写要写心里想的内容。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f03-2",
+                      "type": "blank",
+                      "stem": "“他心里直打鼓：这该怎么办呢？”这是对人物____的描写。",
+                      "answer": "心理",
+                      "answerAccepts": ["心理"],
+                      "explanation": "句子直接写心里的想法和不安的感觉，所以是心理描写，能把人物内心展示给读者。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f03-3",
+                      "type": "single",
+                      "stem": "“小嘎子蹦蹦跳跳，围着对手转来转去，总想找个空子伸手去抓。”这句主要用了哪种人物描写？",
+                      "options": [
+                        { "id": "A", "text": "外貌描写" },
+                        { "id": "B", "text": "动作描写" },
+                        { "id": "C", "text": "语言描写" },
+                        { "id": "D", "text": "环境描写" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“蹦跳”“围着他转”“伸手去抓”写的都是身体行为，属于动作描写，从中看出小嘎子的机灵活泼；句中没有写长相、说话或周围环境。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny5b-f04",
+                  "title": "按一定顺序复述",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5b-f04-1",
+                      "type": "single",
+                      "stem": "复述古典小说的故事片段，最合适的办法是？",
+                      "options": [
+                        { "id": "A", "text": "想到哪里讲到哪里" },
+                        { "id": "B", "text": "按起因、经过、结果的顺序，抓住主要情节讲述" },
+                        { "id": "C", "text": "只背诵最精彩的句子" },
+                        { "id": "D", "text": "只讲自己的阅读感受" }
+                      ],
+                      "answer": "B",
+                      "explanation": "故事有发展的顺序，先弄清单事件怎么发生、怎样推进、结果如何，再按顺序讲，别人才能听得明白。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f04-2",
+                      "type": "blank",
+                      "stem": "《猴王出世》中，石猴是从____山上一块仙石里蹦出来的。",
+                      "answer": "花果",
+                      "answerAccepts": ["花果", "花果山"],
+                      "explanation": "故事开头就交代石猴出世的地方是花果山，山上的仙石迸裂，石猴由此诞生。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f04-3",
+                      "type": "blank",
+                      "stem": "复述故事前先理清顺序：抓情节的“起因→______→结果”这条线索，讲出来才不会乱。",
+                      "answer": "经过",
+                      "answerAccepts": ["经过"],
+                      "explanation": "故事都是按事情的发展顺序推进的：怎么发生、怎样发展、结局如何。“经过”是故事主体，抓住它才能把情节讲完整、讲连贯。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny5b-m03",
+          "title": "古诗文",
+          "units": [
+            {
+              "id": "kn-cny5b-u03",
+              "title": "家国诗篇",
+              "leaves": [
+                {
+                  "id": "kn-cny5b-f05",
+                  "title": "从军行",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5b-f05-1",
+                      "type": "single",
+                      "stem": "“黄沙百战穿金甲，不破楼兰终不还”表达了戍边将士怎样的豪情？",
+                      "options": [
+                        { "id": "A", "text": "思念家乡的愁苦" },
+                        { "id": "B", "text": "誓死破敌、保卫国家的壮志" },
+                        { "id": "C", "text": "悠闲欣赏边塞风光" },
+                        { "id": "D", "text": "对军旅生活的厌倦" }
+                      ],
+                      "answer": "B",
+                      "explanation": "历经百战、金甲磨穿，将士们仍立下“不攻破楼兰绝不回家”的誓言，悲壮中更显决心之坚。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f05-2",
+                      "type": "blank",
+                      "stem": "把诗句补充完整：青海长云暗雪山，____。",
+                      "answer": "孤城遥望玉门关",
+                      "answerAccepts": ["孤城遥望玉门关"],
+                      "explanation": "连绵长云使雪山黯淡，与孤城遥遥相望的是玉门关，壮阔苍凉的边塞图景为后文抒情作铺垫。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f05-3",
+                      "type": "single",
+                      "stem": "《从军行》是乐府旧题，这类诗歌的内容大多写什么？",
+                      "options": [
+                        { "id": "A", "text": "田园隐居的乐趣" },
+                        { "id": "B", "text": "军旅征战和边塞生活" },
+                        { "id": "C", "text": "送别友人的离情" },
+                        { "id": "D", "text": "山水游览的见闻" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“从军”即参加军队，《从军行》是乐府旧题，多写将士戍边征战的生活与情怀，王昌龄这首正是借它抒发守边报国之志。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny5b-f06",
+                  "title": "闻官军收河南河北",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny5b-f06-1",
+                      "type": "single",
+                      "stem": "《闻官军收河南河北》被称作杜甫“生平第一快诗”，贯穿全诗的感情是哪个字？",
+                      "options": [
+                        { "id": "A", "text": "悲" },
+                        { "id": "B", "text": "喜" },
+                        { "id": "C", "text": "愁" },
+                        { "id": "D", "text": "静" }
+                      ],
+                      "answer": "B",
+                      "explanation": "忽然听到失地收复的消息，“剑外忽传收蓟北”之后涕泪、妻子、愁云都转悲为喜，全诗一个“喜”字贯串到底。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f06-2",
+                      "type": "blank",
+                      "stem": "杜甫被后世尊称为“____”。",
+                      "answer": "诗圣",
+                      "answerAccepts": ["诗圣"],
+                      "explanation": "杜甫的诗真实记录社会动荡、心怀百姓，后人把他与“诗仙”李白并举，尊为“诗圣”。"
+                    },
+                    {
+                      "id": "qz-kn-cny5b-f06-3",
+                      "type": "blank",
+                      "stem": "把诗句补充完整：剑外忽传收蓟北，______。",
+                      "answer": "初闻涕泪满衣裳",
+                      "answerAccepts": ["初闻涕泪满衣裳"],
+                      "explanation": "“忽传”写捷报来得突然，诗人刚听到失地收复就激动得泪流满面、沾湿衣裳，悲去喜来，一个“喜”字从泪水中喷薄而出。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "term": "上",
+      "modules": [
+        {
+          "id": "kn-cny6a-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny6a-u01",
+              "title": "近义词辨析与句序",
+              "leaves": [
+                {
+                  "id": "kn-cny6a-f01",
+                  "title": "近义词辨析",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6a-f01-1",
+                      "type": "single",
+                      "stem": "“老师对我们的要求很____”，横线上填哪个词最恰当？",
+                      "options": [
+                        { "id": "A", "text": "严肃" },
+                        { "id": "B", "text": "严格" },
+                        { "id": "C", "text": "严峻" },
+                        { "id": "D", "text": "严厉" }
+                      ],
+                      "answer": "B",
+                      "explanation": "“要求”常与“严格”搭配；“严肃”多形容神情气氛，“严峻”多形容考验形势，“严厉”多形容批评处分。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f01-2",
+                      "type": "blank",
+                      "stem": "选词填空（只填词语）：考验十分____，容不得半点马虎。",
+                      "answer": "严峻",
+                      "answerAccepts": ["严峻", "严酷"],
+                      "explanation": "“严峻”形容严重、不容乐观，常与考验、形势搭配，用在这里最恰当。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f01-3",
+                      "type": "single",
+                      "stem": "“下课铃响了，同学们（ ）走出教室，向操场跑去。”括号里填哪个词最恰当？",
+                      "options": [
+                        { "id": "A", "text": "陆续" },
+                        { "id": "B", "text": "继续" },
+                        { "id": "C", "text": "连续" },
+                        { "id": "D", "text": "持续" }
+                      ],
+                      "answer": "A",
+                      "explanation": "“陆续”表示有先有后、时断时续，同学们三三两两地走出教室正用它；“继续”指接着做同一件事，“连续”“持续”强调不间断，都不能这样修饰“走出教室”。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny6a-f02",
+                  "title": "句子连贯与衔接",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6a-f02-1",
+                      "type": "single",
+                      "stem": "把句子排成一段话：①他每天放学后先写作业 ②写完再认真检查一遍 ③周末才痛快地玩。正确的顺序是？",
+                      "options": [
+                        { "id": "A", "text": "①②③" },
+                        { "id": "B", "text": "①③②" },
+                        { "id": "C", "text": "②①③" },
+                        { "id": "D", "text": "③①②" }
+                      ],
+                      "answer": "A",
+                      "explanation": "按事情先后排序：先写作业，再检查，最后才去玩，②中“再”紧跟①，③“才”收束在后，所以顺序是①②③。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f02-2",
+                      "type": "blank",
+                      "stem": "填上合适的关联词（只填前半）：（____）年纪小，（却）志气不小。",
+                      "answer": "虽然",
+                      "answerAccepts": ["虽然", "尽管"],
+                      "explanation": "前后分句意思有转折，且后半用“却”呼应，“虽然……却……”是表示转折关系的搭配。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f02-3",
+                      "type": "blank",
+                      "stem": "排列句子时找“推进词”很管用：如“先……再……接着……最后……”，这些词提示句子是按______顺序排列的。",
+                      "answer": "时间",
+                      "answerAccepts": ["时间", "事情发展", "发展"],
+                      "explanation": "“先、再、接着、最后”表示动作一前一后发生，其实就是事情发展的先后，属于时间顺序；按它排句，段落才通顺连贯。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny6a-m02",
+          "title": "阅读理解",
+          "units": [
+            {
+              "id": "kn-cny6a-u02",
+              "title": "小说与有目的阅读",
+              "leaves": [
+                {
+                  "id": "kn-cny6a-f03",
+                  "title": "小说三要素",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6a-f03-1",
+                      "type": "single",
+                      "stem": "小说的三要素是什么？",
+                      "options": [
+                        { "id": "A", "text": "人物、情节、环境" },
+                        { "id": "B", "text": "时间、地点、标点" },
+                        { "id": "C", "text": "标题、作者、段数" },
+                        { "id": "D", "text": "语言、修辞、字形" }
+                      ],
+                      "answer": "A",
+                      "explanation": "小说通过完整的故事情节，在具体的环境中塑造人物形象，人物、情节、环境缺一不可，被称为三要素。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f03-2",
+                      "type": "blank",
+                      "stem": "刻画人物常抓住语言、动作、心理和____描写。",
+                      "answer": "外貌",
+                      "answerAccepts": ["外貌", "神态", "肖像"],
+                      "explanation": "长相、衣着、神情属于外貌（肖像）描写，与语言、动作、心理描写一起把人物写得鲜活。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f03-3",
+                      "type": "blank",
+                      "stem": "小说中写狂风暴雨、环境恶劣，往往是为了烘托人物心情、推动______的发展。",
+                      "answer": "情节",
+                      "answerAccepts": ["情节"],
+                      "explanation": "小说的人物、情节、环境相互依存：环境不只是背景，还能渲染气氛，并为下一步的矛盾冲突做铺垫，从而推动情节向前发展。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny6a-f04",
+                  "title": "根据阅读目的选择内容",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6a-f04-1",
+                      "type": "single",
+                      "stem": "读一篇介绍皇家宫殿群的文章，如果是为设计参观路线图而读，应重点关注？",
+                      "options": [
+                        { "id": "A", "text": "宫殿里的传说故事" },
+                        { "id": "B", "text": "各处建筑的方位布局与参观入口出口" },
+                        { "id": "C", "text": "建筑美学理论" },
+                        { "id": "D", "text": "宫廷人物的饮食" }
+                      ],
+                      "answer": "B",
+                      "explanation": "阅读目的决定阅读重点：画路线图需要的是方位、位置、路线的信息，别的内容可以快读或跳读。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f04-2",
+                      "type": "blank",
+                      "stem": "为解决问题而阅读时，要善于从材料中筛选与问题相关的____。",
+                      "answer": "信息",
+                      "answerAccepts": ["信息", "内容", "资料"],
+                      "explanation": "有目的地阅读要带着问题找答案，把分散在不同段落里、与问题有关的信息提取出来，再加以梳理。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f04-3",
+                      "type": "single",
+                      "stem": "读一份学校社团招新启事，如果目的是搞清“怎样报名”，应重点阅读哪部分内容？",
+                      "options": [
+                        { "id": "A", "text": "社团历年活动的照片" },
+                        { "id": "B", "text": "社团成立的时间" },
+                        { "id": "C", "text": "报名的条件、时间和方式" },
+                        { "id": "D", "text": "社团徽标的设计含义" }
+                      ],
+                      "answer": "C",
+                      "explanation": "阅读目的决定阅读重点：想知道“怎么报名”，就要把目光锁定在报名条件、时间和方式上，其余内容快速读过甚至跳过。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny6a-m03",
+          "title": "古诗文",
+          "units": [
+            {
+              "id": "kn-cny6a-u03",
+              "title": "自然景物的诗",
+              "leaves": [
+                {
+                  "id": "kn-cny6a-f05",
+                  "title": "六月二十七日望湖楼醉书",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6a-f05-1",
+                      "type": "single",
+                      "stem": "“黑云翻墨未遮山，白雨跳珠乱入船”描写的是怎样的景象？",
+                      "options": [
+                        { "id": "A", "text": "绵绵的春雨" },
+                        { "id": "B", "text": "夏天骤来骤急的阵雨" },
+                        { "id": "C", "text": "秋夜的冷雨" },
+                        { "id": "D", "text": "冬日的茫茫雪景" }
+                      ],
+                      "answer": "B",
+                      "explanation": "乌云像打翻的墨、雨点像跳动的珍珠，云未遮山雨已落船，来得急、下得大，是夏日暴雨的典型景象。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f05-2",
+                      "type": "blank",
+                      "stem": "把诗句补充完整：黑云翻墨未遮山，____。",
+                      "answer": "白雨跳珠乱入船",
+                      "answerAccepts": ["白雨跳珠乱入船"],
+                      "explanation": "“黑云”对“白雨”，墨色云团还未把山遮住，白色的雨点已乱跳入船，苏轼写活了西湖骤雨。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f05-3",
+                      "type": "single",
+                      "stem": "“卷地风来忽吹散，望湖楼下水如天”描写的是怎样的景象？",
+                      "options": [
+                        { "id": "A", "text": "乌云压境的雨前" },
+                        { "id": "B", "text": "大雨倾盆的雨中" },
+                        { "id": "C", "text": "雨过天晴、湖面明净如天" },
+                        { "id": "D", "text": "月夜宁静的湖面" }
+                      ],
+                      "answer": "C",
+                      "explanation": "狂风卷地而来，忽然吹散云雨，“水如天”写雨后湖水明净、水天一色，这是暴雨骤停、霎时放晴的景象，不是雨前、雨中或月夜。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny6a-f06",
+                  "title": "浪淘沙与江南春",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6a-f06-1",
+                      "type": "single",
+                      "stem": "《浪淘沙（其一）》中运用奇特想象、写要沿着黄河上天寻访牛郎织女的诗句是？",
+                      "options": [
+                        { "id": "A", "text": "九曲黄河万里沙" },
+                        { "id": "B", "text": "如今直上银河去" },
+                        { "id": "C", "text": "浪淘风簸自天涯" },
+                        { "id": "D", "text": "同到牵牛织女家" }
+                      ],
+                      "answer": "B",
+                      "explanation": "刘禹锡由黄河联想到天上的银河，说“直上银河去”，以浪漫想象表现黄河的豪迈气势。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f06-2",
+                      "type": "blank",
+                      "stem": "“千里莺啼绿映红，水村山郭酒旗风”描绘的是哪个季节的江南美景？（填一个字）",
+                      "answer": "春",
+                      "answerAccepts": ["春", "春季", "春天"],
+                      "explanation": "莺啼、花红、绿叶相映，正是江南春天的典型画面，诗题《江南春》也点明了季节。"
+                    },
+                    {
+                      "id": "qz-kn-cny6a-f06-3",
+                      "type": "blank",
+                      "stem": "《浪淘沙（其一）》的作者是唐代诗人______。",
+                      "answer": "刘禹锡",
+                      "answerAccepts": ["刘禹锡"],
+                      "explanation": "刘禹锡是唐代文学家、诗人，白居易称他为“诗豪”；《浪淘沙》是一组共九首的诗，课本选的是其中第一首。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "term": "下",
+      "modules": [
+        {
+          "id": "kn-cny6b-m01",
+          "title": "词语与句子",
+          "units": [
+            {
+              "id": "kn-cny6b-u01",
+              "title": "表达与衔接",
+              "leaves": [
+                {
+                  "id": "kn-cny6b-f01",
+                  "title": "表达真情实感",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6b-f01-1",
+                      "type": "single",
+                      "stem": "想要“让真情自然流露”，写文章时应该怎么做？",
+                      "options": [
+                        { "id": "A", "text": "尽量喊空洞的口号" },
+                        { "id": "B", "text": "把情感融进具体的事情和细节中" },
+                        { "id": "C", "text": "只堆砌华丽的词语" },
+                        { "id": "D", "text": "夸大事实吸引眼球" }
+                      ],
+                      "answer": "B",
+                      "explanation": "真情感人靠的是真实：选择亲身经历的事，把当时的所见所感写具体，情感自然会从字里行间流露出来。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f01-2",
+                      "type": "blank",
+                      "stem": "不把情藏在景物里、而是开口直接说出心声，这种方法叫____抒情。",
+                      "answer": "直接",
+                      "answerAccepts": ["直接"],
+                      "explanation": "抒情有间接和直接之分：借景物、事件倾吐是间接，直抒胸臆、大声说出口就是直接抒情。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f01-3",
+                      "type": "single",
+                      "stem": "要写第一次做错事后很后悔的往事，下面哪种写法更能让真情自然流露？",
+                      "options": [
+                        { "id": "A", "text": "反复写“我真后悔啊，真后悔啊”" },
+                        { "id": "B", "text": "把事情的经过和当时的动作、心里感受写具体" },
+                        { "id": "C", "text": "开头引用一大堆名人名言" },
+                        { "id": "D", "text": "尽量用华丽生僻的词语装点" }
+                      ],
+                      "answer": "B",
+                      "explanation": "情感依附于具体的事和细节：写出当时怎么做、心里怎么想，读者自然能体会那份后悔；只喊口号、堆名言和华丽词藻，感情反而空洞。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny6b-f02",
+                  "title": "关联词运用",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6b-f02-1",
+                      "type": "single",
+                      "stem": "下面哪一句关联词使用不恰当？",
+                      "options": [
+                        { "id": "A", "text": "因为他坚持跑步，所以身体渐渐好了" },
+                        { "id": "B", "text": "即使下大雨，运动会也照常举行" },
+                        { "id": "C", "text": "他不仅学习好，因此品德也好" },
+                        { "id": "D", "text": "虽然路很远，但他坚持走完了" }
+                      ],
+                      "answer": "C",
+                      "explanation": "“学习好”与“品德好”是并列递进关系，应搭配“而且”；“因此”表因果，与前半的“不仅”无法配套，所以 C 不当。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f02-2",
+                      "type": "blank",
+                      "stem": "填上合适的关联词（只填前半）：（____）人人都献出一点爱，世界就会变成美好人间。",
+                      "answer": "只要",
+                      "answerAccepts": ["只要"],
+                      "explanation": "后半句“就会”表示条件满足就会有结果，与之搭配的正是表示充分条件的“只要”。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f02-3",
+                      "type": "blank",
+                      "stem": "填上合适的关联词（只填前半）：（______）遇到再大的困难，我们也不退缩。",
+                      "answer": "即使",
+                      "answerAccepts": ["即使", "即便", "哪怕"],
+                      "explanation": "“再大的困难”是假设的极端情况，“也不退缩”表示结果不受影响，“即使……也……”正表这种假设让步；填“只要”就与句中的“也”无法配套。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny6b-m02",
+          "title": "阅读理解",
+          "units": [
+            {
+              "id": "kn-cny6b-u02",
+              "title": "体会情感与文言文",
+              "leaves": [
+                {
+                  "id": "kn-cny6b-f03",
+                  "title": "体会文章的思想感情",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6b-f03-1",
+                      "type": "single",
+                      "stem": "读一篇写孩子耐心等大人带自己出门、最终失望的往事文章，体会心情应重点抓住？",
+                      "options": [
+                        { "id": "A", "text": "全文一共有几个自然段" },
+                        { "id": "B", "text": "人物的心理和动作细节" },
+                        { "id": "C", "text": "作者的出生年月" },
+                        { "id": "D", "text": "段落首行缩进几个格" }
+                      ],
+                      "answer": "B",
+                      "explanation": "心情藏在细节里：焦急地看表、一次次跑出家门、最后光线暗下来的失落，抓住这些心理和动作描写才能读出情感变化。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f03-2",
+                      "type": "blank",
+                      "stem": "读事写人的文章，抓住关键语句和典型事例，就能体会作者要表达的____。",
+                      "answer": "情感",
+                      "answerAccepts": ["情感", "思想感情", "感情"],
+                      "explanation": "文章最终指向的是情与理：关键句中往往含情，透过具体事例就能读出作者的思想感情。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f03-3",
+                      "type": "single",
+                      "stem": "体会文章的思想感情，下面方法不恰当的一项是？",
+                      "options": [
+                        { "id": "A", "text": "抓住反复出现的语句体会强调之情" },
+                        { "id": "B", "text": "联系作者生平和时代背景帮助理解" },
+                        { "id": "C", "text": "只看封面插图猜测文章情感" },
+                        { "id": "D", "text": "品味含义深刻的关键句子" }
+                      ],
+                      "answer": "C",
+                      "explanation": "反复出现的语句、意味深长的句子往往寄情含理，知人论世也有助理解；只凭封面插图猜测脱离了文章内容，得不到作者真实的思想感情。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny6b-f04",
+                  "title": "文言文理解",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6b-f04-1",
+                      "type": "single",
+                      "stem": "《学弈》里两个学生跟同一下棋高手学棋，结果却不同，原因是什么？",
+                      "options": [
+                        { "id": "A", "text": "老师教得偏心" },
+                        { "id": "B", "text": "一人专心致志，一人一心想着射天鹅" },
+                        { "id": "C", "text": "两人智力差别悬殊" },
+                        { "id": "D", "text": "一个人以前学过" }
+                      ],
+                      "answer": "B",
+                      "explanation": "孟子借这个故事说明：智力并非决定因素，学棋成败的差异正在于是否专心——一人惟弈秋之为听，一人思援弓缴而射鸿鹄。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f04-2",
+                      "type": "blank",
+                      "stem": "《学弈》告诉我们：学习必须____，不能三心二意。",
+                      "answer": "专心",
+                      "answerAccepts": ["专心", "专心致志"],
+                      "explanation": "文中专心者学棋有成、分心者一无所获，对比说明学习成败的关键在于能否专心致志。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f04-3",
+                      "type": "blank",
+                      "stem": "《学弈》结尾问“为是其智弗若与”，其中“弗若”的意思是______。",
+                      "answer": "不如",
+                      "answerAccepts": ["不如", "比不上"],
+                      "explanation": "“弗”表示否定，“弗若”就是比不上的意思；这句是说：难道是因为他的智力不如前一个人吗？答案其实是不专心，并非智力差别。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kn-cny6b-m03",
+          "title": "古诗文",
+          "units": [
+            {
+              "id": "kn-cny6b-u03",
+              "title": "托物言志与节日诗",
+              "leaves": [
+                {
+                  "id": "kn-cny6b-f05",
+                  "title": "马诗与竹石",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6b-f05-1",
+                      "type": "single",
+                      "stem": "“何当金络脑，快走踏清秋”中的骏马象征着什么？",
+                      "options": [
+                        { "id": "A", "text": "渴望出游的游客" },
+                        { "id": "B", "text": "渴望建功立业、施展抱负的人" },
+                        { "id": "C", "text": "勤劳致富的牧人" },
+                        { "id": "D", "text": "追求奢华的富人" }
+                      ],
+                      "answer": "B",
+                      "explanation": "李贺借马自喻：骏马盼望套上金络脑在清秋原野驰骋，表达的正是志士渴望被重用、报效国家的雄心。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f05-2",
+                      "type": "blank",
+                      "stem": "把诗句补充完整：千磨万击还坚劲，____。",
+                      "answer": "任尔东西南北风",
+                      "answerAccepts": ["任尔东西南北风"],
+                      "explanation": "郑燮写岩竹历经磨难仍然刚劲，任凭四面来风也不动摇，以竹喻人，歌颂坚韧不屈的品格。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f05-3",
+                      "type": "single",
+                      "stem": "《竹石》中“咬定青山不放松，立根原在破岩中”表现了岩竹怎样的品格？",
+                      "options": [
+                        { "id": "A", "text": "美丽动人" },
+                        { "id": "B", "text": "坚定顽强、不向艰难低头" },
+                        { "id": "C", "text": "虚心好学" },
+                        { "id": "D", "text": "孤独寂寞" }
+                      ],
+                      "answer": "B",
+                      "explanation": "一个“咬”字写竹根牢牢抓住青山，“破岩”说明环境恶劣，根基再难也要扎稳、风再大也不动摇，正是坚定不移、百折不回的人格写照。"
+                    }
+                  ]
+                },
+                {
+                  "id": "kn-cny6b-f06",
+                  "title": "寒食与迢迢牵牛星",
+                  "quizzes": [
+                    {
+                      "id": "qz-kn-cny6b-f06-1",
+                      "type": "single",
+                      "stem": "“春城无处不飞花，寒食东风御柳斜”描写的是哪个节日前后的长安城？",
+                      "options": [
+                        { "id": "A", "text": "寒食节" },
+                        { "id": "B", "text": "端午节" },
+                        { "id": "C", "text": "七夕节" },
+                        { "id": "D", "text": "重阳节" }
+                      ],
+                      "answer": "A",
+                      "explanation": "诗句题咏寒食：暮春长安落絮飞花，东风吹斜宫柳，寒食节在清明前一二日，正合“春城”景象。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f06-2",
+                      "type": "blank",
+                      "stem": "《迢迢牵牛星》选自《____十九首》。",
+                      "answer": "古诗",
+                      "answerAccepts": ["古诗"],
+                      "explanation": "《迢迢牵牛星》出自东汉末年文人五言诗集《古诗十九首》，借牛郎织女的故事写离别相思。"
+                    },
+                    {
+                      "id": "qz-kn-cny6b-f06-3",
+                      "type": "blank",
+                      "stem": "《迢迢牵牛星》借牛郎织女神话写离别相思，与这首诗相关的传统节日是______。",
+                      "answer": "七夕",
+                      "answerAccepts": ["七夕", "七夕节"],
+                      "explanation": "诗里牵牛、织女二星隔河相望、不能相会，民间正是借七夕仰望银河、传说牛郎织女一年一度相会的故事寄托相思；寒食、端午、重阳都与这个传说无关。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  address: 127.0.0.1        # 默认只监听本机；家庭局域网开放请改为 0.0.0.0（见 README）
+
+spring:
+  application:
+    name: studyworkplace
+  datasource:
+    # MySQL root 凭据（家庭本机部署；如需改密只需改这两行）
+    url: jdbc:mysql://127.0.0.1:3306/studyworkplace?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: root
+    password: "root@123"
+  jpa:
+    hibernate:
+      ddl-auto: validate    # 表结构以 schema.sql 为唯一事实（docs/05）
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Shanghai
+  sql:
+    init:
+      mode: always          # schema.sql 全部 CREATE TABLE IF NOT EXISTS，幂等
+      continue-on-error: false
+  mvc:
+    problemdetails:
+      enabled: false
+  web:
+    resources:
+      cache:
+        period: 0
+
+studdy:
+  admin-token-ttl-minutes: 30
+  default-pin: "8888"
+  ebooks-dir: data/ebooks     # 人教 PDF drop-in 目录（FR-24/M4.7）：math-4上.pdf 等
+
+logging:
+  level:
+    com.studdy: INFO
